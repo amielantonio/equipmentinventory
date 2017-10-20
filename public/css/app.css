@@ -1,2 +1,71 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800");
 
+
+
+/**
+  System created for YVP
+ */
+
+/* CSS Variables
+ ******************************************/
+:root{
+    /*Body */
+    --body-bg: #f5f8fa;
+
+    /*Borders*/
+
+    /*Color Palette*/
+    --primary: #054f99;
+    --info: #054f99;
+    --success: #054f99;
+    --warning: #054f99;
+    --danger: #054f99;
+
+    /*Typography*/
+    --font-family: "Open Sans", sans-serif;
+    --base-font-size: 14px;
+
+    /*Inputs*/
+}
+
+/* Normalization
+ ******************************************/
+
+/*Reset Box sizing*/
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+html, body{
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+}
+
+
+
+
+/* Sidebar
+ ******************************************/
+
+.sidebar-container{
+    /*display*/
+
+    /*position*/
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    /*design*/
+    background-color: #fff;
+    border-right: #054f99
+}

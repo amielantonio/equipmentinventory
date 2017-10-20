@@ -11,11 +11,13 @@
     <title>IT Inventory</title>
 
     <!-- Styles -->
-    <link href="{{ asset('css/normalize.css') }}" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
 
 <nav>
+    <div class="">
 
+    </div>
 </nav>
