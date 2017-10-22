@@ -15,17 +15,23 @@
     /*Borders*/
 
     /*Color Palette*/
-    --primary: #054f99;
-    --info: #054f99;
-    --success: #054f99;
-    --warning: #054f99;
-    --danger: #054f99;
+    --primary: #03A9F4;
+    --info: #7FC6E1;
+    --success: #2FD16B;
+    --warning: #FFA039;
+    --danger: #FC3842;
 
     /*Typography*/
     --font-family: "Open Sans", sans-serif;
     --base-font-size: 14px;
+    --text-color: #383839;
 
-    /*Inputs*/
+    /*Z-index*/
+    --z-100: 100;
+    --z-200: 200;
+    --z-300: 300;
+    --z-400: 400;
+
 }
 
 /* Normalization
@@ -49,6 +55,17 @@ html, body{
 body{
     font-family: "Open Sans", sans-serif;
     font-size: 14px;
+    color: var(--text-color);
+}
+
+
+/* Main
+ ******************************************/
+main{
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('../images/coffee-2319122_1920.jpg') center center fixed no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
 }
 
 
@@ -66,6 +83,14 @@ body{
     left: 0;
 
     /*design*/
-    background-color: #fff;
-    border-right: #054f99
+    background: var(--primary);
+    height: 100%;
+    width: 15%;
+}
+.sidebar-container > .sidebar-head{
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    min-height: 100px;
+    background: var(--danger);
 }

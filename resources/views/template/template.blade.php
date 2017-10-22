@@ -1,8 +1,10 @@
 @include('template.header')
-@include('template.sidebar')
 
-@yield('page-content')
 
+<main class="app">
+    @include('template.sidebar')
+    @yield('page-content')
+</main>
 
 
 @include('template.footer')
