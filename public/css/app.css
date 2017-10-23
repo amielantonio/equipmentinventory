@@ -1,13 +1,29 @@
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800");
-
-
 
 /**
   System created for YVP
+  includes all user interface css
+
+  Copyright 2017 Your Virtual People
+
+  Table of Contents
+
+  I.    CSS Variables
+  II.   Normalization
+    i.    Helper Class
+  III.  App Layout
+  IV.   Sidebar
+    i.    Sidebar Global List
+    ii.   Sidebar Global Links
+    iii.  Main Sidebar
+    iv.   Sub menu
+  V.
+  VI.
  */
 
-/* CSS Variables
+/*******************************************
+ * CSS VARIABLES
  ******************************************/
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800");
 :root{
     /*Body */
     --body-bg: #f5f8fa;
@@ -15,16 +31,20 @@
     /*Borders*/
 
     /*Color Palette*/
-    --primary: #03A9F4;
-    --info: #7FC6E1;
+    --primary: #2196F3;
+    --info: #18FFFF;
     --success: #2FD16B;
     --warning: #FFA039;
-    --danger: #FC3842;
+    --danger: #FF5252;
+    --black: #212121;
+    --gray: #757575;
+
 
     /*Typography*/
     --font-family: "Open Sans", sans-serif;
     --base-font-size: 14px;
-    --text-color: #383839;
+    --text-color: #424242;
+
 
     /*Z-index*/
     --z-100: 100;
@@ -34,7 +54,8 @@
 
 }
 
-/* Normalization
+/*******************************************
+ * NORMALIZATION
  ******************************************/
 
 /*Reset Box sizing*/
@@ -58,39 +79,277 @@ body{
     color: var(--text-color);
 }
 
+.container, .row{
+    position: relative;
+}
 
-/* Main
+.container,
+.row,
+div[class^="col-"]{
+    background: inherit;
+}
+
+/* Helper Class
+ ******************************************/
+/*Margin Bottom*/
+.mb-10{margin-bottom: 10px;}
+.mb-20{margin-bottom: 20px;}
+.mb-30{margin-bottom: 30px;}
+.mb-40{margin-bottom: 40px;}
+.mb-50{margin-bottom: 50px;}
+.mb-60{margin-bottom: 60px;}
+.mb-70{margin-bottom: 70px;}
+.mb-80{margin-bottom: 80px;}
+.mb-90{margin-bottom: 90px;}
+.mb-100{margin-bottom: 100px;}
+
+/*Margin Top*/
+.mt-10{margin-top: 10px;}
+.mt-20{margin-top: 20px;}
+.mt-30{margin-top: 30px;}
+.mt-40{margin-top: 40px;}
+.mt-50{margin-top: 50px;}
+.mt-60{margin-top: 60px;}
+.mt-70{margin-top: 70px;}
+.mt-80{margin-top: 80px;}
+.mt-90{margin-top: 90px;}
+.mt-100{margin-top: 100px;}
+
+/*Margin Right*/
+.mr-10{margin-right: 10px;}
+.mr-20{margin-right: 20px;}
+.mr-30{margin-right: 30px;}
+.mr-40{margin-right: 40px;}
+.mr-50{margin-right: 50px;}
+.mr-60{margin-right: 60px;}
+.mr-70{margin-right: 70px;}
+.mr-80{margin-right: 80px;}
+.mr-90{margin-right: 90px;}
+.mr-100{margin-right: 100px;}
+
+/*Margin Left*/
+.ml-10{margin-left: 10px;}
+.ml-20{margin-left: 20px;}
+.ml-30{margin-left: 30px;}
+.ml-40{margin-left: 40px;}
+.ml-50{margin-left: 50px;}
+.ml-60{margin-left: 60px;}
+.ml-70{margin-left: 70px;}
+.ml-80{margin-left: 80px;}
+.ml-90{margin-left: 90px;}
+.ml-100{margin-left: 100px;}
+
+
+/*******************************************
+ * MAIN
  ******************************************/
 main{
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('../images/coffee-2319122_1920.jpg') center center fixed no-repeat;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('/images/coffee-2319122_1920.jpg') fixed no-repeat;
+    /*background: url('../images/coffee-2319122_1920.jpg') fixed no-repeat;*/
     background-size: cover;
     height: 100%;
-    width: 100%;
+    width: 83%;
+    float: right;
+    position: relative;
+    display: block;
+
+    padding: 1em;
+}
+main::before, main::after{
+    content: "";
+    clear: both;
+    display: table;
 }
 
 
-
-
-/* Sidebar
+/*******************************************
+ * SIDEBAR
  ******************************************/
 
 .sidebar-container{
     /*display*/
-
+    height: 100%;
+    width: 17%;
     /*position*/
     position: fixed;
     top: 0;
     left: 0;
 
     /*design*/
-    background: var(--primary);
-    height: 100%;
-    width: 15%;
+    background: var(--info);
+
+    -webkit-box-shadow: 1px 0 0 0 rgba(0,0,0,0.75);
+    -moz-box-shadow: 1px 0 0 0 rgba(0,0,0,0.75);
+    box-shadow: 1px 0 0 0 rgba(0,0,0,0.75);
 }
 .sidebar-container > .sidebar-head{
     width: 100%;
     height: auto;
-    padding: 10px;
+    padding: 20px;
     min-height: 100px;
     background: var(--danger);
+    margin-bottom: 15px;
+}
+
+
+/* Sidebar Global List
+******************************************/
+.sidebar-container ul{
+    list-style: none;
+    padding: 0;
+    margin : 0;
+}
+.sidebar-container ul > li{
+    position: relative;
+}
+.sidebar-container ul > li > ul{
+    -moz-padding-start: 20px;
+    -webkit-padding-start: 20px;
+}
+
+/* Sidebar Global Links
+******************************************/
+.sidebar-container ul>li>a,
+.sidebar-container ul>li>a:visited,
+.sidebar-container ul>li>a:focus,
+.sidebar-container ul>li>a:hover{
+    color: var(--text-color);
+}
+.sidebar-container ul>li>a{
+    width: 100%;
+    display: block;
+    padding: 7px 10px;
+}
+
+/*Hover*/
+.sidebar-container ul>li>a:hover{
+    text-decoration: none;
+    border-left: 7px solid var(--primary);
+}
+.sidebar-container ul>li>a:hover>span{
+    margin-left: -7px;
+}
+
+.sidebar-container a > .link-icon{
+    float: right;
+}
+
+/* Main Sidebar
+******************************************/
+
+.main-sidebar{
+    /*display*/
+
+    /*position*/
+    position: relative;
+    margin: 0;
+
+    /*design*/
+}
+
+/*Main Sidebar Links*/
+
+.main-sidebar > li > a{
+    padding-left: 30px !important;
+}
+
+
+/*icon animation*/
+.main-sidebar > li > i{
+    transform: rotate(0deg);
+    transition: 0.5s all ease;
+}
+.main-sidebar > li.active i{
+    transform: rotate(45deg);
+    transition: 0.5s all ease;
+}
+
+
+/* Sub Menu
+******************************************/
+
+.main-sidebar .sub-menu{
+    /*display*/
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
+    max-height: 0;
+
+    /*position*/
+
+
+    /*design*/
+}
+
+
+/*******************************************
+ * COMPONENTS
+ ******************************************/
+
+
+/*@override bootstrap cards*/
+.card{
+    background: inherit;
+    border: none;
+    border-radius: 0;
+
+    z-index: 2;
+    overflow: hidden;
+    color: #FFFFFF;
+}
+/*Frosted Glass Effect*/
+.card::before{
+    content: "";
+    position: absolute;
+    top: -25px;
+    left: -25px;
+    bottom: 0;
+    right: 0;
+    background: inherit;
+    z-index: -1;
+    box-shadow: inset 0 0 0 200px rgba(255,255,255,0.2);
+    filter: blur(10px);
+}
+.card > .card-header{
+    border-bottom: 0;
+}
+
+/* User Details
+ ******************************************/
+.user-details{
+    /*display*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    width: 100%;
+    height: 100%;
+
+    /*position*/
+    position: relative;
+    padding: 0;
+    margin: 0;
+
+    /*design*/
+    list-style: none;
+}
+.user-details > li{
+    color: white;
+}
+
+.user-details > .user-image{
+    cursor: pointer;
+    position: relative;
+    margin-right: 10px;
+}
+.user-details > .user-image > img{
+    width: 70px;
+    height: 70px;
+
+    border-radius: 50%;
+}
+
+.user-details > .user-name{
+    font-weight: 700;
 }
