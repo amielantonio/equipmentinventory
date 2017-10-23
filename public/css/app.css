@@ -255,13 +255,13 @@ main::before, main::after{
 
 
 /*icon animation*/
-.main-sidebar > li > i{
-    transform: rotate(0deg);
-    transition: 0.5s all ease;
-}
-.main-sidebar > li.active i{
-    transform: rotate(45deg);
-    transition: 0.5s all ease;
+/*.main-sidebar > li > i{*/
+    /*transform: rotate(0deg);*/
+    /*transition: 0.3s transform;*/
+/*}*/
+.main-sidebar > li.active > i{
+    transform: rotate(-45deg);
+
 }
 
 

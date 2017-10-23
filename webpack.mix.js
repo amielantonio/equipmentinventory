@@ -11,5 +11,4 @@ let mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/assets/js/app.js', 'public/js')
-    .copy('node_modules/chart.js/dist/Chart.bundle.js', 'public/js/Chart.min.js');
+mix.copy('node_modules/chart.js/dist/Chart.bundle.js', 'public/js/Chart.min.js');

@@ -1,6 +1,11 @@
 @extends('template.template')
 
 
+@section('page-title')
+    Dashboard
+@endsection
+
+
 @section('page-content')
 
     {{-- CARDS SECTION--}}

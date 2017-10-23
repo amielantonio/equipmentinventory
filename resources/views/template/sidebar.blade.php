@@ -22,28 +22,28 @@
     <ul class="main-sidebar">
 
         <li>
-            <a href="">
+            <a href="{{route('dashboard')}}">
                 <span>Dashboard</span>
             </a>
         </li>
 
-        <li>
-            <a href="">
+        <li class="has-child">
+            <a href="#">
                 <span>Equipments</span>
                 <span class="link-icon"><i class="fa fa-plus"></i></span>
             </a>
             <ul class="sub-menu">
                 <li>
-                    <a href="{{route('')}}">View All</a>
+                    <a href="{{route('equipments.index')}}">View All</a>
                 </li>
                 <li>
-                    <a href="">Add New</a>
+                    <a href="{{route('equipments.create')}}">Add New</a>
                 </li>
             </ul>
         </li>
 
-        <li>
-            <a href="">
+        <li class="has-child">
+            <a href="#">
                 <span>User</span>
                 <span class="link-icon"><i class="fa fa-plus"></i></span>
             </a>
@@ -57,8 +57,8 @@
             </ul>
         </li>
 
-        <li>
-            <a href="">
+        <li class="has-child">
+            <a href="#">
                 <span>Workstation</span>
                 <span class="link-icon"><i class="fa fa-plus"></i></span>
             </a>
@@ -72,8 +72,8 @@
             </ul>
         </li>
 
-        <li>
-            <a href="">
+        <li class="has-child">
+            <a href="#">
                 <span>Settings</span>
                 <span class="link-icon"><i class="fa fa-plus"></i></span>
             </a>

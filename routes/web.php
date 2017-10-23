@@ -11,5 +11,20 @@
 |
 */
 
-Route::get('/', "DashboardController@index");
+
+/**
+ * Dashboard Routes
+ */
+Route::get('/', "DashboardController@index")->name('dashboard');
+
+
+/**
+ * Equipments Routing
+ */
+
+Route::group(['namespace' => 'Equipments'], function(){
+
+    Route::resource('equipments', 'EquipmentsController');
+
+});
 
