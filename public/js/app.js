@@ -13,10 +13,12 @@
 
             $(this).toggleClass('active');
 
+        }).hover( function(){
 
-
+            $(this).find('i.fa').toggleClass('hover');
 
         });
+
     });
 
 

@@ -255,13 +255,11 @@ main::before, main::after{
 
 
 /*icon animation*/
-/*.main-sidebar > li > i{*/
-    /*transform: rotate(0deg);*/
-    /*transition: 0.3s transform;*/
-/*}*/
-.main-sidebar > li.active > i{
-    transform: rotate(-45deg);
 
+.main-sidebar > li > .link-icon > i.hover{
+    animation-name: beatIt;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
 }
 
 
@@ -276,6 +274,7 @@ main::before, main::after{
     max-height: 0;
 
     /*position*/
+
 
 
     /*design*/
@@ -352,4 +351,24 @@ main::before, main::after{
 
 .user-details > .user-name{
     font-weight: 700;
+}
+
+
+/* Animations
+ ******************************************/
+
+@keyframes beatIt{
+    0%{
+        transform: translateX(-10px);
+    }
+    20%{
+        transform: translateX(15px);
+    }
+    40%{
+        transform: translateX(-25px);
+    }
+    60%{
+        transform: translateX(35px);
+    }
+
 }

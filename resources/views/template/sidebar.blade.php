@@ -30,7 +30,7 @@
         <li class="has-child">
             <a href="#">
                 <span>Equipments</span>
-                <span class="link-icon"><i class="fa fa-plus"></i></span>
+                <span class="link-icon"><i class="fa fa-chevron-right"></i></span>
             </a>
             <ul class="sub-menu">
                 <li>
@@ -45,7 +45,7 @@
         <li class="has-child">
             <a href="#">
                 <span>User</span>
-                <span class="link-icon"><i class="fa fa-plus"></i></span>
+                <span class="link-icon"><i class="fa fa-chevron-right"></i></span>
             </a>
             <ul class="sub-menu">
                 <li>
@@ -60,7 +60,7 @@
         <li class="has-child">
             <a href="#">
                 <span>Workstation</span>
-                <span class="link-icon"><i class="fa fa-plus"></i></span>
+                <span class="link-icon"><i class="fa fa-chevron-right"></i></span>
             </a>
             <ul class="sub-menu">
                 <li>
@@ -75,7 +75,7 @@
         <li class="has-child">
             <a href="#">
                 <span>Settings</span>
-                <span class="link-icon"><i class="fa fa-plus"></i></span>
+                <span class="link-icon"><i class="fa fa-chevron-right"></i></span>
             </a>
             <ul class="sub-menu">
                 <li>
