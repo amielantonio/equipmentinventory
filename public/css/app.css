@@ -256,9 +256,9 @@ main::before, main::after{
 
 /*icon animation*/
 
-.main-sidebar > li > .link-icon > i.hover{
+.beatIt{
     animation-name: beatIt;
-    animation-duration: 0.5s;
+    animation-duration: 1s;
     animation-iteration-count: infinite;
 }
 
@@ -274,10 +274,22 @@ main::before, main::after{
     max-height: 0;
 
     /*position*/
-
+    -webkit-padding-start: 40px;
+    -moz-padding-start: 40px;
 
 
     /*design*/
+    transition: 0.5s height, 0.5s max-height, 0.3s opacity, 0.3s visibility;
+}
+
+
+/*animations*/
+
+.main-sidebar li.active > .sub-menu{
+    opacity:1;
+    visibility: visible;
+    height: auto;
+    max-height: 300px;
 }
 
 
@@ -359,16 +371,16 @@ main::before, main::after{
 
 @keyframes beatIt{
     0%{
-        transform: translateX(-10px);
+        transform: translateX(-2px);
     }
     20%{
-        transform: translateX(15px);
+        transform: translateX(4px);
     }
     40%{
-        transform: translateX(-25px);
+        transform: translateX(-4px);
     }
     60%{
-        transform: translateX(35px);
+        transform: translateX(5px);
     }
 
 }

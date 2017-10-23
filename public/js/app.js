@@ -15,7 +15,7 @@
 
         }).hover( function(){
 
-            $(this).find('i.fa').toggleClass('hover');
+            // $(this).find('i.fa').toggleClass('beatIt');
 
         });
 
