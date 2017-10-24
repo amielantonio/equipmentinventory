@@ -9,15 +9,15 @@
         var menuItem = $('.main-sidebar > li');
 
 
-        menuItem.on( 'click', function(){
-
-            $(this).toggleClass('active');
-
-        }).hover( function(){
-
-            // $(this).find('i.fa').toggleClass('beatIt');
-
-        });
+        // menuItem.on( 'click', function(){
+        //
+        //     $(this).toggleClass('active');
+        //
+        // }).hover( function(){
+        //
+        //     // $(this).find('i.fa').toggleClass('beatIt');
+        //
+        // });
 
     });
 

@@ -11,4 +11,17 @@ let mix = require('laravel-mix');
  |
  */
 
-mix.copy('node_modules/chart.js/dist/Chart.bundle.js', 'public/js/Chart.min.js');
+//Font Awesome Mix
+mix.copy('node_modules/font-awesome/css/', 'public/css/font-awesome/css/')
+    .copy('node_modules/font-awesome/fonts/', 'public/css/font-awesome/fonts/');
+
+//Bootstrap Mix
+mix.copy('node_modules/bootstrap/dist/css/bootstrap.min.css', 'public/css/bootstrap.min.css')
+    .copy('node_modules/bootstrap/dist/js/bootstrap.bundle.min.js', 'public/js/bootstrap.bundle.min.js')
+    .copy('node_modules/popper.js/dist/popper.min.js', 'public/js/popper.min.js');
+
+//ChartJS Mix
+mix.copy('node_modules/chart.js/dist/Chart.bundle.js', 'public/js/Chart.bundle.min.js');
+
+//jQuery Mix
+mix.copy('node_modules/jquery/dist/jquery.min.js', 'public/js/jquery.min.js');

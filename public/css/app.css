@@ -268,18 +268,26 @@ main::before, main::after{
 
 .main-sidebar .sub-menu{
     /*display*/
-    opacity: 0;
-    visibility: hidden;
-    height: 0;
-    max-height: 0;
+    /*opacity: 0;*/
+    /*visibility: hidden;*/
+    /*height: 0;*/
+    /*max-height: 0;*/
 
     /*position*/
-    -webkit-padding-start: 40px;
-    -moz-padding-start: 40px;
+    /*-webkit-padding-start: 40px;*/
+    /*-moz-padding-start: 40px;*/
+
+    position: absolute;
+    top: 0;
+    right: -150px;
+    min-width: 150px;
+
+
+
 
 
     /*design*/
-    transition: 0.5s height, 0.5s max-height, 0.3s opacity, 0.3s visibility;
+    /*transition: 0.5s height, 0.5s max-height, 0.3s opacity, 0.3s visibility;*/
 }
 
 

@@ -1,5 +1,7 @@
 {
-    "/js/app.js": "/js/app.js",
-    "/css/app.css": "/css/app.css",
-    "/js/Chart.min.js": "/js/Chart.min.js"
+    "/css/bootstrap.min.css": "/css/bootstrap.min.css",
+    "/js/bootstrap.bundle.min.js": "/js/bootstrap.bundle.min.js",
+    "/js/popper.min.js": "/js/popper.min.js",
+    "/js/Chart.bundle.min.js": "/js/Chart.bundle.min.js",
+    "/js/jquery.min.js": "/js/jquery.min.js"
 }
