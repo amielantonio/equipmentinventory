@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers\Equipments;
 
+use App\Equipment;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+
 
 class EquipmentsController extends Controller
 {
@@ -35,7 +37,27 @@ class EquipmentsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // Server side validation
+//        $request->validate([
+//            'equipment_name' => 'required',
+//            'category' => 'required',
+//            'price' => 'required',
+//            'on_hand' => 'required'
+//        ]);
+
+        $equipment = new Equipment;
+
+        //Assign Value to Model
+        $equipment->equipment_name = $request->equipment_name;
+        $equipment->slug = str_slug($request->equipment_name, '-');
+        $equipment->category = $request->category;
+        $equipment->price = $request->price;
+        $equipment->on_hand = $request->on_hand;
+        $equipment->durability = $request->durability;
+        $equipment->info = $request->info;
+
+        // Save
+        $equipment->save();
     }
 
     /**

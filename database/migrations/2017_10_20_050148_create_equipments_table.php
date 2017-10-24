@@ -13,15 +13,15 @@ class CreateEquipmentsTable extends Migration
      */
     public function up()
     {
-        Schema::create('equipments', function (Blueprint $table) {
+        Schema::create('equipment', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name', 50);
+            $table->string('equipment_name', 50);
             $table->string('slug', '80');
             $table->integer('category');
             $table->text('info');
             $table->float('price');
             $table->integer("on_hand");
-            $table->enum("choices", ['working','broken','for repair']);
+            $table->enum("durability", ['working','broken','for repair', 'needs replacement']);
             $table->timestamps();
         });
     }
@@ -33,6 +33,6 @@ class CreateEquipmentsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('equipments');
+        Schema::dropIfExists('equipment');
     }
 }

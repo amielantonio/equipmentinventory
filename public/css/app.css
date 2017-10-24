@@ -38,6 +38,8 @@
     --danger: #FF5252;
     --black: #212121;
     --gray: #757575;
+    --slategray: #323c4e;
+    --darkslategray: #202937;
 
 
     /*Typography*/
@@ -45,6 +47,15 @@
     --base-font-size: 14px;
     --text-color: #424242;
 
+    --font-light: 300;
+    --font-normal: 400;
+    --font-semibold: 600;
+    --font-bold: 700;
+    --font-bolder: 800;
+
+    /*Animation timing*/
+
+    --race-car: cubic-bezier(1, .01, 0, 1);
 
     /*Z-index*/
     --z-100: 100;
@@ -77,6 +88,9 @@ body{
     font-family: "Open Sans", sans-serif;
     font-size: 14px;
     color: var(--text-color);
+
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('../images/coffee-2319122_1920.jpg') fixed no-repeat;
+    background-size: cover;
 }
 
 .container, .row{
@@ -144,16 +158,18 @@ div[class^="col-"]{
  * MAIN
  ******************************************/
 main{
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('/images/coffee-2319122_1920.jpg') fixed no-repeat;
-    /*background: url('../images/coffee-2319122_1920.jpg') fixed no-repeat;*/
-    background-size: cover;
+
+    /*display*/
+    display: block;
     height: 100%;
     width: 83%;
-    float: right;
-    position: relative;
-    display: block;
 
+    /*position*/
+    float: right;
     padding: 1em;
+
+    /*design*/
+    background: inherit
 }
 main::before, main::after{
     content: "";
@@ -170,24 +186,28 @@ main::before, main::after{
     /*display*/
     height: 100%;
     width: 17%;
+
     /*position*/
     position: fixed;
     top: 0;
     left: 0;
+    z-index: 400;
 
     /*design*/
-    background: var(--info);
+    /*background: var(--darkslategray);*/
+    background: rgba(32, 41, 55, 0.97);
 
-    -webkit-box-shadow: 1px 0 0 0 rgba(0,0,0,0.75);
-    -moz-box-shadow: 1px 0 0 0 rgba(0,0,0,0.75);
-    box-shadow: 1px 0 0 0 rgba(0,0,0,0.75);
+    /*-webkit-box-shadow: 1px 0 0 0 rgba(0,0,0,0.75);*/
+    /*-moz-box-shadow: 1px 0 0 0 rgba(0,0,0,0.75);*/
+    /*box-shadow: 1px 0 0 0 rgba(0,0,0,0.75);*/
 }
 .sidebar-container > .sidebar-head{
     width: 100%;
     height: auto;
     padding: 20px;
     min-height: 100px;
-    background: var(--danger);
+    /*background: var(--slategray);*/
+    background: rgba(50, 60, 78, 0.5);
     margin-bottom: 15px;
 }
 
@@ -202,9 +222,9 @@ main::before, main::after{
 .sidebar-container ul > li{
     position: relative;
 }
-.sidebar-container ul > li > ul{
-    -moz-padding-start: 20px;
-    -webkit-padding-start: 20px;
+.sidebar-container ul > li > ul a{
+    margin-left: 10px;
+    padding-left: 20px;
 }
 
 /* Sidebar Global Links
@@ -213,7 +233,7 @@ main::before, main::after{
 .sidebar-container ul>li>a:visited,
 .sidebar-container ul>li>a:focus,
 .sidebar-container ul>li>a:hover{
-    color: var(--text-color);
+    color: white;
 }
 .sidebar-container ul>li>a{
     width: 100%;
@@ -222,11 +242,11 @@ main::before, main::after{
 }
 
 /*Hover*/
-.sidebar-container ul>li>a:hover{
+.sidebar-container>ul>li>a:hover{
     text-decoration: none;
     border-left: 7px solid var(--primary);
 }
-.sidebar-container ul>li>a:hover>span{
+.sidebar-container>ul>li>a:hover>span{
     margin-left: -7px;
 }
 
@@ -238,13 +258,8 @@ main::before, main::after{
 ******************************************/
 
 .main-sidebar{
-    /*display*/
-
-    /*position*/
     position: relative;
     margin: 0;
-
-    /*design*/
 }
 
 /*Main Sidebar Links*/
@@ -252,59 +267,107 @@ main::before, main::after{
 .main-sidebar > li > a{
     padding-left: 30px !important;
 }
-
-
-/*icon animation*/
-
-.beatIt{
-    animation-name: beatIt;
-    animation-duration: 1s;
-    animation-iteration-count: infinite;
+.main-sidebar > li > a ~ .sub-menu > li > a > span{
+    margin-left: 15px;
+    transition: margin-left 0.7s var(--race-car);
 }
-
 
 /* Sub Menu
 ******************************************/
 
 .main-sidebar .sub-menu{
     /*display*/
-    /*opacity: 0;*/
-    /*visibility: hidden;*/
-    /*height: 0;*/
-    /*max-height: 0;*/
+    opacity: 0;
+    visibility: hidden;
+    min-width: 200px;
+    max-width: 200px;
+    word-break: break-all;
 
     /*position*/
-    /*-webkit-padding-start: 40px;*/
-    /*-moz-padding-start: 40px;*/
-
     position: absolute;
     top: 0;
-    right: -150px;
-    min-width: 150px;
-
-
-
-
+    right: -200px;
+    padding: 10px 0;
+    z-index: var(--z-300);
 
     /*design*/
-    /*transition: 0.5s height, 0.5s max-height, 0.3s opacity, 0.3s visibility;*/
+    background: rgba(32, 41, 55, 0.97);
 }
+
+/*Parent Hover State*/
+.main-sidebar > li:hover > .sub-menu{
+    animation-name: fadeInMenu;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+    /*animation-timing-function: cubic-bezier(.02,1,.53,.99);*/
+    animation-timing-function: var(--race-car);
+
+    -webkit-animation-name: fadeInMenu;
+    -webkit-animation-duration: 0.5s;
+    -webkit-animation-iteration-count: 1;
+    --webkit-animation-timing-function: var(--race-car);
+}
+
+
+.sub-menu > li > a:hover {
+    text-decoration: none;
+}
+.sub-menu > li > a:hover > span{
+    color: var(--primary);
+}
+
+/*Parent Active State*/
+/*.main-sidebar > li.active > .sub-menu{*/
+    /*!*display*!*/
+    /*visibility: visible;*/
+    /*opacity: 1;*/
+
+    /*!*position*!*/
+    /*position: relative;*/
+    /*right: 0;*/
+    /*padding-left: 20px;*/
+
+/*}*/
 
 
 /*animations*/
 
-.main-sidebar li.active > .sub-menu{
-    opacity:1;
-    visibility: visible;
-    height: auto;
-    max-height: 300px;
+
+
+.show{
+    visibility: visible !important;
+    opacity: 1 !important;
+
+    transition: 0.3s all !important;
+}
+.show > li > a > span{
+    margin-left: 0 !important;
 }
 
+
+@keyframes fadeInMenu{
+    from{
+        transform: translateX(20%);
+    }
+    to{
+        transform: translateX(0);
+    }
+}
+@-webkit-keyframes fadeInMenu {
+    from{
+        transform: translateX(20%);
+    }
+    to{
+          transform: translateX(0);
+    }
+}
 
 /*******************************************
  * COMPONENTS
  ******************************************/
 
+/* Cards
+ ******************************************/
 
 /*@override bootstrap cards*/
 .card{
@@ -316,6 +379,23 @@ main::before, main::after{
     overflow: hidden;
     color: #FFFFFF;
 }
+
+.card-header.primary{
+    background-color: rgba(33, 152, 243, 0.3);
+}
+.card-header.info{
+    background-color: rgba(24, 255, 255, 0.3);
+}
+.card-header.success{
+    background-color: rgba(47, 209, 107, 0.3);
+}
+.card-header.warning{
+    background-color: rgba(255, 160, 57, 0.3);
+}
+.card-header.danger{
+    background-color: rgba(255, 82, 82, 0.3);
+}
+
 /*Frosted Glass Effect*/
 .card::before{
     content: "";
@@ -326,7 +406,7 @@ main::before, main::after{
     right: 0;
     background: inherit;
     z-index: -1;
-    box-shadow: inset 0 0 0 200px rgba(255,255,255,0.2);
+    box-shadow: inset 0 0 0 100vh rgba(0,0,0,0.2);
     filter: blur(10px);
 }
 .card > .card-header{
@@ -373,22 +453,185 @@ main::before, main::after{
     font-weight: 700;
 }
 
-
-/* Animations
+/*******************************************
+ * FROSTED GLASS FORMS
  ******************************************/
 
-@keyframes beatIt{
-    0%{
-        transform: translateX(-2px);
-    }
-    20%{
-        transform: translateX(4px);
-    }
-    40%{
-        transform: translateX(-4px);
-    }
-    60%{
-        transform: translateX(5px);
-    }
-
+/* FG Form
+ ******************************************/
+.fg-form{
+    position: relative;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
+
+/* FG Form Group
+ ******************************************/
+
+.fg-form > .fg-form-group{
+    margin-bottom: 30px;
+    position: relative;
+}
+
+/* FG Form Control
+ ******************************************/
+
+.fg-form-group > .fg-form-control{
+    /*display*/
+    display: block;
+    width: 100%;
+
+    /*position*/
+    padding: .375rem .75rem;
+
+    /*design*/
+    font-size: 1rem;
+    line-height: 1.5;
+    color: white;
+    font-weight: var(--font-light);
+
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #fff;
+}
+.fg-form-group > .fg-form-control:focus{
+    outline: none;
+}
+select.fg-form-control > option{
+    color: var(--text-color);
+}
+/*animation*/
+.fg-form-control ~ label{
+    /*display*/
+
+    /*position*/
+    position:absolute;
+    top: 0;
+    left: 0;
+
+    /*design*/
+    font-size: 1rem;
+
+    transition: all 0.3s;
+}
+/*.fg-form-control:focus,*/
+.fg-form-control.focus{
+    border-color: var(--info);
+}
+/*.fg-form-control:focus ~ label,*/
+.fg-form-control.focus ~ label{
+    top: -14px;
+    font-size: 0.8rem;
+    color: var(--info);
+}
+
+
+/*Required*/
+
+label > .required{
+    color: var(--danger);
+}
+
+
+/*******************************************
+ * BUTTONS @override bootstrap btn
+ ******************************************/
+
+.btn{
+    /*display*/
+    display: inline-block;
+    width: 120px;
+
+    /*position*/
+    padding: .65rem 0;
+
+    /*design*/
+    border-radius: 0;
+
+    font-weight: var(--font-light);
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    user-select: none;
+    border: 1px solid transparent;
+    font-size: 1rem;
+    line-height: 1.5;
+    cursor: pointer;
+
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+
+    transition: all 0.3s;
+}
+.btn ~ .btn{
+    margin-left: 10px;
+}
+
+/*Button animation and icon Hovers*/
+/*submit*/
+.btn[type='submit']:hover > span::after{
+    content: "\f054";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    margin-left: 5px;
+}
+/*clear / reset*/
+.btn[type='reset']:hover > span::after{
+    content: "\f1f8";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    margin-left: 5px;
+}
+
+.btn[type='submit'] > span,
+.btn[type='reset'] > span{
+    margin-right: 0;
+    transition: 0.5s all;
+}
+.btn[type='submit']:hover > span,
+.btn[type='reset']:hover > span{
+    margin-right: 5px;
+}
+
+
+
+/*Accents*/
+.btn-primary{
+    background-color: var(--primary);
+    color: white;
+}
+.btn-info{
+    background-color: var(--info);
+    color: white;
+}
+.btn-success{
+    background-color: var(--success);
+    color: white;
+}
+.btn-warning{
+    background-color: var(--warning);
+    color: white;
+}
+.btn-danger{
+    background-color: var(--danger);
+    color: white;
+}
+.btn-primary:hover,
+.btn-info:hover,
+.btn-success:hover,
+.btn-warning:hover,
+.btn-danger:hover{
+    color: white;
+}
+
+
+
+/*******************************************
+ * FROSTED GLASS BUTTONS
+ ******************************************/

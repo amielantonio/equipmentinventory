@@ -34,10 +34,14 @@
             </a>
             <ul class="sub-menu">
                 <li>
-                    <a href="{{route('equipments.index')}}">View All</a>
+                    <a href="{{route('equipments.index')}}">
+                        <span>View All</span>
+                    </a>
                 </li>
                 <li>
-                    <a href="{{route('equipments.create')}}">Add New</a>
+                    <a href="{{route('equipments.create')}}">
+                        <span>Add New</span>
+                    </a>
                 </li>
             </ul>
         </li>
@@ -49,10 +53,14 @@
             </a>
             <ul class="sub-menu">
                 <li>
-                    <a href="">View All</a>
+                    <a href="">
+                        <span>View All</span>
+                    </a>
                 </li>
                 <li>
-                    <a href="">Add New</a>
+                    <a href="">
+                        <span>Add New</span>
+                    </a>
                 </li>
             </ul>
         </li>
@@ -64,10 +72,14 @@
             </a>
             <ul class="sub-menu">
                 <li>
-                    <a href="">View All</a>
+                    <a href="">
+                        <span>View All</span>
+                    </a>
                 </li>
                 <li>
-                    <a href="">Add New</a>
+                    <a href="">
+                        <span>Add New</span>
+                    </a>
                 </li>
             </ul>
         </li>
@@ -79,10 +91,14 @@
             </a>
             <ul class="sub-menu">
                 <li>
-                    <a href="">View All</a>
+                    <a href="">
+                        <span>View All</span>
+                    </a>
                 </li>
                 <li>
-                    <a href="">Add New</a>
+                    <a href="">
+                        <span>Add New</span>
+                    </a>
                 </li>
             </ul>
         </li>

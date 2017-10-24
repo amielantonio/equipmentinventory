@@ -1,33 +1,37 @@
-@extends('template.template')
+@extends('layouts.collection')
 
 
 @section('page-title')
     Equipments
 @endsection
 
-@section('page-content')
+@section('card-title')
+    Equipments Inventory
+@endsection
 
-    <div class="container">
+{{--@section('page-content')--}}
 
-        <div class="row">
+    {{--<div class="container">--}}
 
-            <div class="col-sm-12">
-                <div class="card">
+        {{--<div class="row">--}}
 
-                    <div class="card-header">
-                        <h5 class="card-title">Equipments Inventory</h5>
-                    </div>
+            {{--<div class="col-sm-12">--}}
+                {{--<div class="card">--}}
 
-                    <div class="card-body">
+                    {{--<div class="card-header">--}}
+                        {{--<h5 class="card-title">Equipments Inventory</h5>--}}
+                    {{--</div>--}}
 
-                    </div>
+                    {{--<div class="card-body">--}}
 
-                </div>
-            </div>
+                    {{--</div>--}}
+
+                {{--</div>--}}
+            {{--</div>--}}
             {{-- end column --}}
-        </div>
+        {{--</div>--}}
         {{-- end row --}}
-    </div>
+    {{--</div>--}}
     {{-- end container --}}
 
-@endsection
+{{--@endsection--}}
