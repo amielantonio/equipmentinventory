@@ -513,7 +513,7 @@ select.fg-form-control > option{
     font-size: 1rem;
 
     transition: all 0.3s;
-}we
+}
 
 .fg-form-control.focus{
     border-color: var(--info);
