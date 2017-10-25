@@ -1,17 +1,18 @@
 @extends('layouts.form')
 
 @section('page-title')
-    Equipments Form
+    Equipment Form
 @endsection
 
 @section('form-title')
-    Equipments
+    Equipment
 @endsection
 
 @section('form-content')
 
-    <form action="{{route('equipments.store')}}" method="POST" class="fg-form">
+    <form method="POST" class="fg-form" id="equipment-form">
         {{ csrf_field() }}
+        {{ method_field('POST') }}
 
         <div class="fg-form-group">
             <input type="text" id="equipment_name" name="equipment_name" class="fg-form-control" required="required">
@@ -50,9 +51,16 @@
             <label for="info">Additional Information</label>
         </div>
 
-        <button type="submit" class="btn btn-primary"><span>Add New</span></button>
+        <button type="button" class="btn btn-primary submit"><span>Add New</span></button>
         <button type="reset" class="btn btn-warning"><span>Clear</span></button>
 
     </form>
+
+@endsection
+
+
+@section('ajax-script')
+
+    <script src="{{ asset('js/ajax/equipment.js') }}"></script>
 
 @endsection

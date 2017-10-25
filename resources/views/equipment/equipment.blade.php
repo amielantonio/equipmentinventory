@@ -2,11 +2,11 @@
 
 
 @section('page-title')
-    Equipments
+    Equipment
 @endsection
 
 @section('card-title')
-    Equipments Inventory
+    Equipment Inventory
 @endsection
 
 {{--@section('page-content')--}}
@@ -19,7 +19,7 @@
                 {{--<div class="card">--}}
 
                     {{--<div class="card-header">--}}
-                        {{--<h5 class="card-title">Equipments Inventory</h5>--}}
+                        {{--<h5 class="card-title">Equipment Inventory</h5>--}}
                     {{--</div>--}}
 
                     {{--<div class="card-body">--}}

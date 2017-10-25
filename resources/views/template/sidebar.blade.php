@@ -29,17 +29,17 @@
 
         <li class="has-child">
             <a href="#">
-                <span>Equipments</span>
+                <span>Equipment</span>
                 <span class="link-icon"><i class="fa fa-chevron-right"></i></span>
             </a>
             <ul class="sub-menu">
                 <li>
-                    <a href="{{route('equipments.index')}}">
+                    <a href="{{route('equipment.index')}}">
                         <span>View All</span>
                     </a>
                 </li>
                 <li>
-                    <a href="{{route('equipments.create')}}">
+                    <a href="{{route('equipment.create')}}">
                         <span>Add New</span>
                     </a>
                 </li>

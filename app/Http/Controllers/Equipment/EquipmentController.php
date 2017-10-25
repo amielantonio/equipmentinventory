@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\Equipments;
+namespace App\Http\Controllers\Equipment;
 
 use App\Equipment;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 
-class EquipmentsController extends Controller
+class EquipmentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +16,7 @@ class EquipmentsController extends Controller
      */
     public function index()
     {
-        return view('equipments.equipments');
+        return view('equipment.equipment');
     }
 
     /**
@@ -26,7 +26,7 @@ class EquipmentsController extends Controller
      */
     public function create()
     {
-        return view('equipments.form');
+        return view('equipment.form');
     }
 
     /**
@@ -44,7 +44,7 @@ class EquipmentsController extends Controller
 //            'price' => 'required',
 //            'on_hand' => 'required'
 //        ]);
-
+//
         $equipment = new Equipment;
 
         //Assign Value to Model
@@ -58,6 +58,7 @@ class EquipmentsController extends Controller
 
         // Save
         $equipment->save();
+
     }
 
     /**
@@ -68,7 +69,8 @@ class EquipmentsController extends Controller
      */
     public function show(Equipment $equipment)
     {
-        //
+        $equipment = new Equipment;
+
     }
 
     /**

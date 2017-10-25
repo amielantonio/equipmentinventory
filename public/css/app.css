@@ -506,21 +506,21 @@ select.fg-form-control > option{
 
     /*position*/
     position:absolute;
-    top: 0;
+    top: 5px;
     left: 0;
 
     /*design*/
     font-size: 1rem;
 
     transition: all 0.3s;
-}
-/*.fg-form-control:focus,*/
+}we
+
 .fg-form-control.focus{
     border-color: var(--info);
 }
-/*.fg-form-control:focus ~ label,*/
+
 .fg-form-control.focus ~ label{
-    top: -14px;
+    top: -16px;
     font-size: 0.8rem;
     color: var(--info);
 }
@@ -571,6 +571,7 @@ label > .required{
 
 /*Button animation and icon Hovers*/
 /*submit*/
+.btn.submit:hover > span::after,
 .btn[type='submit']:hover > span::after{
     content: "\f054";
     font-family: FontAwesome;
@@ -633,5 +634,6 @@ label > .required{
 
 
 /*******************************************
- * FROSTED GLASS BUTTONS
+ * CUSTOM GRID
  ******************************************/
+

@@ -19,12 +19,12 @@ Route::get('/', "DashboardController@index")->name('dashboard');
 
 
 /**
- * Equipments Routing
+ * Equipment Routing
  */
 
-Route::group(['namespace' => 'Equipments'], function(){
+Route::group(['namespace' => 'Equipment', 'middleware'=>'web'], function(){
 
-    Route::resource('equipments', 'EquipmentsController');
+    Route::resource('equipment', 'EquipmentController');
 
 });
 

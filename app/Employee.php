@@ -9,7 +9,7 @@ class Employee extends Model
 {
 
 
-    public function equipments(){
+    public function equipment(){
         return $this->hasMany('Equipment');
     }
 }

@@ -1,3 +1,5 @@
+
+
 <footer class="site-footer">
 
 </footer>
@@ -9,6 +11,12 @@
     <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('js/app.js') }}"></script>
 </footer>
+
+{{--Ajax Functions--}}
+<div id="ajax-functions">
+    @yield('ajax-script')
+</div>
+
 
 </body>
 </html>

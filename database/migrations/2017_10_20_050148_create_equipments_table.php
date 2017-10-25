@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateEquipmentsTable extends Migration
+class CreateEquipmentTable extends Migration
 {
     /**
      * Run the migrations.
@@ -18,7 +18,7 @@ class CreateEquipmentsTable extends Migration
             $table->string('equipment_name', 50);
             $table->string('slug', '80');
             $table->integer('category');
-            $table->text('info');
+            $table->text('info')->nullable();
             $table->float('price');
             $table->integer("on_hand");
             $table->enum("durability", ['working','broken','for repair', 'needs replacement']);
