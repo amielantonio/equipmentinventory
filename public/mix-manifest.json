@@ -3,5 +3,7 @@
     "/plugins/bootstrap/js/bootstrap.bundle.min.js": "/plugins/bootstrap/js/bootstrap.bundle.min.js",
     "/plugins/bootstrap/js/popper.min.js": "/plugins/bootstrap/js/popper.min.js",
     "/plugins/chart.js/js/Chart.bundle.min.js": "/plugins/chart.js/js/Chart.bundle.min.js",
-    "/plugins/jquery/js/jquery.min.js": "/plugins/jquery/js/jquery.min.js"
+    "/plugins/jquery/js/jquery.min.js": "/plugins/jquery/js/jquery.min.js",
+    "/plugins/datatables/js/jquery.dataTables.js": "/plugins/datatables/js/jquery.dataTables.js",
+    "/plugins/datatables/js/jquery.dataTables.css": "/plugins/datatables/js/jquery.dataTables.css"
 }

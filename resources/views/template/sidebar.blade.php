@@ -30,7 +30,7 @@
         {{-- END DASHBOARD--}}
 
         <li class="has-child">
-            <a href="#">
+            <a href="{{route('equipment.index')}}">
                 <span class="icon"><i class="fa fa-cube"></i></span>
                 <span>Equipment</span>
                 <span class="link-icon"><i class="fa fa-chevron-right"></i></span>
@@ -52,7 +52,7 @@
         {{-- END EQUIPMENTS--}}
 
         <li class="has-child">
-            <a href="#">
+            <a href="{{ route('employees.index') }}">
                 <span class="icon"><i class="fa fa-address-book-o"></i></span>
                 <span>Employee</span>
                 <span class="link-icon"><i class="fa fa-chevron-right"></i></span>
@@ -74,19 +74,19 @@
         {{-- END EMPLOYEE --}}
 
         <li class="has-child">
-            <a href="#">
+            <a href="{{ route('computers.index') }}">
                 <span class="icon"><i class="fa fa-desktop"></i></span>
                 <span>Computer</span>
                 <span class="link-icon"><i class="fa fa-chevron-right"></i></span>
             </a>
             <ul class="sub-menu">
                 <li>
-                    <a href="">
+                    <a href="{{ route('computers.index') }}">
                         <span>View All</span>
                     </a>
                 </li>
                 <li>
-                    <a href="">
+                    <a href="{{ route('computers.create') }}">
                         <span>Build Computer</span>
                     </a>
                 </li>
@@ -95,7 +95,7 @@
         {{-- END COMPUTER--}}
 
         <li class="has-child">
-            <a href="#">
+            <a href="{{ route('workstation.index') }}">
                 <span class="icon"><i class="fa fa-id-card"></i></span>
                 <span>Workstation</span>
                 <span class="link-icon"><i class="fa fa-chevron-right"></i></span>

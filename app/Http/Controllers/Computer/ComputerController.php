@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Computer;
 
 use App\Computer;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class ComputerController extends Controller
 {
@@ -14,7 +15,7 @@ class ComputerController extends Controller
      */
     public function index()
     {
-        //
+        return view('computers.computer');
     }
 
     /**
@@ -24,7 +25,7 @@ class ComputerController extends Controller
      */
     public function create()
     {
-        //
+        return view('computers.form');
     }
 
     /**

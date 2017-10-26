@@ -3,13 +3,18 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Employee;
+use App\Computer;
 
 class Equipment extends Model
 {
 
-
-    public function employee(){
-        return $this->belongsTo('Employee');
+    /**
+     * Eloquent Relationship for Computer
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function computer(){
+        return $this->belongsTo('Computer');
     }
+
 }

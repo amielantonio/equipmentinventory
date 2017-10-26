@@ -29,6 +29,6 @@ mix.copy('node_modules/jquery/dist/jquery.min.js', 'public/plugins/jquery/js/jqu
 
 //DataTables
 mix.copy('node_modules/datatables.net/js/jquery.dataTables.js', 'public/plugins/datatables/js/jquery.dataTables.js')
-    .copy('node_modules/datatables.net/css/jquery.dataTables.css', 'public/plugins/datatables/js/jquery.dataTables.css')
-    .copy('node_modules/datatables.net/images/', 'public/plugins/datatables/images/');
+    .copy('node_modules/datatables.net-dt/css/jquery.dataTables.css', 'public/plugins/datatables/js/jquery.dataTables.css')
+    .copy('node_modules/datatables.net-dt/images/', 'public/plugins/datatables/images/');
 

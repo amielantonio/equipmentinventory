@@ -38,6 +38,15 @@ Route::group(['namespace' => 'Employee', 'middleware'=>'web'], function(){
 });
 
 /**
+ * Computer Routing
+ */
+Route::group(['namespace' => 'Computer', 'middleware'=>'web'], function(){
+
+    Route::resource('computers', 'ComputerController');
+
+});
+
+/**
  * Workstations Routing
  */
 Route::group(['namespace' => 'Workstation', 'middleware'=>'web'], function(){
