@@ -19,8 +19,7 @@ class CreateEmployeeTable extends Migration
             $table->string('last_name', '50');
             $table->string('email', '50')->unique();
             $table->string('contact');
-            $table->string('ip_address', "100")->unique();
-            $table->string('mac_address', '100')->unique();
+            $table->string('position');
             $table->timestamps();
         });
     }

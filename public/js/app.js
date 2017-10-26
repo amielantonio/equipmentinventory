@@ -33,6 +33,7 @@
 
         $( function(){
             var inputForm = $('input[class="fg-form-control"]');
+            var resetButton = $("[type='reset']");
 
             inputForm.each( function(){
                 var form = $(this).val();
@@ -59,6 +60,15 @@
             // for select elements
             $('select.fg-form-control').addClass('focus');
 
+
+            // RESET BUTTON LISTENER
+            resetButton.on( 'click', function(){
+                inputForm.each( function(){
+                    $(this).removeClass('focus');
+                    //for select elements
+                    $('select.fg-form-control').addClass('focus');
+                });
+            });
         });
 
     });

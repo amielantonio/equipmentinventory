@@ -1,7 +1,7 @@
 {
-    "/css/bootstrap.min.css": "/css/bootstrap.min.css",
-    "/js/bootstrap.bundle.min.js": "/js/bootstrap.bundle.min.js",
-    "/js/popper.min.js": "/js/popper.min.js",
-    "/js/Chart.bundle.min.js": "/js/Chart.bundle.min.js",
-    "/js/jquery.min.js": "/js/jquery.min.js"
+    "/plugins/bootstrap/css/bootstrap.min.css": "/plugins/bootstrap/css/bootstrap.min.css",
+    "/plugins/bootstrap/js/bootstrap.bundle.min.js": "/plugins/bootstrap/js/bootstrap.bundle.min.js",
+    "/plugins/bootstrap/js/popper.min.js": "/plugins/bootstrap/js/popper.min.js",
+    "/plugins/chart.js/js/Chart.bundle.min.js": "/plugins/chart.js/js/Chart.bundle.min.js",
+    "/plugins/jquery/js/jquery.min.js": "/plugins/jquery/js/jquery.min.js"
 }

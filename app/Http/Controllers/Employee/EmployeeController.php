@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Employee;
 
 use App\Employee;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class EmployeeController extends Controller
 {
@@ -14,7 +15,11 @@ class EmployeeController extends Controller
      */
     public function index()
     {
-        //
+        $employeesCollection = new Employee();
+
+        $employees = $employeesCollection::all();
+
+        return view('employees.employees', compact('employees'));
     }
 
     /**
@@ -24,7 +29,7 @@ class EmployeeController extends Controller
      */
     public function create()
     {
-        //
+        return view('employees.form');
     }
 
     /**
@@ -35,7 +40,21 @@ class EmployeeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $employee = new Employee;
+
+        $employee->first_name = $request->first_name;
+        $employee->last_name = $request->last_name;
+        $employee->email = $request->email;
+        $employee->contact = $request->contact;
+        $employee->ip_address = $request->ip_address;
+        $employee->mac_address = $request->mac_address;
+
+        // Save
+        $employee->save();
+
+        return response()->json($request->all());
+
     }
 
     /**

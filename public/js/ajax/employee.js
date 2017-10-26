@@ -6,7 +6,7 @@
 
     $(function(){
 
-        var form = $('#equipment-form');
+        var form = $('#employee-form');
         var alertable = $('.alert');
         var notif =$('.notification');
 
@@ -19,7 +19,7 @@
             });
             $.ajax({
 
-                "url": '/equipment',
+                "url": '/employees',
                 "method":'POST',
                 "data": form.serialize(),
                 success: function( data ){
@@ -27,8 +27,10 @@
                     //Show alert
                     notif.css('display', 'block');
                     alertable.find('#message')
-                        .html('<span class="color-primary">'+data.equipment_name+'</span>'
-                            + ' added successfully');
+                        .html('<span class="color-primary">'+
+                            data.first_name+ " "+ data.last_name +
+                            '</span>'+
+                            ' added successfully');
                     //Form Reset
                     // form[0].reset();
                 },

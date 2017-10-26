@@ -103,6 +103,25 @@ div[class^="col-"]{
     background: inherit;
 }
 
+/* Typography
+ ******************************************/
+
+.color-primary{
+    color: var(--primary);
+}
+.color-info{
+    color: var(--info);
+}
+.color-secondary{
+    color: var(--secondary);
+}
+.color-warning{
+    color: var(--warning);
+}
+.color-danger{
+    color: var(--danger);
+}
+
 /* Helper Class
  ******************************************/
 /*Margin Bottom*/
@@ -344,7 +363,6 @@ main::before, main::after{
     margin-left: 0 !important;
 }
 
-
 @keyframes fadeInMenu{
     from{
         transform: translateX(20%);
@@ -411,6 +429,10 @@ main::before, main::after{
 }
 .card > .card-header{
     border-bottom: 0;
+}
+
+.card-header > .with-search-form{
+
 }
 
 /* User Details
@@ -511,7 +533,7 @@ select.fg-form-control > option{
 
     /*design*/
     font-size: 1rem;
-
+    cursor: text;
     transition: all 0.3s;
 }
 
@@ -630,10 +652,107 @@ label > .required{
 .btn-danger:hover{
     color: white;
 }
+/*******************************************
+ * ALERTS @override bootstrap alerts
+ ******************************************/
 
+.alert{
+    /*border-radius: 0;*/
+    border-width: 2px;
+    color: #fff !important;
+
+    animation-name: fadeIn;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+    animation-timing-function: var(--race-car);
+}
+.alert > .close{
+    text-shadow: none;
+    cursor: pointer;
+}
+.alert-primary{
+    background-color: transparent;
+    border-color: var(--primary);
+}
+.alert-primary > .close{
+    color: var(--primary);
+}
+.alert-info{
+    background-color: transparent;
+    border-color: var(--info);
+}
+.alert-info> .close{
+    color: var(--info);
+}
+.alert-secondary{
+    background-color: transparent;
+    border-color: var(--secondary);
+}
+.alert-secondary > .close{
+    color: var(--secondary);
+}
+.alert-warning{
+    background-color: transparent;
+    border-color: var(--warning);
+}
+.alert-warning > .close{
+    color: var(--warning);
+}
+.alert-danger{
+    background-color: transparent;
+    border-color: var(--danger);
+}
+.alert-danger > .close{
+    color: var(--danger);
+}
+
+/* Alert Parent*/
+.notification{
+    display: none;
+}
 
 
 /*******************************************
  * CUSTOM GRID
  ******************************************/
 
+.fg-grid{
+    display: flex;
+    flex-flow: row wrap;
+}
+.grid-1{
+    flex-basis: 8.333333333%;
+}
+.grid-2{
+    flex-basis: 16.666666665%;
+}
+.grid-3{
+    flex-basis: 24.99999%;
+}
+.grid-4{
+    flex-basis: 33.3333333332%;
+}
+.grid-5{
+    flex-basis: 41.666666665%;
+}
+.grid-6{
+    flex-basis: 50%;
+}
+.grid-7{
+    flex-basis: 58.33333331%;
+}
+.grid-8{
+    flex-basis: 66.666666664%;
+}
+.grid-9{
+    flex-basis: 74.999999997%;
+}
+.grid-10{
+    flex-basis: 83.333333333%;
+}
+.grid-11{
+    flex-basis: 91.666666663%;
+}
+.grid-12{
+    flex-basis: 100%;
+}

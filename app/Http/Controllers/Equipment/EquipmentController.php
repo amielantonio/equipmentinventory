@@ -16,7 +16,11 @@ class EquipmentController extends Controller
      */
     public function index()
     {
-        return view('equipment.equipment');
+        $equipment = new Equipment;
+
+        $items = $equipment::all();
+
+        return view('equipment.equipment', compact('items'));
     }
 
     /**
@@ -37,14 +41,6 @@ class EquipmentController extends Controller
      */
     public function store(Request $request)
     {
-        // Server side validation
-//        $request->validate([
-//            'equipment_name' => 'required',
-//            'category' => 'required',
-//            'price' => 'required',
-//            'on_hand' => 'required'
-//        ]);
-//
         $equipment = new Equipment;
 
         //Assign Value to Model
@@ -59,6 +55,8 @@ class EquipmentController extends Controller
         // Save
         $equipment->save();
 
+        return response()->json($request->all());
+
     }
 
     /**
@@ -70,6 +68,10 @@ class EquipmentController extends Controller
     public function show(Equipment $equipment)
     {
         $equipment = new Equipment;
+
+
+
+        return view('equipment.equipment')->with($equipment);
 
     }
 

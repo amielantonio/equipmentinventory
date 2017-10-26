@@ -28,3 +28,9 @@ Route::group(['namespace' => 'Equipment', 'middleware'=>'web'], function(){
 
 });
 
+Route::group(['namespace' => 'Employee', 'middleware'=>'web'], function(){
+
+    Route::resource('employees', 'EmployeeController');
+
+});
+

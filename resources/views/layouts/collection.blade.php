@@ -10,16 +10,24 @@
 
                 <div class="card">
 
-                    <div class="card-header">
-                        <h5 class="card-title">@yield('card-title')</h5>
-                        @include('layouts.search')
+                    <div class="card-header with-search-form">
+                        {{--<h5 class="card-title">@yield('card-title')</h5>--}}
+                        {{--@include('layouts.search')--}}
 
+                        <div class="fg-grid">
+                            <div class="grid-8">
+                                <h5 class="card-title">@yield('card-title')</h5>
+                            </div>
+                            <div class="grid-4">
+                                @include('layouts.search')
+                            </div>
+                        </div>
 
                     </div>
 
                     <div class="card-body">
 
-                        @yield('form-content')
+                        @yield('collection-content')
 
                     </div>
 

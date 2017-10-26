@@ -48,17 +48,17 @@
 
         <li class="has-child">
             <a href="#">
-                <span>User</span>
+                <span>Employee</span>
                 <span class="link-icon"><i class="fa fa-chevron-right"></i></span>
             </a>
             <ul class="sub-menu">
                 <li>
-                    <a href="">
+                    <a href="{{ route('employees.index') }}">
                         <span>View All</span>
                     </a>
                 </li>
                 <li>
-                    <a href="">
+                    <a href="{{ route('employees.create') }}">
                         <span>Add New</span>
                     </a>
                 </li>
@@ -92,12 +92,17 @@
             <ul class="sub-menu">
                 <li>
                     <a href="">
-                        <span>View All</span>
+                        <span>Import</span>
                     </a>
                 </li>
                 <li>
                     <a href="">
-                        <span>Add New</span>
+                        <span>Computer</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <span>Workstations</span>
                     </a>
                 </li>
             </ul>
