@@ -44,14 +44,11 @@
         </div>
 
         <div class="fg-form-group">
-            <input type="text" id="ip_address" name="ip_address" class="fg-form-control" required="required">
-            <label for="ip_address">IP Address<span class="required">*</span></label>
+            <input type="text" id="position" name="position" class="fg-form-control" required="required">
+            <label for="position">Position<span class="required">*</span></label>
         </div>
 
-        <div class="fg-form-group">
-            <input type="text" id="mac_address" name="mac_address" class="fg-form-control">
-            <label for="mac_address">Mac Address</label>
-        </div>
+
 
         <button type="button" class="btn btn-primary submit"><span>Add New</span></button>
         <button type="reset" class="btn btn-warning"><span>Clear</span></button>

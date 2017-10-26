@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Workstation;
 
 use App\Workstation;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class WorkstationController extends Controller
 {
@@ -14,7 +15,7 @@ class WorkstationController extends Controller
      */
     public function index()
     {
-        //
+        return view('workstation.workstation');
     }
 
     /**
@@ -24,7 +25,7 @@ class WorkstationController extends Controller
      */
     public function create()
     {
-        //
+        return view('workstation.form');
     }
 
     /**
@@ -35,7 +36,17 @@ class WorkstationController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $workstation = new Workstation;
+
+        $workstation->user_id = $request->user_id;
+        $workstation->computer_id = $request->computer_id;
+        $workstation->location = $request->location;
+        $workstation->ip_address = $request->ip_address;
+        $workstation->mac_address = $request->mac_address;
+
+        $workstation->save();
+
+        return response()->json($request->all());
     }
 
     /**

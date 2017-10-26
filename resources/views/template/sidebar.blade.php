@@ -23,12 +23,15 @@
 
         <li>
             <a href="{{route('dashboard')}}">
+                <span class="icon"><i class="fa fa-dashboard"></i></span>
                 <span>Dashboard</span>
             </a>
         </li>
+        {{-- END DASHBOARD--}}
 
         <li class="has-child">
             <a href="#">
+                <span class="icon"><i class="fa fa-cube"></i></span>
                 <span>Equipment</span>
                 <span class="link-icon"><i class="fa fa-chevron-right"></i></span>
             </a>
@@ -46,8 +49,11 @@
             </ul>
         </li>
 
+        {{-- END EQUIPMENTS--}}
+
         <li class="has-child">
             <a href="#">
+                <span class="icon"><i class="fa fa-address-book-o"></i></span>
                 <span>Employee</span>
                 <span class="link-icon"><i class="fa fa-chevron-right"></i></span>
             </a>
@@ -65,9 +71,12 @@
             </ul>
         </li>
 
+        {{-- END EMPLOYEE --}}
+
         <li class="has-child">
             <a href="#">
-                <span>Workstation</span>
+                <span class="icon"><i class="fa fa-desktop"></i></span>
+                <span>Computer</span>
                 <span class="link-icon"><i class="fa fa-chevron-right"></i></span>
             </a>
             <ul class="sub-menu">
@@ -78,34 +87,59 @@
                 </li>
                 <li>
                     <a href="">
+                        <span>Build Computer</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        {{-- END COMPUTER--}}
+
+        <li class="has-child">
+            <a href="#">
+                <span class="icon"><i class="fa fa-id-card"></i></span>
+                <span>Workstation</span>
+                <span class="link-icon"><i class="fa fa-chevron-right"></i></span>
+            </a>
+            <ul class="sub-menu">
+                <li>
+                    <a href="{{ route('workstation.index') }}">
+                        <span>View All</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('workstation.create') }}">
                         <span>Add New</span>
                     </a>
                 </li>
             </ul>
         </li>
+        {{-- END WORKSTATION --}}
 
-        <li class="has-child">
-            <a href="#">
-                <span>Settings</span>
-                <span class="link-icon"><i class="fa fa-chevron-right"></i></span>
-            </a>
-            <ul class="sub-menu">
-                <li>
-                    <a href="">
-                        <span>Import</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="">
-                        <span>Computer</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="">
-                        <span>Workstations</span>
-                    </a>
-                </li>
-            </ul>
-        </li>
+        {{--<li class="has-child">--}}
+            {{--<a href="#">--}}
+                {{--<span class="icon"><i class="fa fa-cogs"></i></span>--}}
+                {{--<span>Settings</span>--}}
+                {{--<span class="link-icon"><i class="fa fa-chevron-right"></i></span>--}}
+            {{--</a>--}}
+            {{--<ul class="sub-menu">--}}
+                {{--<li>--}}
+                    {{--<a href="">--}}
+                        {{--<span>Import</span>--}}
+                    {{--</a>--}}
+                {{--</li>--}}
+                {{--<li>--}}
+                    {{--<a href="">--}}
+                        {{--<span>Computer</span>--}}
+                    {{--</a>--}}
+                {{--</li>--}}
+                {{--<li>--}}
+                    {{--<a href="">--}}
+                        {{--<span>Workstations</span>--}}
+                    {{--</a>--}}
+                {{--</li>--}}
+            {{--</ul>--}}
+        {{--</li>--}}
+        {{-- END SETTINGS --}}
+
     </ul>
 </aside>

@@ -265,8 +265,11 @@ main::before, main::after{
     text-decoration: none;
     border-left: 7px solid var(--primary);
 }
-.sidebar-container>ul>li>a:hover>span{
+.sidebar-container>ul>li>a:hover>span:first-child{
     margin-left: -7px;
+}
+.sidebar-container>ul>li>a:hover>span.icon{
+    color: var(--info);
 }
 
 .sidebar-container a > .link-icon{
@@ -289,6 +292,10 @@ main::before, main::after{
 .main-sidebar > li > a ~ .sub-menu > li > a > span{
     margin-left: 15px;
     transition: margin-left 0.7s var(--race-car);
+}
+
+.main-sidebar > li > a > span.icon{
+    margin-right: 10px;
 }
 
 /* Sub Menu
@@ -332,22 +339,10 @@ main::before, main::after{
     text-decoration: none;
 }
 .sub-menu > li > a:hover > span{
-    color: var(--primary);
+    color: var(--info);
 }
 
 /*Parent Active State*/
-/*.main-sidebar > li.active > .sub-menu{*/
-    /*!*display*!*/
-    /*visibility: visible;*/
-    /*opacity: 1;*/
-
-    /*!*position*!*/
-    /*position: relative;*/
-    /*right: 0;*/
-    /*padding-left: 20px;*/
-
-/*}*/
-
 
 /*animations*/
 
@@ -424,14 +419,18 @@ main::before, main::after{
     right: 0;
     background: inherit;
     z-index: -1;
-    box-shadow: inset 0 0 0 100vh rgba(0,0,0,0.2);
-    filter: blur(10px);
+    box-shadow: inset 0 0 0 100vh rgba(0,0,0,0.5);
+    filter: blur(20px);
 }
 .card > .card-header{
     border-bottom: 0;
+    background-color: rgba(0,0,0,0);
 }
 
 .card-header > .with-search-form{
+    display: flex;
+    align-items: center;
+    flex-flow: row wrap;
 
 }
 
@@ -462,13 +461,37 @@ main::before, main::after{
 .user-details > .user-image{
     cursor: pointer;
     position: relative;
-    margin-right: 10px;
 }
 .user-details > .user-image > img{
     width: 70px;
     height: 70px;
+    position: relative;
 
+    border: 2px solid transparent;
     border-radius: 50%;
+
+    transition: 0.5s border ease-in;
+}
+.user-details > .user-image > img:hover{
+    border: 2px solid var(--info);
+}
+.user-details > .user-image::after{
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    border-radius: 50%;
+    z-index: -1;
+    border: 2px solid transparent;
+    transition: 1s border ease-in;
+}
+.user-details > .user-image:hover::after{
+    content: " ";
+
+    border: 2px solid var(--info);
+    transition: 0.5s border ease-in;
+
 }
 
 .user-details > .user-name{
