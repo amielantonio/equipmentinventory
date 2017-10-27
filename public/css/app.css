@@ -170,7 +170,50 @@ div[class^="col-"]{
 .ml-70{margin-left: 70px;}
 .ml-80{margin-left: 80px;}
 .ml-90{margin-left: 90px;}
-.ml-100{margin-left: 100px;}
+.ml-100{margin-left: 100px}
+
+/*Padding Left Right*/
+.plr-10{ padding: 0 10px; }
+.plr-20{ padding: 0 20px; }
+.plr-30{ padding: 0 30px; }
+.plr-40{ padding: 0 40px; }
+.plr-50{ padding: 0 50px; }
+.plr-60{ padding: 0 60px; }
+.plr-70{ padding: 0 70px; }
+.plr-80{ padding: 0 80px; }
+.plr-90{ padding: 0 90px; }
+.plr-100{ padding: 0 100px; }
+
+/*Padding Top Button*/
+.ptb-10{ padding: 10px 0; }
+.ptb-20{ padding: 20px 0; }
+.ptb-30{ padding: 30px 0; }
+.ptb-40{ padding: 40px 0; }
+.ptb-50{ padding: 50px 0; }
+.ptb-60{ padding: 60px 0; }
+.ptb-70{ padding: 70px 0; }
+.ptb-80{ padding: 80px 0; }
+.ptb-90{ padding: 90px 0; }
+.ptb-100{ padding: 100px 0; }
+
+/*Padding*/
+.p-10{ padding: 10px; }
+.p-20{ padding: 20px; }
+.p-30{ padding: 30px; }
+.p-40{ padding: 40px; }
+.p-50{ padding: 50px; }
+.p-60{ padding: 60px; }
+.p-70{ padding: 70px; }
+.p-80{ padding: 80px; }
+.p-90{ padding: 90px; }
+.p-100{ padding: 100px; }
+
+
+/*Border-right*/
+
+.br-1-w{
+    border-right: 1px solid #fff;
+}
 
 
 /*******************************************
@@ -470,7 +513,7 @@ main::before, main::after{
     border: 2px solid transparent;
     border-radius: 50%;
 
-    transition: 0.5s border ease-in;
+    transition: 0.2s border ease-in;
 }
 .user-details > .user-image > img:hover{
     border: 2px solid var(--info);
@@ -620,8 +663,7 @@ label > .required{
 .btn[type='submit']:hover > span::after{
     content: "\f054";
     font-family: FontAwesome;
-    font-style: normal;
-    font-weight: normal;
+    font-style: normal;font-weight: normal;
     text-decoration: inherit;
     margin-left: 5px;
 }
@@ -801,6 +843,13 @@ label > .required{
     width: 100%;
 }
 
+/*******************************************
+ * STEP WIZARD
+ ******************************************/
+
+
+
+
 
 /*******************************************
  * CUSTOM GRID
@@ -846,3 +895,5 @@ label > .required{
 .grid-12{
     flex-basis: 100%;
 }
+
+

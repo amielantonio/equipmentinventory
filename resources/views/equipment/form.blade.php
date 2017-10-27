@@ -29,7 +29,11 @@
         </div>
 
         <div class="fg-form-group">
-            <input type="text" id="category" name="category" class="fg-form-control" required="required">
+            <select id="category" name="category" class="fg-form-control" required="required">
+                @foreach( $categories as $category)
+                    <option value="{{ $category->id }}">{{ $category->category_name }}</option>
+                @endforeach
+            </select>
             <label for="category">Category <span class="required">*</span></label>
         </div>
 

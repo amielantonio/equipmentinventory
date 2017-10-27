@@ -25,7 +25,7 @@
 
         <div class="fg-form-group">
             <input type="text" id="user_id" name="user_id" class="fg-form-control" required="required">
-            <label for="user_id">User name <span class="required">*</span></label>
+            <label for="user_id">User <span class="required">*</span></label>
         </div>
 
         <div class="fg-form-group">

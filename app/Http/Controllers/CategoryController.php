@@ -14,7 +14,12 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        $cats = new Category;
+
+        $categories = $cats->all();
+
+
+        return view('categories.categories', compact('categories'));
     }
 
     /**
@@ -35,7 +40,15 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $categories = new Category;
+
+        $categories->category_name = $request->category_name;
+        $categories->category_slug = str_slug( $request->category_name, '-');
+        $categories->category_description = $request->category_description;
+
+        $categories->save();
+
+        return response()->json($request->all());
     }
 
     /**
@@ -46,7 +59,19 @@ class CategoryController extends Controller
      */
     public function show(Category $category)
     {
-        //
+
+    }
+
+    /**
+     * Display all resources
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function getAll(){
+
+        return response()->json(
+            (new Category)->all()
+        );
     }
 
     /**

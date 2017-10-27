@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Equipment;
 
 use App\Equipment;
+use App\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -30,7 +31,11 @@ class EquipmentController extends Controller
      */
     public function create()
     {
-        return view('equipment.form');
+        $cats = new Category;
+
+        $categories = $cats->all();
+
+        return view('equipment.form', compact('categories'));
     }
 
     /**

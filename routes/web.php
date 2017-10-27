@@ -43,6 +43,7 @@ Route::group(['namespace' => 'Employee', 'middleware'=>'web'], function(){
 Route::group(['namespace' => 'Computer', 'middleware'=>'web'], function(){
 
     Route::resource('computers', 'ComputerController');
+    Route::get('computer/build', 'ComputerController@buildComputer')->name('computer-build');
 
 });
 
@@ -52,5 +53,15 @@ Route::group(['namespace' => 'Computer', 'middleware'=>'web'], function(){
 Route::group(['namespace' => 'Workstation', 'middleware'=>'web'], function(){
 
     Route::resource('workstation', 'WorkstationController');
+
+});
+
+
+/**
+ * Categories Routing
+ */
+Route::group(['middleware'=>'web'], function(){
+
+    Route::resource('categories', 'CategoryController');
 
 });

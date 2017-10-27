@@ -30,6 +30,32 @@
         {{-- END DASHBOARD--}}
 
         <li class="has-child">
+            <a href="{{ route('workstation.index') }}">
+                <span class="icon"><i class="fa fa-id-card"></i></span>
+                <span>Workstation</span>
+                <span class="link-icon"><i class="fa fa-chevron-right"></i></span>
+            </a>
+            <ul class="sub-menu">
+                <li>
+                    <a href="{{ route('workstation.index') }}">
+                        <span>View Workstations</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('workstation.index') }}">
+                        <span>Assign Station</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('workstation.create') }}">
+                        <span>Add New</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        {{-- END WORKSTATION --}}
+
+        <li class="has-child">
             <a href="{{route('equipment.index')}}">
                 <span class="icon"><i class="fa fa-cube"></i></span>
                 <span>Equipment</span>
@@ -44,6 +70,16 @@
                 <li>
                     <a href="{{route('equipment.create')}}">
                         <span>Add New</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{route('equipment.create')}}">
+                        <span>Request</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{route('categories.index')}}">
+                        <span>Categories</span>
                     </a>
                 </li>
             </ul>
@@ -87,6 +123,11 @@
                 </li>
                 <li>
                     <a href="{{ route('computers.create') }}">
+                        <span>Add New</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('computer-build') }}">
                         <span>Build Computer</span>
                     </a>
                 </li>
@@ -94,26 +135,6 @@
         </li>
         {{-- END COMPUTER--}}
 
-        <li class="has-child">
-            <a href="{{ route('workstation.index') }}">
-                <span class="icon"><i class="fa fa-id-card"></i></span>
-                <span>Workstation</span>
-                <span class="link-icon"><i class="fa fa-chevron-right"></i></span>
-            </a>
-            <ul class="sub-menu">
-                <li>
-                    <a href="{{ route('workstation.index') }}">
-                        <span>View All</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ route('workstation.create') }}">
-                        <span>Add New</span>
-                    </a>
-                </li>
-            </ul>
-        </li>
-        {{-- END WORKSTATION --}}
 
         {{--<li class="has-child">--}}
             {{--<a href="#">--}}

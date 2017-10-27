@@ -21,17 +21,39 @@
         var menuItem = $('.main-sidebar > li');
 
 
-        menuItem.hover(function () {
-            var sidebarWidth = $('.sidebar-container').width();
+        // menuItem.hover(function () {
+        //     var sidebarWidth = $('.sidebar-container').width();
+        //
+        //     if ($(this).hasClass('has-child')) {
+        //
+        //         if ($(this).hasClass('active')) return;
+        //
+        //         $(this).children('.sub-menu')
+        //             .toggleClass('show')
+        //             .css('right', '-' + sidebarWidth);
+        //
+        //     }
+        //
+        // });
 
-            if ($(this).hasClass('has-child')) {
+        menuItem.on( 'mouseenter', function(){
 
-                if ($(this).hasClass('active')) return;
+            if( $(this).hasClass( 'has-child' )){
+                if( $(this).hasClass('show')){
+                    return;
+                }else{
+                    $(this).children('.sub-menu')
+                        .addClass('show');
+                }
+            }
 
+        });
+
+        menuItem.on( 'mouseleave', function(){
+
+            if( $(this).children('.sub-menu').hasClass('show')){
                 $(this).children('.sub-menu')
-                    .toggleClass('show')
-                    .css('right', '-' + sidebarWidth);
-
+                    .removeClass('show');
             }
 
         });
