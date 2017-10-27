@@ -16,7 +16,7 @@ class CategoryController extends Controller
     {
         $cats = new Category;
 
-        $categories = $cats->all();
+        $categories = $cats->all()->sortBy('category_name');
 
 
         return view('categories.categories', compact('categories'));
