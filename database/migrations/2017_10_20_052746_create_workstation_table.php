@@ -18,6 +18,7 @@ class CreateWorkstationTable extends Migration
             $table->integer('user_id');
             $table->integer('computer_id');
             $table->integer('location');
+            $table->string('network_type', 50);
             $table->string('ip_address', "100")->unique();
             $table->string('mac_address', '100')->unique();
             $table->timestamps();

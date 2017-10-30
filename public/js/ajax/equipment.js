@@ -40,6 +40,50 @@
 
 
         });
+        // END FORM
+
+        //Get Equipment resources
+        var table = $('#equipment-table');
+
+        $.ajax({
+            "url":"equipments/get",
+            "method": "GET",
+            "dataType": "json",
+            success: function( data ){
+
+                var t = table.DataTable({
+                    "paging": true,
+                    "lengthChange": false,
+                    "searching": true,
+                    "ordering": true,
+                    "info": false,
+                    "autoWidth": true,
+                    columns: [
+                        { data: null, sortable: false},
+                        { data: "equipment_name" },
+                        { data: "category" },
+                        { data: "price" },
+                        { data: "durability" },
+                        { data: "on_hand" },
+                        { data: "info" }
+                    ],
+                    data: data,
+                    columnDefs: [ {
+                        searchable: false,
+                        orderable: false,
+                        targets: 0
+                    } ],
+                    order: [[ 1, 'asc' ]]
+                });
+
+                t.on( 'order.dt search.dt', function () {
+                    t.column(0, {search:'applied', order:'applied'}).nodes().each( function (cell, i) {
+                        cell.innerHTML = i+1;
+                    } );
+                } ).draw();
+            }
+        });
+        // END AJAX
 
     });
 

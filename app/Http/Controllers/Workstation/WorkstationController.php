@@ -19,6 +19,20 @@ class WorkstationController extends Controller
     }
 
     /**
+     * Display workstation resources
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function get(){
+        $workstation = new Workstation;
+
+        $workstations = $workstation->all();
+
+        return response()->json( $workstation );
+    }
+
+
+    /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
@@ -26,6 +40,16 @@ class WorkstationController extends Controller
     public function create()
     {
         return view('workstation.form');
+    }
+
+    /**
+     * Show the form to assign user to workstation
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function assign(){
+
+        return view('workstation.assignStation');
     }
 
     /**

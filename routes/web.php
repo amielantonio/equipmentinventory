@@ -25,6 +25,7 @@ Route::get('/', "DashboardController@index")->name('dashboard');
 Route::group(['namespace' => 'Equipment', 'middleware'=>'web'], function(){
 
     Route::resource('equipment', 'EquipmentController');
+    Route::get('equipments/get', 'EquipmentController@get');
 
 });
 
@@ -34,6 +35,7 @@ Route::group(['namespace' => 'Equipment', 'middleware'=>'web'], function(){
 Route::group(['namespace' => 'Employee', 'middleware'=>'web'], function(){
 
     Route::resource('employees', 'EmployeeController');
+    Route::get('employee/get', 'EmployeeController@get');
 
 });
 
@@ -53,6 +55,8 @@ Route::group(['namespace' => 'Computer', 'middleware'=>'web'], function(){
 Route::group(['namespace' => 'Workstation', 'middleware'=>'web'], function(){
 
     Route::resource('workstation', 'WorkstationController');
+    Route::get('workstations/get', 'WorkstationController@get');
+    Route::get('workstations/assign', 'WorkstationController@assign')->name('workstations');
 
 });
 

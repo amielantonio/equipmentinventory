@@ -15,8 +15,10 @@ class CreateComputerTable extends Migration
     {
         Schema::create('computers', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('computer_name');
+            $table->string('computer_name', 50);
             $table->string('computer_parts');
+            $table->string('operating_system', 30);
+            $table->string('os_product_id', 30);
         });
     }
 

@@ -23,49 +23,29 @@
 
                         <h5 class="card-title">@yield('card-title')</h5>
 
-                        <a href="{{route('equipment.create')}}" class="btn btn-primary">
-                            <span>Add New</span>
-                        </a>
-
                     </div>
                     {{-- end card header--}}
 
                     <div class="card-body">
 
                         <div class="row">
-                            <table class="table">
+                            <table id="equipment-table">
 
                                 <thead>
-                                <tr>
-                                    <th>Equipment Name</th>
-                                    <th>Category</th>
-                                    <th>Price</th>
-                                    <th>Durability</th>
-                                    <th>On Hand</th>
-                                    <th>Additional Information</th>
-                                </tr>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Equipment Name</th>
+                                        <th>Category</th>
+                                        <th>Price</th>
+                                        <th>Durability</th>
+                                        <th>On Hand</th>
+                                        <th>Additional Information</th>
+                                    </tr>
                                 </thead>
 
-                                <tbody>
-                                @foreach( $items as $item )
-                                    <tr>
-                                        <td>{{ $item->equipment_name }}</td>
-                                        <td>{{ $item->category }}</td>
-                                        <td>{{ $item->price }}</td>
-                                        <td>{{ $item->durability }}</td>
-                                        <td>{{ $item->on_hand }}</td>
-                                        <td>{{ $item->info }}</td>
-                                    </tr>
-                                @endforeach
+                                {{--<tbody>--}}
 
-                                </tbody>
-
-
-                                <tfoot>
-                                <tr>
-                                    <td></td>
-                                </tr>
-                                </tfoot>
+                                {{--</tbody>--}}
 
                             </table>
                         </div>
@@ -84,6 +64,11 @@
     {{-- end container --}}
 
 
+@endsection
 
+
+@section('ajax-script')
+
+    <script src="{{ asset('js/ajax/equipment.js') }}"></script>
 
 @endsection

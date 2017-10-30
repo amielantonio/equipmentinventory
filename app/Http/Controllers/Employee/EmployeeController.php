@@ -22,6 +22,21 @@ class EmployeeController extends Controller
         return view('employees.employees', compact('employees'));
     }
 
+
+    /**
+     * Display the list of resources without rendering a view
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function get(){
+
+        $employee = new Employee;
+        $employees = $employee->all();
+
+        return response()->json( $employees );
+
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -47,8 +62,7 @@ class EmployeeController extends Controller
         $employee->last_name = $request->last_name;
         $employee->email = $request->email;
         $employee->contact = $request->contact;
-        $employee->ip_address = $request->ip_address;
-        $employee->mac_address = $request->mac_address;
+        $employee->position = $request->position;
 
         // Save
         $employee->save();

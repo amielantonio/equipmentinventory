@@ -24,6 +24,14 @@ class EquipmentController extends Controller
         return view('equipment.equipment', compact('items'));
     }
 
+    public function get(){
+        $equipment = new Equipment;
+
+        $equipments = $equipment::all();
+
+        return response()->json( $equipments);
+    }
+
     /**
      * Show the form for creating a new resource.
      *

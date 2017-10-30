@@ -1,12 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Computer;
+namespace App\Http\Controllers;
 
-use App\Computer;
+use App\Diagnostics;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 
-class ComputerController extends Controller
+class DiagnosticController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +14,7 @@ class ComputerController extends Controller
      */
     public function index()
     {
-        return view('computers.computer');
+        //
     }
 
     /**
@@ -25,17 +24,7 @@ class ComputerController extends Controller
      */
     public function create()
     {
-        return view('computers.form');
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function buildComputer()
-    {
-        return view('computers.build');
+        //
     }
 
     /**
@@ -46,25 +35,16 @@ class ComputerController extends Controller
      */
     public function store(Request $request)
     {
-        $computer = new Computer;
-
-        $computer->computer_name = $request->computer_name;
-        $computer->computer_parts = $request->computer_parts;
-        $computer->operating_system = $request->operating_system;
-        $computer->os_product_id = $request->product_id;
-
-        $computer->save();
-
-        return response()->json( $request->all());
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Computer  $computer
+     * @param  \App\Diagnostics  $diagnostics
      * @return \Illuminate\Http\Response
      */
-    public function show(Computer $computer)
+    public function show(Diagnostics $diagnostics)
     {
         //
     }
@@ -72,10 +52,10 @@ class ComputerController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Computer  $computer
+     * @param  \App\Diagnostics  $diagnostics
      * @return \Illuminate\Http\Response
      */
-    public function edit(Computer $computer)
+    public function edit(Diagnostics $diagnostics)
     {
         //
     }
@@ -84,10 +64,10 @@ class ComputerController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Computer  $computer
+     * @param  \App\Diagnostics  $diagnostics
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Computer $computer)
+    public function update(Request $request, Diagnostics $diagnostics)
     {
         //
     }
@@ -95,10 +75,10 @@ class ComputerController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Computer  $computer
+     * @param  \App\Diagnostics  $diagnostics
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Computer $computer)
+    public function destroy(Diagnostics $diagnostics)
     {
         //
     }

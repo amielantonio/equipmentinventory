@@ -33,7 +33,7 @@
             <a href="{{ route('workstation.index') }}">
                 <span class="icon"><i class="fa fa-id-card"></i></span>
                 <span>Workstation</span>
-                <span class="link-icon"><i class="fa fa-chevron-right"></i></span>
+                {{--<span class="link-icon"><i class="fa fa-chevron-right"></i></span>--}}
             </a>
             <ul class="sub-menu">
                 <li>
@@ -42,7 +42,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{ route('workstation.index') }}">
+                    <a href="{{ route('workstations') }}">
                         <span>Assign Station</span>
                     </a>
                 </li>
@@ -59,7 +59,7 @@
             <a href="{{route('equipment.index')}}">
                 <span class="icon"><i class="fa fa-cube"></i></span>
                 <span>Equipment</span>
-                <span class="link-icon"><i class="fa fa-chevron-right"></i></span>
+                {{--<span class="link-icon"><i class="fa fa-chevron-right"></i></span>--}}
             </a>
             <ul class="sub-menu">
                 <li>
@@ -91,7 +91,7 @@
             <a href="{{ route('employees.index') }}">
                 <span class="icon"><i class="fa fa-address-book-o"></i></span>
                 <span>Employee</span>
-                <span class="link-icon"><i class="fa fa-chevron-right"></i></span>
+                {{--<span class="link-icon"><i class="fa fa-chevron-right"></i></span>--}}
             </a>
             <ul class="sub-menu">
                 <li>
@@ -113,7 +113,7 @@
             <a href="{{ route('computers.index') }}">
                 <span class="icon"><i class="fa fa-desktop"></i></span>
                 <span>Computer</span>
-                <span class="link-icon"><i class="fa fa-chevron-right"></i></span>
+                {{--<span class="link-icon"><i class="fa fa-chevron-right"></i></span>--}}
             </a>
             <ul class="sub-menu">
                 <li>
@@ -128,7 +128,7 @@
                 </li>
                 <li>
                     <a href="{{ route('computer-build') }}">
-                        <span>Build Computer</span>
+                        <span>Build PC </span><span class="badge badge-primary">BETA</span>
                     </a>
                 </li>
             </ul>
@@ -136,31 +136,21 @@
         {{-- END COMPUTER--}}
 
 
-        {{--<li class="has-child">--}}
-            {{--<a href="#">--}}
-                {{--<span class="icon"><i class="fa fa-cogs"></i></span>--}}
-                {{--<span>Settings</span>--}}
+        <li class="has-child">
+            <a href="#">
+                <span class="icon"><i class="fa fa-cogs"></i></span>
+                <span>Settings</span>
                 {{--<span class="link-icon"><i class="fa fa-chevron-right"></i></span>--}}
-            {{--</a>--}}
-            {{--<ul class="sub-menu">--}}
-                {{--<li>--}}
-                    {{--<a href="">--}}
-                        {{--<span>Import</span>--}}
-                    {{--</a>--}}
-                {{--</li>--}}
-                {{--<li>--}}
-                    {{--<a href="">--}}
-                        {{--<span>Computer</span>--}}
-                    {{--</a>--}}
-                {{--</li>--}}
-                {{--<li>--}}
-                    {{--<a href="">--}}
-                        {{--<span>Workstations</span>--}}
-                    {{--</a>--}}
-                {{--</li>--}}
-            {{--</ul>--}}
-        {{--</li>--}}
-        {{-- END SETTINGS --}}
+            </a>
+            <ul class="sub-menu">
+                <li>
+                    <a href="">
+                        <span>Import</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+         {{--END SETTINGS --}}
 
     </ul>
 </aside>

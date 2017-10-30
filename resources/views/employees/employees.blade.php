@@ -23,21 +23,19 @@
 
                         <h5 class="card-title">@yield('card-title')</h5>
 
-                        <a href="{{route('equipment.create')}}" class="btn btn-primary">
-                            <span>Add New</span>
-                        </a>
-
                     </div>
                     {{-- end card header--}}
 
                     <div class="card-body">
 
                         <div class="row">
-                            <table class="table">
+                            <table id="employee-table">
 
                                 <thead>
                                 <tr>
-                                    <th>Employee Name</th>
+                                    <th>#</th>
+                                    <th>First Name</th>
+                                    <th>Last Name</th>
                                     <th>Email</th>
                                     <th>Contact Information</th>
                                     <th>Position</th>
@@ -46,23 +44,7 @@
 
                                 <tbody>
 
-                                @foreach( $employees as $employee )
-                                    <tr>
-                                        <td>{{ $employee->first_name." ".$employee->last_name }}</td>
-                                        <td>{{ $employee->email }}</td>
-                                        <td>{{ $employee->contact }}</td>
-                                        <td>{{ $employee->position }}</td>
-                                    </tr>
-                                @endforeach
-
                                 </tbody>
-
-
-                                <tfoot>
-                                <tr>
-                                    <td></td>
-                                </tr>
-                                </tfoot>
 
                             </table>
                         </div>
@@ -82,5 +64,11 @@
 
 
 
+
+@endsection
+
+@section('ajax-script')
+
+    <script src="{{ asset('js/ajax/employee.js') }}"></script>
 
 @endsection

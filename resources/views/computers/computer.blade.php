@@ -23,48 +23,24 @@
 
                         <h5 class="card-title">@yield('card-title')</h5>
 
-                        <a href="{{route('computers.create')}}" class="btn btn-primary">
-                            <span>Add New</span>
-                        </a>
-
                     </div>
                     {{-- end card header--}}
 
                     <div class="card-body">
 
                         <div class="row">
-                            {{--<table class="table">--}}
+                            <table id="computer-table">
 
-                            {{--<thead>--}}
-                            {{--<tr>--}}
-                            {{--<th>Employee Name</th>--}}
-                            {{--<th>Email</th>--}}
-                            {{--<th>Contact Information</th>--}}
-                            {{--<th>Position</th>--}}
-                            {{--</tr>--}}
-                            {{--</thead>--}}
-
-                            {{--<tbody>--}}
-
-                            {{--@foreach( $employees as $employee )--}}
-                            {{--<tr>--}}
-                            {{--<td>{{ $employee->first_name." ".$employee->last_name }}</td>--}}
-                            {{--<td>{{ $employee->email }}</td>--}}
-                            {{--<td>{{ $employee->contact }}</td>--}}
-                            {{--<td>{{ $employee->position }}</td>--}}
-                            {{--</tr>--}}
-                            {{--@endforeach--}}
-
-                            {{--</tbody>--}}
-
-
-                            {{--<tfoot>--}}
-                            {{--<tr>--}}
-                            {{--<td></td>--}}
-                            {{--</tr>--}}
-                            {{--</tfoot>--}}
-
-                            {{--</table>--}}
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Computer Name</th>
+                                        <th>Specs</th>
+                                        <th>Operating System</th>
+                                        <th>Product ID</th>
+                                    </tr>
+                                </thead>
+                            </table>
                         </div>
 
                     </div>
@@ -80,7 +56,10 @@
     </div>
     {{-- end container --}}
 
+@endsection
 
+@section('ajax-script')
 
+    <script src="{{ asset('js/ajax/computer.js') }}"></script>
 
 @endsection

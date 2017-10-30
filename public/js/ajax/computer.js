@@ -1,12 +1,12 @@
 /**
- * Workstation Ajax
+ * Equipment Ajax
  */
 
 ( function($){
 
     $(function(){
 
-        var form = $('#workstation-form');
+        var form = $('#equipment-form');
         var alertable = $('.alert');
         var notif =$('.notification');
 
@@ -19,7 +19,7 @@
             });
             $.ajax({
 
-                "url": '/workstation',
+                "url": '/equipment',
                 "method":'POST',
                 "data": form.serialize(),
                 success: function( data ){
@@ -27,7 +27,8 @@
                     //Show alert
                     notif.css('display', 'block');
                     alertable.find('#message')
-                        .html('New Workstation added successfully');
+                        .html('<span class="color-primary">'+data.equipment_name+'</span>'
+                            + ' added successfully');
                     //Form Reset
                     // form[0].reset();
                 },
@@ -42,10 +43,10 @@
         // END FORM
 
         //Get Equipment resources
-        var table = $('#workstation-table');
+        var table = $('#computer-table');
 
         $.ajax({
-            "url":"/workstations/get",
+            "url":"equipments/get",
             "method": "GET",
             "dataType": "json",
             success: function( data ){
@@ -59,13 +60,12 @@
                     "autoWidth": true,
                     columns: [
                         { data: null, sortable: false},
-                        { data: "user_id" },
-                        { data: "computer" },
-                        { data: "location" },
-                        { data: "network_type" },
-                        { data: "ip_address" },
-                        { data: "mac_address" },
-                        { data: null, sortable: false}
+                        { data: "equipment_name" },
+                        { data: "category" },
+                        { data: "price" },
+                        { data: "durability" },
+                        { data: "on_hand" },
+                        { data: "info" }
                     ],
                     data: data,
                     columnDefs: [ {
@@ -84,7 +84,6 @@
             }
         });
         // END AJAX
-
 
     });
 

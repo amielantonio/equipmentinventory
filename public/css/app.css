@@ -723,7 +723,7 @@ label > .required{
 
 .alert{
     /*border-radius: 0;*/
-    border-width: 2px;
+    /*border-width: 2px;*/
     color: #fff !important;
 
     animation-name: fadeIn;
@@ -774,8 +774,45 @@ label > .required{
 /* Alert Parent*/
 .notification{
     display: none;
+    margin: 15px 0;
 }
 
+/*******************************************
+ * BADGE @override bootstrap badge
+ ******************************************/
+
+.badge-primary{
+    background-color: var(--primary);
+}
+.badge-info{
+    background-color: var(--info);
+}
+.badge-success{
+    background-color: var(--success);
+}
+.badge-warning{
+    background-color: var(--warning);
+}
+.badge-danger{
+    background-color: var(--danger);
+}
+
+/*******************************************
+ * NAV @override bootstrap alerts
+ ******************************************/
+
+.nav{
+    width: 100%;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link{
+    background-color: transparent;
+    border-bottom: 2px solid var(--primary);
+}
+.nav-pills .nav-link{
+    border-radius: 0;
+    color: #fff;
+}
 
 /*******************************************
  * FORM WIZARD
@@ -848,9 +885,36 @@ label > .required{
  ******************************************/
 
 
-
-
-
+/*******************************************
+ * Data Tables @override Datatables
+ ******************************************/
+.dataTables_wrapper{
+    width: 100%;
+}
+.dataTables_wrapper .dataTable{
+    margin-bottom: 30px;
+    width: 100%;
+}
+.dataTables_wrapper .dataTables_filter{
+    margin-bottom: 30px;
+}
+table.dataTable tbody tr{
+    background-color: transparent;
+}
+table.dataTable.no-footer{
+    border-bottom: 1px solid var(--darkslategray);
+}
+table.dataTable thead th, table.dataTable thead td{
+    border-bottom: 1px solid var(--darkslategray);
+    border-top: 1px solid var(--darkslategray);
+}
+table.dataTable thead th, table.dataTable thead td{
+    padding: 15px 18px;
+    background-color: rgba(255,255,255,0.06);
+}
+table.dataTable tbody th, table.dataTable tbody td{
+    padding: 15px 10px;
+}
 /*******************************************
  * CUSTOM GRID
  ******************************************/

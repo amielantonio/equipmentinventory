@@ -23,49 +23,49 @@
 
                         <h5 class="card-title">@yield('card-title')</h5>
 
-                        <a href="{{route('equipment.create')}}" class="btn btn-primary">
-                            <span>Add New</span>
-                        </a>
-
                     </div>
                     {{-- end card header--}}
 
                     <div class="card-body">
 
-                        <div class="row">
-                            {{--<table class="table">--}}
+                        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#table-view" role="tab" aria-controls="pills-home" aria-selected="true">Table View</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#sit-view" role="tab" aria-controls="pills-profile" aria-selected="false">Other View</a>
+                            </li>
+                        </ul>
+                        {{-- end navigation--}}
 
-                                {{--<thead>--}}
-                                {{--<tr>--}}
-                                    {{--<th>Employee Name</th>--}}
-                                    {{--<th>Email</th>--}}
-                                    {{--<th>Contact Information</th>--}}
-                                    {{--<th>Position</th>--}}
-                                {{--</tr>--}}
-                                {{--</thead>--}}
+                        <div class="tab-content" id="pills-tabContent">
+                            <div class="tab-pane fade show active" id="table-view" role="tabpanel" aria-labelledby="pills-home-tab">
 
-                                {{--<tbody>--}}
+                                <table id="workstation-table">
 
-                                {{--@foreach( $employees as $employee )--}}
-                                    {{--<tr>--}}
-                                        {{--<td>{{ $employee->first_name." ".$employee->last_name }}</td>--}}
-                                        {{--<td>{{ $employee->email }}</td>--}}
-                                        {{--<td>{{ $employee->contact }}</td>--}}
-                                        {{--<td>{{ $employee->position }}</td>--}}
-                                    {{--</tr>--}}
-                                {{--@endforeach--}}
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>User</th>
+                                            <th>Computer</th>
+                                            <th>Location</th>
+                                            <th>Network Type</th>
+                                            <th>Ip Address</th>
+                                            <th>Mac Address</th>
+                                            <th>Diagnostics History</th>
+                                        </tr>
+                                    </thead>
 
-                                {{--</tbody>--}}
+                                </table>
 
+                            </div>
+                            {{-- end table view--}}
+                            <div class="tab-pane fade" id="sit-view" role="tabpanel" aria-labelledby="pills-profile-tab">
 
-                                {{--<tfoot>--}}
-                                {{--<tr>--}}
-                                    {{--<td></td>--}}
-                                {{--</tr>--}}
-                                {{--</tfoot>--}}
-
-                            {{--</table>--}}
+                            </div>
+                            {{-- end other view--}}
                         </div>
+                        {{-- end tab content --}}
 
                     </div>
                     {{-- end card body--}}
@@ -81,6 +81,10 @@
     {{-- end container --}}
 
 
+@endsection
 
+@section('ajax-script')
+
+    <script src="{{ asset('js/ajax/workstation.js') }}"></script>
 
 @endsection
