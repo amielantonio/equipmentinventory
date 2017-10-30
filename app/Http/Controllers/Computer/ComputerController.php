@@ -6,6 +6,7 @@ use App\Computer;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
+
 class ComputerController extends Controller
 {
     /**
@@ -25,6 +26,7 @@ class ComputerController extends Controller
      */
     public function create()
     {
+
         return view('computers.form');
     }
 
@@ -52,6 +54,7 @@ class ComputerController extends Controller
         $computer->computer_parts = $request->computer_parts;
         $computer->operating_system = $request->operating_system;
         $computer->os_product_id = $request->product_id;
+        $computer->status = $request->status;
 
         $computer->save();
 
@@ -67,6 +70,20 @@ class ComputerController extends Controller
     public function show(Computer $computer)
     {
         //
+    }
+
+    /**
+     * Get all Computer resources
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function get(){
+        $computer = new Computer;
+
+        $computers = $computer->all();
+
+        return response()->json( $computers );
+
     }
 
     /**

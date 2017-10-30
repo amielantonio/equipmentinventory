@@ -46,6 +46,7 @@ Route::group(['namespace' => 'Computer', 'middleware'=>'web'], function(){
 
     Route::resource('computers', 'ComputerController');
     Route::get('computer/build', 'ComputerController@buildComputer')->name('computer-build');
+    Route::get('computer/get', 'ComputerController@get');
 
 });
 

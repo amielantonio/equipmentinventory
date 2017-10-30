@@ -48,7 +48,7 @@
                 </li>
                 <li>
                     <a href="{{ route('workstation.create') }}">
-                        <span>Add New</span>
+                        <span>Create New</span>
                     </a>
                 </li>
             </ul>

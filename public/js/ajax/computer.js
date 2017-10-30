@@ -6,7 +6,7 @@
 
     $(function(){
 
-        var form = $('#equipment-form');
+        var form = $('#computer-form');
         var alertable = $('.alert');
         var notif =$('.notification');
 
@@ -19,7 +19,7 @@
             });
             $.ajax({
 
-                "url": '/equipment',
+                "url": '/computers',
                 "method":'POST',
                 "data": form.serialize(),
                 success: function( data ){
@@ -27,8 +27,8 @@
                     //Show alert
                     notif.css('display', 'block');
                     alertable.find('#message')
-                        .html('<span class="color-primary">'+data.equipment_name+'</span>'
-                            + ' added successfully');
+                        .html('<span class="color-primary">'+data.computer_name+'</span>'
+                            + ' was added successfully');
                     //Form Reset
                     // form[0].reset();
                 },
@@ -46,7 +46,7 @@
         var table = $('#computer-table');
 
         $.ajax({
-            "url":"equipments/get",
+            "url":"/computer/get",
             "method": "GET",
             "dataType": "json",
             success: function( data ){
@@ -60,12 +60,11 @@
                     "autoWidth": true,
                     columns: [
                         { data: null, sortable: false},
-                        { data: "equipment_name" },
-                        { data: "category" },
-                        { data: "price" },
-                        { data: "durability" },
-                        { data: "on_hand" },
-                        { data: "info" }
+                        { data: "computer_name" },
+                        { data: "computer_parts" },
+                        { data: "operating_system" },
+                        { data: "os_product_id" },
+                        { data: "status" }
                     ],
                     data: data,
                     columnDefs: [ {

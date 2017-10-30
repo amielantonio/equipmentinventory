@@ -28,7 +28,7 @@
                     notif.css('display', 'block');
                     alertable.find('#message')
                         .html('<span class="color-primary">'+data.equipment_name+'</span>'
-                            + ' added successfully');
+                            + ' was added successfully');
                     //Form Reset
                     // form[0].reset();
                 },

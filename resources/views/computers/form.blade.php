@@ -20,7 +20,7 @@
     </div>
 
 
-    <form method="POST" class="fg-form" id="workstation-form">
+    <form method="POST" class="fg-form" id="computer-form">
         {{ csrf_field() }}
 
         <div class="fg-form-group">
@@ -43,6 +43,15 @@
             <label for="product_id">Product ID <span class="required">*</span></label>
         </div>
 
+        <div class="fg-form-group">
+            <select name="status" id="status" class="fg-form-control">
+                <option>Working</option>
+                <option>For Repair</option>
+                <option>Broken</option>
+            </select>
+            <label for="status">Status <span class="required">*</span></label>
+        </div>
+
         <button type="button" class="btn btn-primary submit"><span>Add New</span></button>
         <button type="reset" class="btn btn-warning"><span>Clear</span></button>
 
@@ -53,6 +62,6 @@
 
 @section('ajax-script')
 
-    <script src="{{ asset('js/ajax/workstation.js') }}"></script>
+    <script src="{{ asset('js/ajax/computer.js') }}"></script>
 
 @endsection
