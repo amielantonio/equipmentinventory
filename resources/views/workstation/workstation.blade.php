@@ -33,7 +33,7 @@
                                 <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#table-view" role="tab" aria-controls="pills-home" aria-selected="true">Table View</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#sit-view" role="tab" aria-controls="pills-profile" aria-selected="false">Other View</a>
+                                <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#sit-view" role="tab" aria-controls="pills-profile" aria-selected="false">Sit Plan View</a>
                             </li>
                         </ul>
                         {{-- end navigation--}}

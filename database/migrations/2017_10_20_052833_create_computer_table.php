@@ -19,6 +19,7 @@ class CreateComputerTable extends Migration
             $table->string('computer_parts');
             $table->string('operating_system', 30);
             $table->string('os_product_id', 30);
+            $table->string('status', 30);
         });
     }
 

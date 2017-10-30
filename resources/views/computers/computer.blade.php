@@ -38,6 +38,7 @@
                                         <th>Specs</th>
                                         <th>Operating System</th>
                                         <th>Product ID</th>
+                                        <th>Status</th>
                                     </tr>
                                 </thead>
                             </table>

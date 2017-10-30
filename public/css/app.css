@@ -676,12 +676,13 @@ label > .required{
     text-decoration: inherit;
     margin-left: 5px;
 }
-
+.btn.submit > span,
 .btn[type='submit'] > span,
 .btn[type='reset'] > span{
     margin-right: 0;
     transition: 0.5s all;
 }
+.btn.submit:hover > span,
 .btn[type='submit']:hover > span,
 .btn[type='reset']:hover > span{
     margin-right: 5px;
@@ -898,6 +899,10 @@ label > .required{
 .dataTables_wrapper .dataTables_filter{
     margin-bottom: 30px;
 }
+.dataTables_filter label{
+    color: #fff;
+}
+
 table.dataTable tbody tr{
     background-color: transparent;
 }

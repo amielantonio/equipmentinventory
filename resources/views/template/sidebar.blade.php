@@ -24,7 +24,7 @@
         <li>
             <a href="{{route('dashboard')}}">
                 <span class="icon"><i class="fa fa-dashboard"></i></span>
-                <span>Dashboard</span>
+                <span>Dashboard</span> <span class="badge badge-warning">TODO</span>
             </a>
         </li>
         {{-- END DASHBOARD--}}
@@ -70,11 +70,6 @@
                 <li>
                     <a href="{{route('equipment.create')}}">
                         <span>Add New</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="{{route('equipment.create')}}">
-                        <span>Request</span>
                     </a>
                 </li>
                 <li>
@@ -128,7 +123,7 @@
                 </li>
                 <li>
                     <a href="{{ route('computer-build') }}">
-                        <span>Build PC </span><span class="badge badge-primary">BETA</span>
+                        <span>Build PC </span><span class="badge badge-warning">TODO</span>
                     </a>
                 </li>
             </ul>
@@ -138,8 +133,29 @@
 
         <li class="has-child">
             <a href="#">
+                <span class="icon"><i class="fa fa-file"></i></span>
+                <span>Requests</span> <span class="badge badge-warning">TODO</span>
+                {{--<span class="link-icon"><i class="fa fa-chevron-right"></i></span>--}}
+            </a>
+            <ul class="sub-menu">
+                <li>
+                    <a href="#">
+                        <span>View All</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>Add New</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        {{--END REQUESTS --}}
+
+        <li class="has-child">
+            <a href="#">
                 <span class="icon"><i class="fa fa-cogs"></i></span>
-                <span>Settings</span>
+                <span>Settings</span> <span class="badge badge-warning">TODO</span>
                 {{--<span class="link-icon"><i class="fa fa-chevron-right"></i></span>--}}
             </a>
             <ul class="sub-menu">
