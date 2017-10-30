@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Workstation;
 
 use App\Workstation;
+use App\Employee;
+use App\Computer;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -47,9 +49,17 @@ class WorkstationController extends Controller
      *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function assign(){
+    public function assign()
+    {
 
-        return view('workstation.assignStation');
+        $employee = new Employee;
+        $computer = new Computer;
+
+        $employees = $employee->doesntHave('workstation')->get();
+
+        dd($employees);
+
+        return view('workstation.assignStation', compact('employees'));
     }
 
     /**

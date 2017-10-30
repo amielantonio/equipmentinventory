@@ -17,11 +17,11 @@ class CreateEquipmentTable extends Migration
             $table->increments('id');
             $table->string('equipment_name', 50);
             $table->string('slug', '80');
-            $table->integer('category');
+            $table->integer('category_id');
             $table->text('info')->nullable();
             $table->float('price');
             $table->integer("on_hand");
-            $table->enum("durability", ['working','broken','for repair', 'needs replacement']);
+            $table->enum("durability", ['Working','Broken','For Repair', 'Needs Replacement']);
             $table->timestamps();
         });
     }

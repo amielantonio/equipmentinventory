@@ -16,7 +16,7 @@ class Computer extends Model
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function employee(){
-        return $this->belongsTo('Employee');
+        return $this->belongsTo('Employee', 'computer_id');
     }
 
     /**
@@ -24,7 +24,7 @@ class Computer extends Model
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function workstation(){
-        return $this->belongsTo('Workstation');
+        return $this->belongsTo('Workstation', 'computer_id');
     }
 
     /**

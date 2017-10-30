@@ -20,6 +20,7 @@ class CreateComputerTable extends Migration
             $table->string('operating_system', 30);
             $table->string('os_product_id', 30);
             $table->string('status', 30);
+            $table->integer('user_id')->nullable();
             $table->timestamps();
         });
     }

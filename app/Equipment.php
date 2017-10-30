@@ -15,16 +15,16 @@ class Equipment extends Model
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function computer(){
-        return $this->belongsTo('Computer');
+        return $this->belongsTo('Computer', 'equipment_id');
     }
 
     /**
      * One to One Relationship for Category
      *
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function category(){
-        return $this->hasOne( 'Category');
+        return $this->belongsTo( 'Category','category_id');
     }
 
 }

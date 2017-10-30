@@ -20,6 +20,7 @@ class CreateEmployeeTable extends Migration
             $table->string('email', '50')->unique();
             $table->string('contact');
             $table->string('position');
+            $table->integer('computer_id')->nullable();
             $table->timestamps();
         });
     }

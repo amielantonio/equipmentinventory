@@ -23,6 +23,8 @@
     <form method="POST" class="fg-form" id="computer-form">
         {{ csrf_field() }}
 
+
+
         <div class="fg-form-group">
             <input type="text" id="computer_name" name="computer_name" class="fg-form-control" required="required">
             <label for="computer_name">Computer Name <span class="required">*</span></label>

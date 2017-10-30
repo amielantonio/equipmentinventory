@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Employee;
 
 use App\Employee;
+use App\Computer;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -15,11 +16,17 @@ class EmployeeController extends Controller
      */
     public function index()
     {
-        $employeesCollection = new Employee();
+//        $employeesCollection = new Employee();
+//
+//        $employees = $employeesCollection::all();
+//
+//        return view('employees.employees', compact('employees'));
 
-        $employees = $employeesCollection::all();
+        $employee = new Employee;
 
-        return view('employees.employees', compact('employees'));
+        $computer = $employee->find(1)->computer();
+
+        dd($computer);
     }
 
 
@@ -79,7 +86,7 @@ class EmployeeController extends Controller
      */
     public function show(Employee $employee)
     {
-        //
+
     }
 
     /**
