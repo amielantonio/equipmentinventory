@@ -3,9 +3,6 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Employee;
-use App\Workstation;
-use App\Equipment;
 
 class Computer extends Model
 {
@@ -16,7 +13,7 @@ class Computer extends Model
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function employee(){
-        return $this->belongsTo('Employee', 'computer_id');
+        return $this->belongsTo('App\Employee', 'computer_id');
     }
 
     /**
@@ -24,7 +21,7 @@ class Computer extends Model
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function workstation(){
-        return $this->belongsTo('Workstation', 'computer_id');
+        return $this->belongsTo('App\Workstation', 'computer_id');
     }
 
     /**
@@ -32,7 +29,7 @@ class Computer extends Model
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function equipment(){
-        return $this->hasMany('Equipment');
+        return $this->hasMany('App\Equipment');
     }
 
 }

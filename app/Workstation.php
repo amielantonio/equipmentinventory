@@ -3,8 +3,6 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Employee;
-use App\Computer;
 
 
 class Workstation extends Model
@@ -15,7 +13,7 @@ class Workstation extends Model
      * @return \Illuminate\Database\Eloquent\Builder|static
      */
     public function computer(){
-        return $this->has('Computer');
+        return $this->has('App\Computer');
     }
 
     /**
@@ -23,6 +21,6 @@ class Workstation extends Model
      * @return \Illuminate\Database\Eloquent\Builder|static
      */
     public function employee(){
-        return $this->has('Employee');
+        return $this->has('App\Employee');
     }
 }

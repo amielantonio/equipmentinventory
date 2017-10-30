@@ -16,17 +16,11 @@ class EmployeeController extends Controller
      */
     public function index()
     {
-//        $employeesCollection = new Employee();
-//
-//        $employees = $employeesCollection::all();
-//
-//        return view('employees.employees', compact('employees'));
+        $employeesCollection = new Employee();
 
-        $employee = new Employee;
+        $employees = $employeesCollection::all();
 
-        $computer = $employee->find(1)->computer();
-
-        dd($computer);
+        return view('employees.employees', compact('employees'));
     }
 
 
@@ -38,7 +32,9 @@ class EmployeeController extends Controller
     public function get(){
 
         $employee = new Employee;
-        $employees = $employee->all();
+//        $employees = $employee->all();
+
+        $employees = $employee->computer()->get();
 
         return response()->json( $employees );
 
@@ -70,6 +66,7 @@ class EmployeeController extends Controller
         $employee->email = $request->email;
         $employee->contact = $request->contact;
         $employee->position = $request->position;
+        $employee->computer_id = $request->computer_id;
 
         // Save
         $employee->save();

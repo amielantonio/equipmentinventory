@@ -3,8 +3,6 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Computer;
-use App\Category;
 
 class Equipment extends Model
 {
@@ -15,7 +13,7 @@ class Equipment extends Model
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function computer(){
-        return $this->belongsTo('Computer', 'equipment_id');
+        return $this->belongsTo('App\Computer', 'equipment_id');
     }
 
     /**
@@ -24,7 +22,7 @@ class Equipment extends Model
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function category(){
-        return $this->belongsTo( 'Category','category_id');
+        return $this->belongsTo( 'App\Category','category_id');
     }
 
 }

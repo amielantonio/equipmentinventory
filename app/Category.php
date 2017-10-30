@@ -2,7 +2,6 @@
 
 namespace App;
 
-use App\Equipment;
 use Illuminate\Database\Eloquent\Model;
 
 class Category extends Model
@@ -15,7 +14,7 @@ class Category extends Model
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function equipment(){
-        return $this->hasMany('Equipment');
+        return $this->hasMany('App\Equipment');
     }
 
 }

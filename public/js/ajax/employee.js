@@ -67,7 +67,8 @@
                         { data: "last_name"},
                         { data: "email" },
                         { data: "contact" },
-                        { data: "position" }
+                        { data: "position" },
+                        { data: "computer_id" }
                     ],
                     columnDefs: [ {
                         searchable: false,

@@ -39,6 +39,7 @@
                                     <th>Email</th>
                                     <th>Contact Information</th>
                                     <th>Position</th>
+                                    <th>Assigned Computer</th>
                                 </tr>
                                 </thead>
 
