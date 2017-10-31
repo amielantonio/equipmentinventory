@@ -24,7 +24,7 @@
         <li>
             <a href="{{route('dashboard')}}">
                 <span class="icon"><i class="fa fa-dashboard"></i></span>
-                <span>Dashboard</span> <span class="badge badge-warning">TODO</span>
+                <span>Dashboard</span> <span class="badge badge-primary">BETA</span>
             </a>
         </li>
         {{-- END DASHBOARD--}}
@@ -56,9 +56,57 @@
         {{-- END WORKSTATION --}}
 
         <li class="has-child">
+            <a href="{{ route('employees.index') }}">
+                <span class="icon"><i class="fa fa-address-book-o"></i></span>
+                <span>Employees</span>
+                {{--<span class="link-icon"><i class="fa fa-chevron-right"></i></span>--}}
+            </a>
+            <ul class="sub-menu">
+                <li>
+                    <a href="{{ route('employees.index') }}">
+                        <span>View All</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('employees.create') }}">
+                        <span>Add New</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+        {{-- END EMPLOYEE --}}
+
+        <li class="has-child">
+            <a href="{{ route('computers.index') }}">
+                <span class="icon"><i class="fa fa-desktop"></i></span>
+                <span>Computers</span>
+                {{--<span class="link-icon"><i class="fa fa-chevron-right"></i></span>--}}
+            </a>
+            <ul class="sub-menu">
+                <li>
+                    <a href="{{ route('computers.index') }}">
+                        <span>View All</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('computers.create') }}">
+                        <span>Add New</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('computer-build') }}">
+                        <span>Build PC </span><span class="badge badge-warning">TODO</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        {{-- END COMPUTER--}}
+
+        <li class="has-child">
             <a href="{{route('equipment.index')}}">
                 <span class="icon"><i class="fa fa-cube"></i></span>
-                <span>Equipment</span>
+                <span>Equipments</span>
                 {{--<span class="link-icon"><i class="fa fa-chevron-right"></i></span>--}}
             </a>
             <ul class="sub-menu">
@@ -81,54 +129,6 @@
         </li>
 
         {{-- END EQUIPMENTS--}}
-
-        <li class="has-child">
-            <a href="{{ route('employees.index') }}">
-                <span class="icon"><i class="fa fa-address-book-o"></i></span>
-                <span>Employee</span>
-                {{--<span class="link-icon"><i class="fa fa-chevron-right"></i></span>--}}
-            </a>
-            <ul class="sub-menu">
-                <li>
-                    <a href="{{ route('employees.index') }}">
-                        <span>View All</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ route('employees.create') }}">
-                        <span>Add New</span>
-                    </a>
-                </li>
-            </ul>
-        </li>
-
-        {{-- END EMPLOYEE --}}
-
-        <li class="has-child">
-            <a href="{{ route('computers.index') }}">
-                <span class="icon"><i class="fa fa-desktop"></i></span>
-                <span>Computer</span>
-                {{--<span class="link-icon"><i class="fa fa-chevron-right"></i></span>--}}
-            </a>
-            <ul class="sub-menu">
-                <li>
-                    <a href="{{ route('computers.index') }}">
-                        <span>View All</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ route('computers.create') }}">
-                        <span>Add New</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ route('computer-build') }}">
-                        <span>Build PC </span><span class="badge badge-warning">TODO</span>
-                    </a>
-                </li>
-            </ul>
-        </li>
-        {{-- END COMPUTER--}}
 
 
         <li class="has-child">

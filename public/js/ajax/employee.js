@@ -46,13 +46,12 @@
         //Get Employee resources
         var table = $('#employee-table');
 
-        $.ajax({
+       $.ajax({
             "url":"/employee/get",
             "method": "GET",
             "dataType": "json",
             success: function( data ){
 
-                console.log( data );
                 var t = table.DataTable({
                     "paging": true,
                     "lengthChange": false,
@@ -68,7 +67,21 @@
                         { data: "email" },
                         { data: "contact" },
                         { data: "position" },
-                        { data: "computer_id" }
+                        {
+                            data: "computer",
+                            render: function( data, type, row, meta){
+                                if (type === 'display'){
+                                    if( data[0] !== undefined){
+                                        return "<a href='#' class='color-light' data-toggle='modal' data-target='#specs-modal'>" +
+                                            "<i class='fa fa-desktop'></i> "+
+                                            data['0']['computer_name'] +
+                                            "</a>"
+                                    }
+                                }
+
+                            },
+                            defaultContent: "No PC yet"
+                        }
                     ],
                     columnDefs: [ {
                         searchable: false,

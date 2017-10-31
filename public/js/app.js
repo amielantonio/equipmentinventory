@@ -28,7 +28,7 @@
                     return;
                 }else{
                     $(this).children('.sub-menu')
-                        .addClass('show');
+                        .addClass('showMenu');
                 }
             }
 
@@ -36,9 +36,9 @@
 
         menuItem.on( 'mouseleave', function(){
 
-            if( $(this).children('.sub-menu').hasClass('show')){
+            if( $(this).children('.sub-menu').hasClass('showMenu')){
                 $(this).children('.sub-menu')
-                    .removeClass('show');
+                    .removeClass('showMenu');
             }
 
         });

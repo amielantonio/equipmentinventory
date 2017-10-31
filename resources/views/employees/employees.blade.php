@@ -6,7 +6,7 @@
 @endsection
 
 @section('card-title')
-    Employees
+    Show All Employees <a href="{{ route('employees.create') }}" class="color-light"><i class="fa fa-plus-circle"></i></a>
 @endsection
 
 @section('page-content')
@@ -63,6 +63,23 @@
     </div>
     {{-- end container --}}
 
+    <div class="modal fade" id="specs-modal" tabindex="-1" role="dialog" aria-labelledby="specs-modal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h5 class="modal-title">Computer Specs</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <div class="modal-body">
+                    This here is the specs
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 

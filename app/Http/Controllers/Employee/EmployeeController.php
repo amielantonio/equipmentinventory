@@ -25,16 +25,16 @@ class EmployeeController extends Controller
 
 
     /**
-     * Display the list of resources without rendering a view
+     * Display the list of resources
      *
      * @return \Illuminate\Http\JsonResponse
      */
     public function get(){
 
         $employee = new Employee;
-//        $employees = $employee->all();
 
-        $employees = $employee->computer()->get();
+        $employees = $employee->all();
+
 
         return response()->json( $employees );
 

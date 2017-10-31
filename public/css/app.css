@@ -106,20 +106,33 @@ div[class^="col-"]{
 /* Typography
  ******************************************/
 
-.color-primary{
+.color-primary,
+.color-primary:hover{
     color: var(--primary);
 }
-.color-info{
+.color-info,
+.color-info:hover{
     color: var(--info);
 }
-.color-secondary{
+.color-secondary,
+.color-secondary:hover{
     color: var(--secondary);
 }
-.color-warning{
+.color-warning,
+.color-warning:hover{
     color: var(--warning);
 }
-.color-danger{
+.color-danger,
+.color-danger:hover{
     color: var(--danger);
+}
+.color-light,
+.color-light:hover{
+    color: #fff;
+}
+.color-dark,
+.color-dark:hover{
+    color: var(--black);
 }
 
 /* Helper Class
@@ -389,15 +402,13 @@ main::before, main::after{
 
 /*animations*/
 
-
-
-.show{
+.showMenu{
     visibility: visible !important;
     opacity: 1 !important;
 
     transition: 0.3s all !important;
 }
-.show > li > a > span{
+.showMenu > li > a > span{
     margin-left: 0 !important;
 }
 
@@ -897,17 +908,23 @@ label > .required{
     width: 100%;
 }
 .dataTables_wrapper .dataTables_filter{
-    margin-bottom: 30px;
+    margin-bottom: 15px;
 }
 .dataTables_filter label{
     color: #fff;
 }
-
+.dataTables_filter label input{
+    background: transparent;
+    color: white;
+    width: 300px;
+    padding: 5px 15px;
+}
 table.dataTable tbody tr{
     background-color: transparent;
 }
 table.dataTable.no-footer{
-    border-bottom: 1px solid var(--darkslategray);
+    /*border-bottom: 1px solid var(--darkslategray);*/
+    border-bottom: none;
 }
 table.dataTable thead th, table.dataTable thead td{
     border-bottom: 1px solid var(--darkslategray);
@@ -919,6 +936,24 @@ table.dataTable thead th, table.dataTable thead td{
 }
 table.dataTable tbody th, table.dataTable tbody td{
     padding: 15px 10px;
+    border-bottom: 1px solid var(--darkslategray);
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.current, .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover{
+    color: #fff !important;
+    background: var(--primary) !important;
+    border-radius: 0;
+    border: none;
+}
+.dataTables_wrapper .dataTables_paginate{
+    float: none;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
 }
 /*******************************************
  * CUSTOM GRID
