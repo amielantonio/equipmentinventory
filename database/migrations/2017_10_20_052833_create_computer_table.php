@@ -19,7 +19,7 @@ class CreateComputerTable extends Migration
 
             $table->string('processor', 50);
             $table->string('ram', 50);
-            $table->string('graphics_card', 50);
+            $table->string('graphics_card', 50)->nullable();
 
             $table->enum("system_type", ['x64', 'x32']);
             $table->string('operating_system', 50);

@@ -6,7 +6,7 @@
 @endsection
 
 @section('card-title')
-    Computers
+    Show All Computers
 @endsection
 
 @section('page-content')
@@ -35,10 +35,11 @@
                                     <tr>
                                         <th>#</th>
                                         <th>Computer Name</th>
-                                        <th>Specs</th>
                                         <th>Operating System</th>
-                                        <th>Product ID</th>
+                                        <th>Peripherals</th>
+                                        <th>Specs</th>
                                         <th>Status</th>
+                                        <th>User</th>
                                     </tr>
                                 </thead>
                             </table>

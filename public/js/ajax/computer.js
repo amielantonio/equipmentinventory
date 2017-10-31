@@ -51,6 +51,8 @@
             "dataType": "json",
             success: function( data ){
 
+                console.log( data );
+
                 var t = table.DataTable({
                     "paging": true,
                     "lengthChange": false,
@@ -61,10 +63,11 @@
                     columns: [
                         { data: null, sortable: false},
                         { data: "computer_name" },
-                        { data: "computer_parts" },
                         { data: "operating_system" },
-                        { data: "os_product_id" },
-                        { data: "status" }
+                        { data: "peripherals" },
+                        { data: "specs" },
+                        { data: "status" },
+                        { data: "user" }
                     ],
                     data: data,
                     columnDefs: [ {

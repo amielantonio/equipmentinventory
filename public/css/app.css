@@ -567,7 +567,7 @@ main::before, main::after{
 /* FG Form Group
  ******************************************/
 
-.fg-form > .fg-form-group{
+.fg-form .fg-form-group{
     margin-bottom: 30px;
     position: relative;
 }
@@ -896,6 +896,86 @@ label > .required{
  * STEP WIZARD
  ******************************************/
 
+
+.step-wizard,
+.step-wizard .step-wizard-progress{
+    width: 100%;
+    position: relative;
+    display: block;
+}
+.step-wizard-progress{
+    margin-bottom: 30px;
+}
+
+/* Progress bar Styles*/
+
+.step-wizard-progress .progress{
+    /*display*/
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    /*position*/
+    padding: 30px 0;
+    margin: 0;
+
+    /*design*/
+    background: transparent;
+    list-style: none;
+
+    font-size: 14px;
+}
+.progress > li{
+    width: 100%;
+    text-align: center;
+}
+.progress > li > a{
+    color: #fff;
+    width: 100%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.progress > li > a:hover{
+    text-decoration: none;
+}
+.progress > li::before{
+    content: "";
+    border: 2px solid red;
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    border-radius: 50%;
+    bottom: -20px;
+    margin-left: -7px;
+    background: white;
+
+
+}
+.progress > li::after{
+    content: "";
+    position: absolute;
+    bottom: -12px;
+    border-top: 1px solid #fff;
+    width: 25%;
+    z-index: -1;
+}
+.progress > li:last-child::after{
+    content: "";
+    border-top: none;
+}
+
+
+/* Fieldsets*/
+
+.step-wizard-field {
+    display: none;
+}
+.step-wizard .step-wizard-field:first-child{
+    display: block;
+}
 
 /*******************************************
  * Data Tables @override Datatables
