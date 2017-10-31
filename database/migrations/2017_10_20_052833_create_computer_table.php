@@ -15,7 +15,7 @@ class CreateComputerTable extends Migration
     {
         Schema::create('computers', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('computer_name', 50);
+            $table->string('computer_name', 50)->unique();
 
             $table->string('processor', 50);
             $table->string('ram', 50);
@@ -23,7 +23,7 @@ class CreateComputerTable extends Migration
 
             $table->enum("system_type", ['x64', 'x32']);
             $table->string('operating_system', 50);
-            $table->string('product_id', 50);
+            $table->string('product_id', 50)->unique();
 
             $table->text('peripherals');
 
