@@ -12,6 +12,7 @@
         main_menu();
         frosted_form_control();
         form_wizard();
+        step_wizard();
     });
 
     /**
@@ -116,6 +117,94 @@
             $(this).next('.sub-menu').toggleClass('show');
 
         });
+
+    }
+
+    /**
+     * Step Wizard
+     */
+    function step_wizard(){
+        // Set Variables
+        var progressLink = $('.step-progress > li > a');
+        var wizardPane = $('.step-wizard-pane');
+        var btnNext = $('[data-step-button="next"]');
+        var btnPrev = $('[data-step-button="previous"]');
+
+        // Set Default Active
+        var target = progressLink.eq( 0 ).attr('href');
+        progressLink.eq( 0 ).addClass('active');
+        $( target ).addClass('active');
+
+        // Create a Linked List data structure
+        var currentLinkIndex = progressLink.index();
+        var currentPane = progressLink.eq( currentLinkIndex ).attr('href');
+
+
+        //Click event for next button
+        btnNext.on( 'click', function(){
+            var nextLinkIndex = currentLinkIndex + 1;
+            var nextPane = progressLink.eq( nextLinkIndex ).attr('href');
+
+            //reset working area
+            progressLink.removeClass('active');
+            wizardPane.removeClass('active');
+
+            //add finished class to current link
+            progressLink.eq( currentLinkIndex ).addClass('finished');
+
+            //Process next active work area
+            progressLink.eq( nextLinkIndex ).addClass('active');
+            $(nextPane).addClass('active');
+
+            //Set as Current as currentIndex
+            currentLinkIndex = nextLinkIndex;
+            currentPane = nextPane;
+
+        });
+
+        //Click event for previous button
+        btnPrev.on( 'click', function(){
+            var prevLinkIndex = currentLinkIndex - 1;
+            var prevPane = progressLink.eq( prevLinkIndex ).attr('href');
+
+            //reset working area
+            progressLink.removeClass('active');
+            wizardPane.removeClass('active');
+
+            //add finished class to current link
+            progressLink.eq( currentLinkIndex ).addClass('finished');
+
+            //Process prev active work area
+            progressLink.eq( prevLinkIndex ).addClass('active');
+            $(prevPane).addClass('active');
+
+            //Set as Current as currentIndex
+            currentLinkIndex = prevLinkIndex;
+            currentPane = prevPane;
+        });
+
+
+        // On Click event for Progress Link.
+
+        progressLink.on( 'click', function(){
+            if( !$(this).hasClass('finished') ){
+                return;
+            }
+
+            //Add finished to the previous Link
+            progressLink.eq( currentLinkIndex ).addClass('finished');
+
+            //reset working area
+            progressLink.removeClass('active');
+            wizardPane.removeClass('active');
+
+            $(this).addClass('active');
+            $( $(this).attr('href') ).addClass('active');
+
+            currentLinkIndex = progressLink.index( this );
+            currentPane = progressLink.eq( currentLinkIndex ).attr('href');
+        });
+
 
     }
 
