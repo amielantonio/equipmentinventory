@@ -16,7 +16,11 @@ class ComputerController extends Controller
      */
     public function index()
     {
-        return view('computers.computer');
+        $computer = new Computer;
+        $computers = $computer->all();
+
+
+        return view('computers.computer', compact('computers'));
     }
 
     /**
@@ -51,9 +55,22 @@ class ComputerController extends Controller
         $computer = new Computer;
 
         $computer->computer_name = $request->computer_name;
-        $computer->computer_parts = $request->computer_parts;
         $computer->operating_system = $request->operating_system;
-        $computer->os_product_id = $request->product_id;
+        $computer->product_id = $request->product_id;
+        $computer->system_type = $request->system_type;
+
+        $computer->processor = $request->processor;
+        $computer->ram = $request->ram;
+        $computer->graphics_card = $request->graphics_card;
+
+        $computer->peripherals = '['.
+            "\'mouse\' =>" . $request->mouse. ",".
+            "\'keyboard\' =>" . $request->keyboard. ",".
+            "\'monitor\' =>" . $request->monitor. ",".
+            "\'webcam\' =>" . $request->webcam. ",".
+        ']';
+
+        $computer->employee_id = $request->user_id;
         $computer->status = $request->status;
 
         $computer->save();

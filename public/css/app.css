@@ -111,30 +111,37 @@ div[class^="col-"]{
 .color-primary,
 .color-primary:hover{
     color: var(--primary);
+    text-decoration: none;
 }
 .color-info,
 .color-info:hover{
     color: var(--info);
+    text-decoration: none;
 }
 .color-secondary,
 .color-secondary:hover{
     color: var(--secondary);
+    text-decoration: none;
 }
 .color-warning,
 .color-warning:hover{
     color: var(--warning);
+    text-decoration: none;
 }
 .color-danger,
 .color-danger:hover{
     color: var(--danger);
+    text-decoration: none;
 }
 .color-light,
 .color-light:hover{
     color: #fff;
+    text-decoration: none;
 }
 .color-dark,
 .color-dark:hover{
     color: var(--black);
+    text-decoration: none;
 }
 
 /* Helper Class
@@ -772,6 +779,25 @@ label > .required{
     box-shadow: none;
 }
 
+/*Outline buttons*/
+.btn-outline-primary{
+    color: #007bff;
+    background-color: transparent;
+    background-image: none;
+    border-color: #007bff;
+}
+
+
+/*Helper Buttons*/
+.btn-width-auto{
+    width: auto;
+}
+.btn-circle{
+    border-radius: 50%;
+    width: auto;
+    height: auto;
+}
+
 /*******************************************
  * ALERTS @override bootstrap alerts
  ******************************************/
@@ -1045,9 +1071,17 @@ label > .required{
 .button-group.center{
     justify-content: center;
 }
-.button-group > button ~ button{
+.button-group > [data-step-button] ~ [data-step-button]{
     margin-left: 10px;
 }
+[data-step-button]{
+    border: 1px solid transparent;
+    transition: border 0.3s;
+}
+[data-step-button]:hover{
+    border: 1px solid var(--info);
+}
+
 
 
 /*******************************************

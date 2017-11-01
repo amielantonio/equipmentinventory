@@ -63,6 +63,7 @@
     </div>
     {{-- end container --}}
 
+    {{--MODAL--}}
     <div class="modal fade" id="specs-modal" tabindex="-1" role="dialog" aria-labelledby="specs-modal">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -80,7 +81,7 @@
             </div>
         </div>
     </div>
-
+    {{-- end modal--}}
 
 
 @endsection

@@ -51,7 +51,7 @@
             "dataType": "json",
             success: function( data ){
 
-                console.log( data );
+                // console.log( data );
 
                 var t = table.DataTable({
                     "paging": true,
@@ -60,21 +60,69 @@
                     "ordering": true,
                     "info": false,
                     "autoWidth": true,
+                    data: data,
                     columns: [
                         { data: null, sortable: false},
                         { data: "computer_name" },
-                        { data: "operating_system" },
-                        { data: "peripherals" },
-                        { data: "specs" },
-                        { data: "status" },
-                        { data: "user" }
+                        {
+                            data: null,
+                            render: function( data, type, row, meta){
+                                if( type === 'display'){
+                                    return "<a href='#' class='color-light' data-toggle='modal' data-target='#os-modal' data-source='"+
+                                         data['product_id'] +"'>" +
+                                        " <span class='badge badge-primary mr-10'><i class='fa fa-key'></i></span> "+
+                                        data['operating_system'] +"<br />" +
+                                        "</a>";
+                                }
+                            },
+                            defaultContent: "No OS installed"
+                        },
+                        {
+                            data: null,
+                            render: function( data, type, row, meta ){
+                                if( type === 'display'){
+                                    return "<a href='#' class='color-light' data-toggle='modal' data-target='#specs-modal'>" +
+                                        "<i class='fa fa-microchip mr-10'></i> View" +
+                                        "</a>";
+                                }
+                            },
+                            defaultContent: "No Specs indicated"
+                        },
+                        {
+                            data: null,
+                            render: function( data, type, row, meta ){
+                                if( type === 'display'){
+                                    return "<a href='#' class='color-light' data-toggle='modal' data-target='#peripherals-modal'>" +
+                                        "<i class='fa fa-keyboard-o mr-10'></i> View" +
+                                        "</a>";
+                                }
+                            },
+                            defaultContent: "No Peripherals Used"
+                        },
+                        {
+                            data: "status",
+                            render: function( data, type, row, meta ){
+                                if (type === 'display'){
+
+                                    if( data == "Working" ){
+                                        return "<span class='badge badge-primary'>" + data + "</span>"
+                                    }else{
+                                        return "<span class='badge badge-warning'>" + data + "</span>"
+                                    }
+
+
+                                }
+                            },
+                            defaultContent: "No status defined"
+                        },
+                        { data: "employee_id" }
                     ],
-                    data: data,
                     columnDefs: [ {
                         searchable: false,
                         orderable: false,
                         targets: 0
                     } ],
+
                     order: [[ 1, 'asc' ]]
                 });
 
@@ -88,5 +136,9 @@
         // END AJAX
 
     });
+
+    function parsePeripherals( array ){
+
+    }
 
 })(jQuery);

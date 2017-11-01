@@ -36,8 +36,8 @@
                                         <th>#</th>
                                         <th>Computer Name</th>
                                         <th>Operating System</th>
-                                        <th>Peripherals</th>
                                         <th>Specs</th>
+                                        <th>Peripherals</th>
                                         <th>Status</th>
                                         <th>User</th>
                                     </tr>
@@ -57,6 +57,82 @@
         {{-- end row--}}
     </div>
     {{-- end container --}}
+
+    {{-- Operating System Modal--}}
+    <div class="modal fade" id="os-modal" tabindex="-1" role="dialog" aria-labelledby="os-modal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h5 class="modal-title">Operating System</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row">
+
+                            <div class="col-sm-5">
+                                <p class=font-weight-bold>Operating System: </p>
+                                <p class=font-weight-bold>Product Key: </p>
+                            </div>
+                            <div class="col-sm-7">
+                                <p id="os-value"></p>
+                                <p id="os-id"></p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                {{--end modal body--}}
+            </div>
+            {{--end modal content--}}
+        </div>
+        {{-- end modal dialog--}}
+    </div>
+    {{-- end Operating System Modal--}}
+
+    {{-- Specs Modal--}}
+    <div class="modal fade" id="specs-modal" tabindex="-1" role="dialog" aria-labelledby="specs-modal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h5 class="modal-title">Specs</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <div class="modal-body">
+                    This here is the specs
+                </div>
+            </div>
+        </div>
+    </div>
+    {{-- End Specs modal--}}
+
+    {{-- Peripherals Moda --}}
+    <div class="modal fade" id="peripherals-modal" tabindex="-1" role="dialog" aria-labelledby="peripherals-modal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h5 class="modal-title">Computer Specs</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <div class="modal-body">
+                    This here is the specs
+                </div>
+            </div>
+        </div>
+    </div>
+    {{-- end Peripherals Modal--}}
 
 @endsection
 

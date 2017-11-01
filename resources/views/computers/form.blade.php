@@ -37,7 +37,7 @@
                     </li>
                     <li>
                         <a href="#specs-pane">
-                            <i class="fa fa-puzzle-piece fa-2x icon"></i>
+                            <i class="fa fa-microchip fa-2x icon"></i>
                             <span>Specs</span>
                         </a>
                     </li>
@@ -80,7 +80,7 @@
                     <label for="system_type">System Type <span class="required">*</span></label>
                 </div>
 
-                <div class="button-group left">
+                <div class="button-group center">
                     <button type="button" class="btn btn-properties" data-step-button="next">
                         <span>Next</span> <i class="fa fa-chevron-right"></i>
                     </button>
@@ -106,7 +106,7 @@
                     <label for="graphics_card">Graphics Card</label>
                 </div>
 
-                <div class="button-group left">
+                <div class="button-group center">
                     <button type="button" class="btn btn-properties" data-step-button="previous">
                         <i class="fa fa-chevron-left"></i> <span>Previous</span>
                     </button>
@@ -140,7 +140,7 @@
                     <label for="webcam">Webcam <span class="required">*</span></label>
                 </div>
 
-                <div class="button-group left">
+                <div class="button-group center">
                     <button type="button" class="btn btn-properties" data-step-button="previous">
                         <i class="fa fa-chevron-left"></i> <span>Previous</span>
                     </button>
@@ -160,12 +160,21 @@
                     <label for="user_id">User</label>
                 </div>
 
-                <div class="button-group left">
+                <div class="fg-form-group">
+
+                    <select name="status" class="fg-form-control" id="status">
+                        <option>Working</option>
+                        <option>Broken</option>
+                    </select>
+                    <label for="status">User</label>
+                </div>
+
+                <div class="button-group center">
                     <button type="button" class="btn btn-properties" data-step-button="previous">
                         <i class="fa fa-chevron-left"></i> <span>Previous</span>
                     </button>
-                    <button type="button" class="btn btn-properties">
-                        <span>Submit</span> <i class="fa fa-chevron-right"></i>
+                    <button type="button" class="btn btn-properties submit">
+                        <span>Submit</span>
                     </button>
                 </div>
                 {{-- end button group--}}
