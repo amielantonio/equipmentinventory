@@ -52,6 +52,8 @@
             "dataType": "json",
             success: function( data ){
 
+                console.log( data );
+
                 var t = table.DataTable({
                     "paging": true,
                     "lengthChange": false,
