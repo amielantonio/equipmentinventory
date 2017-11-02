@@ -3,9 +3,13 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Employee;
 
 class Computer extends Model
 {
+
+    protected $appends = ['employees'];
+
 
 
     /**
@@ -14,5 +18,16 @@ class Computer extends Model
      */
     public function employee(){
         return $this->belongsTo('App\Employee', 'computer_id');
+    }
+
+
+    /**
+     * Add Assigned Employee to the computer as a response along with the computer response
+     *
+     * @return \Illuminate\Database\Eloquent\Collection|static[]
+     */
+    public function getEmployeesAttribute(){
+
+        return $this->employee()->get();
     }
 }

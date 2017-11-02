@@ -237,6 +237,50 @@ div[class^="col-"]{
     border-right: 1px solid #fff;
 }
 
+/*******************************************
+ * CUSTOM GRID
+ ******************************************/
+
+.fg-grid{
+    display: flex;
+    flex-flow: row wrap;
+}
+.grid-1{
+    flex-basis: 8.333333333%;
+}
+.grid-2{
+    flex-basis: 16.666666665%;
+}
+.grid-3{
+    flex-basis: 24.99999%;
+}
+.grid-4{
+    flex-basis: 33.3333333332%;
+}
+.grid-5{
+    flex-basis: 41.666666665%;
+}
+.grid-6{
+    flex-basis: 50%;
+}
+.grid-7{
+    flex-basis: 58.33333331%;
+}
+.grid-8{
+    flex-basis: 66.666666664%;
+}
+.grid-9{
+    flex-basis: 74.999999997%;
+}
+.grid-10{
+    flex-basis: 83.333333333%;
+}
+.grid-11{
+    flex-basis: 91.666666663%;
+}
+.grid-12{
+    flex-basis: 100%;
+}
 
 /*******************************************
  * MAIN
@@ -1127,49 +1171,38 @@ table.dataTable tbody th, table.dataTable tbody td{
 
 
 }
+
 /*******************************************
- * CUSTOM GRID
+ * TOOLBOX
  ******************************************/
 
-.fg-grid{
+.toolbox{
+    /*display*/
     display: flex;
-    flex-flow: row wrap;
-}
-.grid-1{
-    flex-basis: 8.333333333%;
-}
-.grid-2{
-    flex-basis: 16.666666665%;
-}
-.grid-3{
-    flex-basis: 24.99999%;
-}
-.grid-4{
-    flex-basis: 33.3333333332%;
-}
-.grid-5{
-    flex-basis: 41.666666665%;
-}
-.grid-6{
-    flex-basis: 50%;
-}
-.grid-7{
-    flex-basis: 58.33333331%;
-}
-.grid-8{
-    flex-basis: 66.666666664%;
-}
-.grid-9{
-    flex-basis: 74.999999997%;
-}
-.grid-10{
-    flex-basis: 83.333333333%;
-}
-.grid-11{
-    flex-basis: 91.666666663%;
-}
-.grid-12{
-    flex-basis: 100%;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: auto;
+
+    /*postion*/
+    position: relative;
+
+    /*design*/
 }
 
+.toolbox > .toolbox-tool{
+    color: #fff;
+    border-radius: 50%;
+    padding: 0.65rem;
+    margin: 0;
+    line-height: 0;
 
+    transition: 0.3s all;
+}
+.toolbox > .toolbox-tool:hover{
+    background: var(--primary);
+}
+
+.toolbox-tool ~ .toolbox-tool{
+    /*margin-left: 15px;*/
+}

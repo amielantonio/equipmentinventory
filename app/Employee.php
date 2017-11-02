@@ -20,7 +20,7 @@ class Employee extends Model
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
     public function computer(){
-        return $this->hasOne('App\Computer', 'employee_id');
+        return $this->hasOne('App\Computer');
     }
 
     /**

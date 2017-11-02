@@ -78,49 +78,57 @@
                             defaultContent: "No OS installed"
                         },
                         {
-                            data: null,
-                            render: function( data, type, row, meta ){
-                                if( type === 'display'){
-                                    return "<a href='#' class='color-light' data-toggle='modal' data-target='#specs-modal'>" +
-                                        "<i class='fa fa-microchip mr-10'></i> View" +
-                                        "</a>";
-                                }
-                            },
-                            defaultContent: "No Specs indicated"
-                        },
-                        {
-                            data: null,
-                            render: function( data, type, row, meta ){
-                                if( type === 'display'){
-                                    return "<a href='#' class='color-light' data-toggle='modal' data-target='#peripherals-modal'>" +
-                                        "<i class='fa fa-keyboard-o mr-10'></i> View" +
-                                        "</a>";
-                                }
-                            },
-                            defaultContent: "No Peripherals Used"
-                        },
-                        {
                             data: "status",
                             render: function( data, type, row, meta ){
                                 if (type === 'display'){
 
-                                    if( data == "Working" ){
-                                        return "<span class='badge badge-primary'>" + data + "</span>"
-                                    }else{
-                                        return "<span class='badge badge-warning'>" + data + "</span>"
+                                    switch( data.toString() ){
+                                        case "Working":
+                                            return "<span class='badge badge-primary'>" + data + "</span>";
+                                            break;
+                                        case "Broken":
+                                            return "<span class='badge badge-warning'>" + data + "</span>";
+                                            break;
+                                        default:
+                                            return "<span class='badge badge-danger'>" + data + "</span>";
+                                            break;
                                     }
-
 
                                 }
                             },
                             defaultContent: "No status defined"
                         },
-                        { data: "employee_id" }
+                        {
+                            data: "employee_information",
+                            render: function( data, type, row, meta){
+                                console.log( data );
+                                return data;
+                            },
+                            defaultContent: "<span class='badge badge-success'>Spare</span>"
+                        },
+                        {
+                            data: null,
+                            render: function( data, type, row, meta ){
+                                if( type === 'display'){
+                                    return "<div class='toolbox'>" +
+                                        "<a href='#' class='toolbox-tool'>" +
+                                            "<i class='fa fa-eye'></i></a>" +
+                                        "<a href='/computers/"+ data['id'] +"/edit' class='toolbox-tool'>" +
+                                            "<i class='fa fa-edit'></i></a>" +
+                                        "" +
+                                        "<a href='/computers/"+ data['id'] +"/destroy' class='toolbox-tool'>" +
+                                            "<i class='fa fa-trash'></i></a>" +
+                                        "</div>"
+
+                                }
+                            },
+                            defaultContent: "Options"
+                        }
                     ],
                     columnDefs: [ {
                         searchable: false,
                         orderable: false,
-                        targets: 0
+                        targets: [0, -1]
                     } ],
 
                     order: [[ 1, 'asc' ]]

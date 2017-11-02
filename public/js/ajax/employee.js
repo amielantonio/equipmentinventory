@@ -70,26 +70,42 @@
                         { data: "contact" },
                         { data: "position" },
                         {
-                            data: "computer",
+                            data: 'computer',
                             render: function( data, type, row, meta){
-                                if (type === 'display'){
-                                    if( data[0] !== undefined){
-                                        return "<a href='#' class='color-light' data-toggle='modal' data-target='#specs-modal'>" +
-                                            "<i class='fa fa-desktop'></i> "+
-                                            data['0']['computer_name'] +
-                                            "</a>"
-                                    }
+                            if (type === 'display'){
+                                if( data[0] !== undefined){
+                                    return "<a href='#' class='color-light' data-toggle='modal' data-target='#specs-modal'>" +
+                                        "<i class='fa fa-desktop'></i> "+
+                                        data['0']['computer_name'] +
+                                        "</a>"
                                 }
+                            }
 
+                        },
+                            defaultContent: "No PC Assigned"
+                        },
+                        {
+                            data: null,
+                            render: function( data, type, row, meta ){
+                                if( type === 'display'){
+                                    return "<div class='toolbox'>" +
+                                            "<a href='/employees/"+ data['id'] +"/edit' class='toolbox-tool'>" +
+                                                "<i class='fa fa-edit'></i></a>" +
+                                            "" +
+                                            "<a href='/employees/"+ data['id'] +"/destroy' class='toolbox-tool'>" +
+                                                "<i class='fa fa-trash'></i></a>" +
+                                        "</div>"
+
+                                }
                             },
-                            defaultContent: "No PC yet"
+                            defaultContent: "Options"
                         }
                     ],
-                    columnDefs: [ {
+                    columnDefs: [{
                         searchable: false,
                         orderable: false,
-                        targets: 0
-                    } ],
+                        targets: [0,-1]
+                    }],
                     order: [[ 1, 'asc' ]]
                 });
 

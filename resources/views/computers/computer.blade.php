@@ -36,10 +36,9 @@
                                         <th>#</th>
                                         <th>Computer Name</th>
                                         <th>Operating System</th>
-                                        <th>Specs</th>
-                                        <th>Peripherals</th>
                                         <th>Status</th>
                                         <th>User</th>
+                                        <th>Action</th>
                                     </tr>
                                 </thead>
                             </table>

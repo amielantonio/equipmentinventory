@@ -19,7 +19,7 @@ class ComputerTableSeeder extends Seeder
             'system_type' => 'x64',
             'operating_system' => 'Windows 10 Pro',
             'product_id' => '00330-800000-00000-AA357',
-            'peripherals' => "[\'mouse\' =>\'Zeus Mouse\',\'keyboard\' =>\'Zeus Keyboard\',\'monitor\' =>\'24\" Samsung, 19\" Samsung\',\'webcam\' =>\'\',]",
+            'peripherals' => "['mouse' =>'Zeus Mouse','keyboard' =>'Zeus Keyboard','monitor' =>'24\" Samsung, 19\" Samsung','webcam' =>'',]",
             'status' => 'Working',
             'employee_id' => '1',
         ]);

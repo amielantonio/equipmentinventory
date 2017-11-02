@@ -60,6 +60,8 @@
 
     </form>
 
+    {{ $employee }}
+
 @endsection
 
 

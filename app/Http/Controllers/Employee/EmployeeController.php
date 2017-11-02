@@ -47,7 +47,7 @@ class EmployeeController extends Controller
      */
     public function create()
     {
-        return view('employees.form');
+        return view('employees.employee-form');
     }
 
     /**
@@ -84,6 +84,8 @@ class EmployeeController extends Controller
     public function show(Employee $employee)
     {
 
+        return response()->json( $employee );
+
     }
 
     /**
@@ -94,7 +96,8 @@ class EmployeeController extends Controller
      */
     public function edit(Employee $employee)
     {
-        //
+        return view('employees.employee-form', compact('employee'));
+
     }
 
     /**

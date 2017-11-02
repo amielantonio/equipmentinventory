@@ -40,6 +40,7 @@
                                     <th>Contact Information</th>
                                     <th>Position</th>
                                     <th>Assigned Computer</th>
+                                    <th>Action</th>
                                 </tr>
                                 </thead>
 

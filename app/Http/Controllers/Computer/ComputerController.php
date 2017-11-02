@@ -64,10 +64,10 @@ class ComputerController extends Controller
         $computer->graphics_card = $request->graphics_card;
 
         $computer->peripherals = '['.
-            "\'mouse\' =>" . "\'". $request->mouse."\'". ",".
-            "\'keyboard\' =>" . "\'". $request->keyboard."\'". ",".
-            "\'monitor\' =>" . "\'". $request->monitor."\'". ",".
-            "\'webcam\' =>" . "\'". $request->webcam."\'". ",".
+            "'mouse' =>" . "'". $request->mouse."'". ",".
+            "'keyboard' =>" . "'". $request->keyboard."'". ",".
+            "'monitor' =>" . "'". $request->monitor."'". ",".
+            "'webcam' =>" . "'". $request->webcam."'". ",".
         ']';
 
         $computer->employee_id = $request->user_id;
