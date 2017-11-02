@@ -11,7 +11,7 @@
                 <div class="card">
 
                     <div class="card-header">
-                        <h5 class="card-title">
+                        <h5 class="card-title data">
                             <?= isset( $formData )? "Edit" : "Add New" ?> @yield('form-title')
                         </h5>
                     </div>

@@ -30,19 +30,9 @@ class WorkstationController extends Controller
 
         $workstations = $workstation->all();
 
-        return response()->json( $workstation );
+        return response()->json( $workstations );
     }
 
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        return view('workstation.form');
-    }
 
     /**
      * Show the form to assign user to workstation
@@ -51,15 +41,14 @@ class WorkstationController extends Controller
      */
     public function assign()
     {
-
         $employee = new Employee;
         $computer = new Computer;
 
-        $employees = $employee->doesntHave('workstation')->get();
+        $employees = $employee->all();
+        $computers = $computer->all();
 
-        dd($employees);
 
-        return view('workstation.assignStation', compact('employees'));
+        return view('workstation.assign-station', compact('employees', 'computers'));
     }
 
     /**
@@ -72,15 +61,26 @@ class WorkstationController extends Controller
     {
         $workstation = new Workstation;
 
-        $workstation->user_id = $request->user_id;
+        $workstation->employee_id = $request->employee_id;
         $workstation->computer_id = $request->computer_id;
         $workstation->location = $request->location;
+        $workstation->network_type = $request->network_type;
         $workstation->ip_address = $request->ip_address;
         $workstation->mac_address = $request->mac_address;
 
         $workstation->save();
 
         return response()->json($request->all());
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        return view('workstation.workstation-form');
     }
 
     /**

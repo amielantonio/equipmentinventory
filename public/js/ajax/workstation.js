@@ -59,13 +59,13 @@
                     "autoWidth": true,
                     columns: [
                         { data: null, sortable: false},
-                        { data: "user_id" },
-                        { data: "computer" },
+                        { data: "employee_id" },
+                        { data: "computer_id" },
                         { data: "location" },
                         { data: "network_type" },
                         { data: "ip_address" },
                         { data: "mac_address" },
-                        { data: null, sortable: false}
+                        { data: null }
                     ],
                     data: data,
                     columnDefs: [ {

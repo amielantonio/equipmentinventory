@@ -31,7 +31,7 @@ class ComputerController extends Controller
     public function create()
     {
 
-        return view('computers.form');
+        return view('computers.computer-form');
     }
 
     /**

@@ -15,10 +15,10 @@ class CreateWorkstationTable extends Migration
     {
         Schema::create('workstations', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id')->nullable();
+            $table->integer('employee_id')->nullable();
             $table->integer('computer_id')->nullable();
             $table->integer('location');
-            $table->string('network_type', 50);
+            $table->enum('network_type', ['Main Network', 'Backup Network']);
             $table->string('ip_address', "100")->unique();
             $table->string('mac_address', '100')->unique();
             $table->timestamps();

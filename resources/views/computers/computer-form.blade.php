@@ -137,7 +137,7 @@
 
                 <div class="fg-form-group">
                     <input type="text" name="webcam" id="webcam" class="fg-form-control">
-                    <label for="webcam">Webcam <span class="required">*</span></label>
+                    <label for="webcam">Webcam </label>
                 </div>
 
                 <div class="button-group center">
@@ -166,7 +166,7 @@
                         <option>Working</option>
                         <option>Broken</option>
                     </select>
-                    <label for="status">User</label>
+                    <label for="status">Status</label>
                 </div>
 
                 <div class="button-group center">

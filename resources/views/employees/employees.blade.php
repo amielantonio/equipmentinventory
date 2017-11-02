@@ -6,7 +6,7 @@
 @endsection
 
 @section('card-title')
-    Show All Employees <a href="{{ route('employees.create') }}" class="color-light"><i class="fa fa-plus-circle"></i></a>
+    Show All Employees
 @endsection
 
 @section('page-content')

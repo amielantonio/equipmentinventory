@@ -186,7 +186,9 @@
 
         // On Click event for Progress Link.
 
-        progressLink.on( 'click', function(){
+        progressLink.on( 'click', function( e ){
+            e.preventDefault();
+
             if( !$(this).hasClass('finished') ){
                 return;
             }
