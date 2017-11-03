@@ -22,6 +22,22 @@ class ComputerTableSeeder extends Seeder
             'peripherals' => "['mouse' =>'Zeus Mouse','keyboard' =>'Zeus Keyboard','monitor' =>'24\" Samsung, 19\" Samsung','webcam' =>'',]",
             'status' => 'Working',
             'employee_id' => '1',
+            'created_at' => Carbon\Carbon::now(),
+            'updated_at' => Carbon\Carbon::now()
+        ]);
+        DB::table('computers')->insert([
+            'computer_name' => "YVP - PC - 2",
+            'processor' => "Intel i5-4160 CPU @ 3.60GHz",
+            'ram' => "4.00 GB",
+            'graphics_card' => '',
+            'system_type' => 'x64',
+            'operating_system' => 'Windows 10 Pro',
+            'product_id' => '00330-800000-00000-AA358',
+            'peripherals' => "['mouse' =>'Zeus Mouse','keyboard' =>'Zeus Keyboard','monitor' =>'24\" Samsung, 19\" Samsung','webcam' =>'',]",
+            'status' => 'Working',
+            'employee_id' => '2',
+            'created_at' => Carbon\Carbon::now(),
+            'updated_at' => Carbon\Carbon::now()
         ]);
     }
 }

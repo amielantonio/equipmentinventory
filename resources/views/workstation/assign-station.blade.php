@@ -33,12 +33,7 @@
                             <span>User</span>
                         </a>
                     </li>
-                    <li>
-                        <a href="#computer-pane">
-                            <i class="fa fa-desktop fa-2x icon"></i>
-                            <span>Computer</span>
-                        </a>
-                    </li>
+
                     <li>
                         <a href="#location-pane">
                             <i class="fa fa-map fa-2x icon"></i>
@@ -56,11 +51,13 @@
 
             <fieldset class="step-wizard-pane" id="user-pane">
                 <div class="fg-form-group">
+
                     <select name="employee_id" id="employee_id" required="required" class="fg-form-control">
                         @foreach( $employees as $employee )
                             <option value="{{ $employee->id }}">{{ $employee->first_name }} {{ $employee->last_name }}</option>
                         @endforeach
                     </select>
+
 
                     <label for="user_id">Employee <span class="required">*</span></label>
                 </div>
@@ -75,30 +72,7 @@
             </fieldset>
             {{-- end first fieldset--}}
 
-            <fieldset class="step-wizard-pane" id="computer-pane">
-                <div class="fg-form-group">
-                    <select name="computer_id" id="computer_id" required="required" class="fg-form-control">
-                        @foreach( $computers as $computer )
-                            <option value="{{ $computer->id }}">{{ $computer->computer_name}}</option>
-                        @endforeach
-                    </select>
 
-                    <label for="computer_id">Computer <span class="required">*</span></label>
-                </div>
-
-
-                <div class="button-group center">
-                    <button type="button" class="btn btn-properties" data-step-button="previous">
-                        <i class="fa fa-chevron-left"></i> <span>Previous</span>
-                    </button>
-                    <button type="button" class="btn btn-properties" data-step-button="next">
-                        <span>Next</span> <i class="fa fa-chevron-right"></i>
-                    </button>
-                </div>
-                {{-- end button group--}}
-
-            </fieldset>
-            {{-- end second fieldset--}}
 
             <fieldset class="step-wizard-pane" id="location-pane">
                 <div class="fg-form-group">

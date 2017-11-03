@@ -86,7 +86,7 @@ class ComputerController extends Controller
      */
     public function show(Computer $computer)
     {
-        //
+        return response()->json( $computer );
     }
 
     /**

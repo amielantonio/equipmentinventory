@@ -28,7 +28,11 @@ class CreateComputerTable extends Migration
             $table->text('peripherals');
 
             $table->enum("status", ['Working', 'Broken']);
-            $table->integer('employee_id')->nullable();
+
+
+            $table->integer('employee_id')->unsigned()->nullable();
+            $table->foreign('employee_id')->references('id')->on('employees');
+
             $table->timestamps();
         });
     }

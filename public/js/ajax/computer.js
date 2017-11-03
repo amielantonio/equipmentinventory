@@ -99,14 +99,6 @@
                             defaultContent: "No status defined"
                         },
                         {
-                            data: "employee_information",
-                            render: function( data, type, row, meta){
-                                console.log( data );
-                                return data;
-                            },
-                            defaultContent: "<span class='badge badge-success'>Spare</span>"
-                        },
-                        {
                             data: null,
                             render: function( data, type, row, meta ){
                                 if( type === 'display'){

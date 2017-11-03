@@ -29,7 +29,7 @@
                     alertable.find('#message')
                         .html('New Workstation added successfully');
                     //Form Reset
-                    // form[0].reset();
+                    // form[0].reset();s
                 },
                 error: function(xhr, status, error) {
                     alert(xhr.responseText);

@@ -48,19 +48,20 @@
             <label for="position">Position<span class="required">*</span></label>
         </div>
 
+
         <div class="fg-form-group">
-            <input type="text" id="computer_id" name="computer_id" class="fg-form-control" required="required">
-            <label for="computer_id">Computer Unit<span class="required">*</span></label>
+            <select id="computer_id" name="computer_id" class="fg-form-control">
+                @foreach( $computers as $computer )
+                    <option value="{{ $computer->id }}">{{ $computer->computer_name }}</option>
+                @endforeach
+            </select>
+            <label for="computer_id">Computer Unit</label>
         </div>
-
-
 
         <button type="button" class="btn btn-primary submit"><span>Add New</span></button>
         <button type="reset" class="btn btn-warning"><span>Clear</span></button>
 
     </form>
-
-    {{ $employee }}
 
 @endsection
 

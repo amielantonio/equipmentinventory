@@ -37,7 +37,6 @@
                                         <th>Computer Name</th>
                                         <th>Operating System</th>
                                         <th>Status</th>
-                                        <th>User</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>

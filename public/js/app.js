@@ -13,6 +13,10 @@
         frosted_form_control();
         form_wizard();
         step_wizard();
+        data_capture();
+
+
+        seat_plan();
     });
 
     /**
@@ -208,6 +212,26 @@
         });
 
 
+    }
+
+
+
+    function data_capture(){
+
+        var dataCaptured = $('[data-injection=""]');
+        var targetDOM = $('[data-transfer=""]');
+
+    }
+
+
+    function seat_plan(){
+        var station = $('.clickables');
+
+        var id = station.data('station-id');
+
+        station.on( 'click', function(){
+            alert( id );
+        });
     }
 
 

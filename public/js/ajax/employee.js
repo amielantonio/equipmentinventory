@@ -70,11 +70,11 @@
                         { data: "contact" },
                         { data: "position" },
                         {
-                            data: 'computer',
+                            data: 'computer_info',
                             render: function( data, type, row, meta){
                             if (type === 'display'){
                                 if( data[0] !== undefined){
-                                    return "<a href='#' class='color-light' data-toggle='modal' data-target='#specs-modal'>" +
+                                    return "<a href='#' class='color-light text-hover-info' data-toggle='modal' data-target='#specs-modal'>" +
                                         "<i class='fa fa-desktop'></i> "+
                                         data['0']['computer_name'] +
                                         "</a>"
@@ -89,6 +89,9 @@
                             render: function( data, type, row, meta ){
                                 if( type === 'display'){
                                     return "<div class='toolbox'>" +
+                                            "<a href='/employees/"+ data['id'] +"/' class='toolbox-tool'>" +
+                                            "<i class='fa fa-eye'></i></a>" +
+                                            "" +
                                             "<a href='/employees/"+ data['id'] +"/edit' class='toolbox-tool'>" +
                                                 "<i class='fa fa-edit'></i></a>" +
                                             "" +

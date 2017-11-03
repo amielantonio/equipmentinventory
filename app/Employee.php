@@ -12,7 +12,7 @@ class Employee extends Model
      *
      * @var array
      */
-    protected $appends = ['computer'];
+    protected $appends = ['computer_info'];
 
     /**
      * One to One Relationship with Computer Model
@@ -28,7 +28,7 @@ class Employee extends Model
      *
      * @return \Illuminate\Database\Eloquent\Collection|static[]
      */
-    public function getComputerAttribute(){
+    public function getComputerInfoAttribute(){
         return $this->computer()->get();
     }
 }

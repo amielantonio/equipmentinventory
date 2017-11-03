@@ -5,29 +5,26 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use App\Employee;
 
+
 class Computer extends Model
 {
 
-    protected $appends = ['employees'];
-
-
+    protected $appends = ['employee_info'];
 
     /**
-     * Eloquent Relationship for Employee
+     * One to One Relationship with Employee Model
+     *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function employee(){
         return $this->belongsTo('App\Employee', 'computer_id');
+
     }
 
-
-    /**
-     * Add Assigned Employee to the computer as a response along with the computer response
-     *
-     * @return \Illuminate\Database\Eloquent\Collection|static[]
-     */
-    public function getEmployeesAttribute(){
+    public function getEmployeeInfoAttribute(){
 
         return $this->employee()->get();
+
     }
+
 }

@@ -47,7 +47,12 @@ class EmployeeController extends Controller
      */
     public function create()
     {
-        return view('employees.employee-form');
+
+        $computer = new Computer;
+
+        $computers = $computer->where('employee_id','=', NULL)->get();
+
+        return view('employees.employee-form', compact( 'computers'));
     }
 
     /**
@@ -96,6 +101,7 @@ class EmployeeController extends Controller
      */
     public function edit(Employee $employee)
     {
+
         return view('employees.employee-form', compact('employee'));
 
     }
