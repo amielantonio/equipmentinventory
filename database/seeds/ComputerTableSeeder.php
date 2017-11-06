@@ -13,6 +13,7 @@ class ComputerTableSeeder extends Seeder
     {
         DB::table('computers')->insert([
             'computer_name' => "YVP - PC - 1",
+            'computer_type' => 'Desktop',
             'processor' => "Intel i3-4160 CPU @ 3.60GHz",
             'ram' => "4.00 GB",
             'graphics_card' => '',
@@ -27,6 +28,7 @@ class ComputerTableSeeder extends Seeder
         ]);
         DB::table('computers')->insert([
             'computer_name' => "YVP - PC - 2",
+            'computer_type' => 'Desktop',
             'processor' => "Intel i5-4160 CPU @ 3.60GHz",
             'ram' => "4.00 GB",
             'graphics_card' => '',

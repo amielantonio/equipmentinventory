@@ -14,8 +14,6 @@
         form_wizard();
         step_wizard();
         data_capture();
-
-
         seat_plan();
     });
 
@@ -223,16 +221,19 @@
 
     }
 
-
     function seat_plan(){
-        var station = $('.clickables');
+        var workstation = $('.workstation');
 
-        var id = station.data('station-id');
+        workstation.on( 'click', function(){
 
-        station.on( 'click', function(){
-            alert( id );
+
+            $('#workstation-information').modal({
+                backdrop: false,
+                show: true
+            });
+
         });
-    }
 
+    }
 
 })(jQuery);

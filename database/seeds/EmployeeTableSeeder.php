@@ -17,6 +17,7 @@ class EmployeeTableSeeder extends Seeder
             'email' => "amielnicole.antonio@gmail.com",
             'contact' => '0975-666-0209',
             'position' => 'Web Developer',
+            'employment_status' => 'Employed',
             'created_at' => \Carbon\Carbon::now(),
             'updated_at' => \Carbon\Carbon::now()
         ]);
@@ -27,6 +28,7 @@ class EmployeeTableSeeder extends Seeder
             'email' => "sj.samonte@yvp.com",
             'contact' => '0975-123-4567',
             'position' => 'Office Tembey',
+            'employment_status' => 'Employed',
             'created_at' => \Carbon\Carbon::now(),
             'updated_at' => \Carbon\Carbon::now()
         ]);

@@ -20,6 +20,7 @@ class CreateEmployeeTable extends Migration
             $table->string('email', '50')->unique();
             $table->string('contact');
             $table->string('position');
+            $table->enum('employment_status',['Employed','Resigned']);
             $table->timestamps();
         });
     }
