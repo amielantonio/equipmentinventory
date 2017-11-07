@@ -152,6 +152,15 @@
         </li>
         {{--END REQUESTS --}}
 
+        <li>
+            <a href="#">
+                <span class="icon"><i class="fa fa-table"></i></span>
+                <span>Reports</span> <span class="badge badge-warning">TODO</span>
+                {{--<span class="link-icon"><i class="fa fa-chevron-right"></i></span>--}}
+            </a>
+        </li>
+        {{--END REQUESTS --}}
+
         <li class="has-child">
             <a href="#">
                 <span class="icon"><i class="fa fa-cogs"></i></span>

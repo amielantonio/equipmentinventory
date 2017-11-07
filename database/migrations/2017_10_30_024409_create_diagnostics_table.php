@@ -13,12 +13,12 @@ class CreateDiagnosticsTable extends Migration
      */
     public function up()
     {
-        Schema::table('diagnostics', function (Blueprint $table) {
+        Schema::create('diagnostics', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('diagnostics_title');
+            $table->string('diagnostics_title', 100);
             $table->text('diagnostics_text');
-            $table->string('computer_id');
-            $table->timestamp('diagnostics_date');
+            $table->integer('computer_id');
+            $table->date('diagnostics_date');
             $table->timestamps();
         });
     }

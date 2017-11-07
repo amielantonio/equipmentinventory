@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Workstation;
 use App\Workstation;
 use App\Employee;
 use App\Computer;
-use App\Diagnostics;
+use App\Diagnostic;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -18,7 +18,21 @@ class WorkstationController extends Controller
      */
     public function index()
     {
-        return view('workstation.workstation');
+        $computers = new Computer;
+        $employees = new Employee;
+        $workstations = new Workstation;
+
+        $allStations = $workstations->all();
+
+
+
+
+
+
+
+
+        $response = $allStations;
+        return view('workstation.workstation', compact('response'));
     }
 
     /**
@@ -27,11 +41,23 @@ class WorkstationController extends Controller
      * @return \Illuminate\Http\JsonResponse
      */
     public function get(){
-        $workstation = new Workstation;
+//        $workstation = new Workstation;
+//
+//        $workstations = $workstation->all();
+//
+//        return response()->json( $workstations );
 
-        $workstations = $workstation->all();
+        $computers = new Computer;
+        $employees = new Employee;
+        $workstations = new Workstation;
 
-        return response()->json( $workstations );
+        $allStations = $workstations->all();
+
+        $response = $allStations;
+
+        return response()->json( $response );
+
+
     }
 
 

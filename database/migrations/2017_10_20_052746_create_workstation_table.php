@@ -19,8 +19,9 @@ class CreateWorkstationTable extends Migration
             $table->integer('computer_id')->nullable();
             $table->integer('location');
             $table->enum('network_type', ['Main Network', 'Backup Network']);
-            $table->string('ip_address', "100")->unique();
-            $table->string('mac_address', '100')->unique();
+            $table->string('ip_address', "100")->unique()->nullable();
+            $table->string('mac_address', '100')->unique()->nullable();
+            $table->string('team', '100');
             $table->timestamps();
         });
     }
