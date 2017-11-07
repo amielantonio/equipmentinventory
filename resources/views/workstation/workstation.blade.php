@@ -94,7 +94,7 @@
 
                                     <div id="marketing-team">
                                         {{--ROW 1--}}
-                                        <div class="workstation" style="top: 255px; left: 70px;">
+                                        <div class="workstation" style="top: 255px; left: 70px;" data-workstation-id="">
                                             <i class="fa fa-desktop fa-2x"></i>
                                         </div>
 

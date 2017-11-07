@@ -16,7 +16,7 @@ class CreateComputerTable extends Migration
         Schema::create('computers', function (Blueprint $table) {
             $table->increments('id');
             $table->string('computer_name', 50)->unique();
-            $table->enum('computer_type', ['Desktop', 'Laptop', 'All-in-one']);
+            $table->enum('computer_type', ['Desktop', 'Laptop']);
 
 
             $table->string('processor', 50);

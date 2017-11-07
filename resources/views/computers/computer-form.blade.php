@@ -63,6 +63,13 @@
                 </div>
 
                 <div class="fg-form-group">
+                    <select name="computer_type" id="computer_type" class="fg-form-control">
+                        <option>Desktop</option>
+                        <option>Laptop</option>
+                    </select>
+                </div>
+
+                <div class="fg-form-group">
                     <input type="text" name="operating_system" id="operating_system" required="required" class="fg-form-control">
                     <label for="operating_system">Operating System <span class="required">*</span></label>
                 </div>

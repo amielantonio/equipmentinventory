@@ -48,6 +48,14 @@
             <label for="position">Position<span class="required">*</span></label>
         </div>
 
+        <div class="fg-form-group">
+            <select name="employment_status" id="employment_status">
+                <option>Employed</option>
+                <option>Resigned</option>
+            </select>
+            <label for="employment_status">Employment Status<span class="required">*</span></label>
+        </div>
+
 
         <div class="fg-form-group">
             <select id="computer_id" name="computer_id" class="fg-form-control">

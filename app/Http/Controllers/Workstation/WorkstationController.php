@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Workstation;
 use App\Workstation;
 use App\Employee;
 use App\Computer;
+use App\Diagnostics;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 

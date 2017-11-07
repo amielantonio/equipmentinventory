@@ -14,7 +14,12 @@ class CreateDiagnosticsTable extends Migration
     public function up()
     {
         Schema::table('diagnostics', function (Blueprint $table) {
-            //
+            $table->increments('id');
+            $table->string('diagnostics_title');
+            $table->text('diagnostics_text');
+            $table->string('computer_id');
+            $table->timestamp('diagnostics_date');
+            $table->timestamps();
         });
     }
 
@@ -25,8 +30,6 @@ class CreateDiagnosticsTable extends Migration
      */
     public function down()
     {
-        Schema::table('diagnostics', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('diagnostics');
     }
 }
