@@ -14,7 +14,6 @@
         form_wizard();
         step_wizard();
         data_capture();
-        seat_plan();
     });
 
     /**
@@ -212,8 +211,6 @@
 
     }
 
-
-
     function data_capture(){
 
         var dataCaptured = $('[data-injection=""]');
@@ -221,19 +218,5 @@
 
     }
 
-    function seat_plan(){
-        var workstation = $('.workstation');
-
-        workstation.on( 'click', function(){
-
-
-            $('#workstation-information').modal({
-                backdrop: false,
-                show: true
-            });
-
-        });
-
-    }
 
 })(jQuery);

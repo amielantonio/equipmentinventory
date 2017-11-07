@@ -13,7 +13,7 @@ class Workstation extends Model
      * @return \Illuminate\Database\Eloquent\Builder|static
      */
     public function computer(){
-        return $this->has('App\Computer');
+        return $this->hasOne('App\Computer');
     }
 
     /**
@@ -21,6 +21,6 @@ class Workstation extends Model
      * @return \Illuminate\Database\Eloquent\Builder|static
      */
     public function employee(){
-        return $this->has('App\Employee');
+        return $this->hasOne('App\Employee');
     }
 }

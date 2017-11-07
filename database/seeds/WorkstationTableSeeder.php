@@ -14,29 +14,39 @@ class WorkstationTableSeeder extends Seeder
 
         $marketingTeam = array(
             array(
-                'location' => 'top: 255px; left: 70px;',
+                'coordinates' => 'top: 255px; left: 70px;',
                 'network_type' => 'Main Network',
-                'team ' => 'Marketing Team'
+                'team' => 'Marketing Team',
+                'created_at' => \Carbon\Carbon::now(),
+                'updated_at' => \Carbon\Carbon::now()
             ),
             array(
-                'location' => 'top: 255px; left: 120px;',
+                'coordinates' => 'top: 255px; left: 120px;',
                 'network_type' => 'Main Network',
-                'team ' => 'Marketing Team'
+                'team' => 'Marketing Team',
+                'created_at' => \Carbon\Carbon::now(),
+                'updated_at' => \Carbon\Carbon::now()
             ),
             array(
-                'location' => 'top: 255px; left: 170px;',
+                'coordinates' => 'top: 255px; left: 170px;',
                 'network_type' => 'Main Network',
-                'team ' => 'Marketing Team'
+                'team' => 'Marketing Team',
+                'created_at' => \Carbon\Carbon::now(),
+                'updated_at' => \Carbon\Carbon::now()
             ),
             array(
-                'location' => 'top: 355px; left: 120px;',
+                'coordinates' => 'top: 355px; left: 120px;',
                 'network_type' => 'Main Network',
-                'team ' => 'Marketing Team'
+                'team' => 'Marketing Team',
+                'created_at' => \Carbon\Carbon::now(),
+                'updated_at' => \Carbon\Carbon::now()
             ),
             array(
-                'location' => 'top: 355px; left: 170px;',
+                'coordinates' => 'top: 355px; left: 170px;',
                 'network_type' => 'Main Network',
-                'team ' => 'Marketing Team'
+                'team' => 'Marketing Team',
+                'created_at' => \Carbon\Carbon::now(),
+                'updated_at' => \Carbon\Carbon::now()
             )
         );
 
@@ -44,7 +54,292 @@ class WorkstationTableSeeder extends Seeder
             DB::table('workstations')->insert([$team]);
         }
 
+        // END MARKETING TEAM
 
+        $adminTeam = array(
+            array(
+                'coordinates' => 'top: 380px; left:420px;',
+                'network_type' => 'Main Network',
+                'team' => 'Admin',
+                'created_at' => \Carbon\Carbon::now(),
+                'updated_at' => \Carbon\Carbon::now()
+            ),
+            array(
+                'coordinates' => 'top: 450px; left:420px;',
+                'network_type' => 'Main Network',
+                'team' => 'Admin',
+                'created_at' => \Carbon\Carbon::now(),
+                'updated_at' => \Carbon\Carbon::now()
+            ),
+            array(
+                'coordinates' => 'top: 450px; left:320px;',
+                'network_type' => 'Main Network',
+                'team' => 'Admin',
+                'created_at' => \Carbon\Carbon::now(),
+                'updated_at' => \Carbon\Carbon::now()
+            ),
+
+             array(
+                 'coordinates' => 'top: 225px; left:860px;',
+                 'network_type' => 'Main Network',
+                 'team' => 'Admin',
+                 'created_at' => \Carbon\Carbon::now(),
+                 'updated_at' => \Carbon\Carbon::now()
+             ),
+
+            array(
+                'coordinates' => 'top: 225px; left:760px;',
+                'network_type' => 'Main Network',
+                'team' => 'Admin',
+                'created_at' => \Carbon\Carbon::now(),
+                'updated_at' => \Carbon\Carbon::now()
+            )
+
+
+        );
+
+        foreach( $adminTeam as $team){
+            DB::table('workstations')->insert([$team]);
+        }
+
+        // END ADMIN TEAM
+
+
+        $outsourcedWorkers = array(
+            array(
+                'coordinates' => 'top: 255px; left:490px;',
+                'network_type' => 'Main Network',
+                'team' => 'Outsourced Workers',
+                'created_at' => \Carbon\Carbon::now(),
+                'updated_at' => \Carbon\Carbon::now()
+            ),
+            array(
+                'coordinates' => 'top: 255px; left:540px;',
+                'network_type' => 'Main Network',
+                'team' => 'Outsourced Workers',
+                'created_at' => \Carbon\Carbon::now(),
+                'updated_at' => \Carbon\Carbon::now()
+            ),
+            array(
+                'coordinates' => 'top: 255px; left:590px;',
+                'network_type' => 'Main Network',
+                'team' => 'Outsourced Workers',
+                'created_at' => \Carbon\Carbon::now(),
+                'updated_at' => \Carbon\Carbon::now()
+            ),
+            array(
+                'coordinates' => 'top: 255px; left:640px;',
+                'network_type' => 'Main Network',
+                'team' => 'Outsourced Workers',
+                'created_at' => \Carbon\Carbon::now(),
+                'updated_at' => \Carbon\Carbon::now()
+            ),
+            array(
+                'coordinates' => 'top: 305px; left:540px;',
+                'network_type' => 'Main Network',
+                'team' => 'Outsourced Workers',
+                'created_at' => \Carbon\Carbon::now(),
+                'updated_at' => \Carbon\Carbon::now()
+            ),
+            array(
+                'coordinates' => 'top: 305px; left:590px;',
+                'network_type' => 'Main Network',
+                'team' => 'Outsourced Workers',
+                'created_at' => \Carbon\Carbon::now(),
+                'updated_at' => \Carbon\Carbon::now()
+            ),
+            array(
+                'coordinates' => 'top: 305px; left:640px;',
+                'network_type' => 'Main Network',
+                'team' => 'Outsourced Workers',
+                'created_at' => \Carbon\Carbon::now(),
+                'updated_at' => \Carbon\Carbon::now()
+            ),
+            array(
+                'coordinates' => 'top: 405px; left:490px;',
+                'network_type' => 'Main Network',
+                'team' => 'Outsourced Workers',
+                'created_at' => \Carbon\Carbon::now(),
+                'updated_at' => \Carbon\Carbon::now()
+            ),
+            array(
+                'coordinates' => 'top: 405px; left:540px;',
+                'network_type' => 'Main Network',
+                'team' => 'Outsourced Workers',
+                'created_at' => \Carbon\Carbon::now(),
+                'updated_at' => \Carbon\Carbon::now()
+            ),
+            array(
+                'coordinates' => 'top: 405px; left:590px;',
+                'network_type' => 'Main Network',
+                'team' => 'Outsourced Workers',
+                'created_at' => \Carbon\Carbon::now(),
+                'updated_at' => \Carbon\Carbon::now()
+            ),
+            array(
+                'coordinates' => 'top: 405px; left:640px;',
+                'network_type' => 'Main Network',
+                'team' => 'Outsourced Workers',
+                'created_at' => \Carbon\Carbon::now(),
+                'updated_at' => \Carbon\Carbon::now()
+            )
+        );
+
+        foreach( $outsourcedWorkers as $team){
+            DB::table('workstations')->insert([$team]);
+        }
+
+        // END OUTSOURCED TEAM
+
+
+
+        $clientBased = array(
+            array(
+                'coordinates' => 'top: 20px; left:730px;',
+                'network_type' => 'Main Network',
+                'team' => 'Outsourced Workers',
+                'created_at' => \Carbon\Carbon::now(),
+                'updated_at' => \Carbon\Carbon::now()
+            ),
+            array(
+                'coordinates' => 'top: 60px; left:730px;',
+                'network_type' => 'Main Network',
+                'team' => 'Outsourced Workers',
+                'created_at' => \Carbon\Carbon::now(),
+                'updated_at' => \Carbon\Carbon::now()
+            ),
+            array(
+                'coordinates' => 'top: 100px; left:730px;',
+                'network_type' => 'Main Network',
+                'team' => 'Outsourced Workers',
+                'created_at' => \Carbon\Carbon::now(),
+                'updated_at' => \Carbon\Carbon::now()
+            ),
+            array(
+                'coordinates' => 'top: 140px; left:730px;',
+                'network_type' => 'Main Network',
+                'team' => 'Outsourced Workers',
+                'created_at' => \Carbon\Carbon::now(),
+                'updated_at' => \Carbon\Carbon::now()
+            ),
+            array(
+                'coordinates' => 'top: 180px; left:730px;',
+                'network_type' => 'Main Network',
+                'team' => 'Outsourced Workers',
+                'created_at' => \Carbon\Carbon::now(),
+                'updated_at' => \Carbon\Carbon::now()
+            ),
+            array(
+                'coordinates' => 'top: 20px; left:780px;',
+                'network_type' => 'Main Network',
+                'team' => 'Outsourced Workers',
+                'created_at' => \Carbon\Carbon::now(),
+                'updated_at' => \Carbon\Carbon::now()
+            ),
+            array(
+                'coordinates' => 'top: 60px; left:780px;',
+                'network_type' => 'Main Network',
+                'team' => 'Outsourced Workers',
+                'created_at' => \Carbon\Carbon::now(),
+                'updated_at' => \Carbon\Carbon::now()
+            ),
+            array(
+                'coordinates' => 'top: 100px; left:780px;',
+                'network_type' => 'Main Network',
+                'team' => 'Outsourced Workers',
+                'created_at' => \Carbon\Carbon::now(),
+                'updated_at' => \Carbon\Carbon::now()
+            ),
+            array(
+                'coordinates' => 'top: 140px; left:780px;',
+                'network_type' => 'Main Network',
+                'team' => 'Outsourced Workers',
+                'created_at' => \Carbon\Carbon::now(),
+                'updated_at' => \Carbon\Carbon::now()
+            ),
+            array(
+                'coordinates' => 'top: 180px; left:780px;',
+                'network_type' => 'Main Network',
+                'team' => 'Outsourced Workers',
+                'created_at' => \Carbon\Carbon::now(),
+                'updated_at' => \Carbon\Carbon::now()
+            ),
+            array(
+                'coordinates' => 'top: 20px; left:830px;',
+                'network_type' => 'Main Network',
+                'team' => 'Outsourced Workers',
+                'created_at' => \Carbon\Carbon::now(),
+                'updated_at' => \Carbon\Carbon::now()
+            ),
+            array(
+                'coordinates' => 'top: 60px; left:830px;',
+                'network_type' => 'Main Network',
+                'team' => 'Outsourced Workers',
+                'created_at' => \Carbon\Carbon::now(),
+                'updated_at' => \Carbon\Carbon::now()
+            ),
+            array(
+                'coordinates' => 'top: 100px; left:830px;',
+                'network_type' => 'Main Network',
+                'team' => 'Outsourced Workers',
+                'created_at' => \Carbon\Carbon::now(),
+                'updated_at' => \Carbon\Carbon::now()
+            ),
+            array(
+                'coordinates' => 'top: 140px; left:830px;',
+                'network_type' => 'Main Network',
+                'team' => 'Outsourced Workers',
+                'created_at' => \Carbon\Carbon::now(),
+                'updated_at' => \Carbon\Carbon::now()
+            ),
+            array(
+                'coordinates' => 'top: 180px; left:830px;',
+                'network_type' => 'Main Network',
+                'team' => 'Outsourced Workers',
+                'created_at' => \Carbon\Carbon::now(),
+                'updated_at' => \Carbon\Carbon::now()
+            ),
+            array(
+                'coordinates' => 'top: 20px; left:880px;',
+                'network_type' => 'Main Network',
+                'team' => 'Outsourced Workers',
+                'created_at' => \Carbon\Carbon::now(),
+                'updated_at' => \Carbon\Carbon::now()
+            ),
+            array(
+                'coordinates' => 'top: 60px; left:880px;',
+                'network_type' => 'Main Network',
+                'team' => 'Outsourced Workers',
+                'created_at' => \Carbon\Carbon::now(),
+                'updated_at' => \Carbon\Carbon::now()
+            ),
+            array(
+                'coordinates' => 'top: 100px; left:880px;',
+                'network_type' => 'Main Network',
+                'team' => 'Outsourced Workers',
+                'created_at' => \Carbon\Carbon::now(),
+                'updated_at' => \Carbon\Carbon::now()
+            ),
+            array(
+                'coordinates' => 'top: 140px; left:880px;',
+                'network_type' => 'Main Network',
+                'team' => 'Outsourced Workers',
+                'created_at' => \Carbon\Carbon::now(),
+                'updated_at' => \Carbon\Carbon::now()
+            ),
+            array(
+                'coordinates' => 'top: 180px; left:880px;',
+                'network_type' => 'Main Network',
+                'team' => 'Outsourced Workers',
+                'created_at' => \Carbon\Carbon::now(),
+                'updated_at' => \Carbon\Carbon::now()
+            ),
+
+        );
+
+        foreach( $clientBased as $team){
+            DB::table('workstations')->insert([$team]);
+        }
 
 
     }

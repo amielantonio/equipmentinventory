@@ -17,11 +17,11 @@ class CreateWorkstationTable extends Migration
             $table->increments('id');
             $table->integer('employee_id')->nullable();
             $table->integer('computer_id')->nullable();
-            $table->integer('location');
             $table->enum('network_type', ['Main Network', 'Backup Network']);
             $table->string('ip_address', "100")->unique()->nullable();
             $table->string('mac_address', '100')->unique()->nullable();
             $table->string('team', '100');
+            $table->string('coordinates', 50);
             $table->timestamps();
         });
     }

@@ -18,18 +18,9 @@ class WorkstationController extends Controller
      */
     public function index()
     {
-        $computers = new Computer;
-        $employees = new Employee;
         $workstations = new Workstation;
 
         $allStations = $workstations->all();
-
-
-
-
-
-
-
 
         $response = $allStations;
         return view('workstation.workstation', compact('response'));
@@ -41,21 +32,21 @@ class WorkstationController extends Controller
      * @return \Illuminate\Http\JsonResponse
      */
     public function get(){
-//        $workstation = new Workstation;
+        $workstation = new Workstation;
+
+        $workstations = $workstation->all();
+
+        return response()->json( $workstations );
+
+//        $computers = new Computer;
+//        $employees = new Employee;
+//        $workstations = new Workstation;
 //
-//        $workstations = $workstation->all();
+//        $allStations = $workstations->all();
 //
-//        return response()->json( $workstations );
-
-        $computers = new Computer;
-        $employees = new Employee;
-        $workstations = new Workstation;
-
-        $allStations = $workstations->all();
-
-        $response = $allStations;
-
-        return response()->json( $response );
+//        $response = $allStations;
+//
+//        return response()->json( $response );
 
 
     }
@@ -118,7 +109,22 @@ class WorkstationController extends Controller
      */
     public function show(Workstation $workstation)
     {
-        //
+        return response()->json( $workstation );
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\Workstation  $workstation
+     * @return \Illuminate\Http\Response
+     */
+    public function showWithUser(Workstation $workstation)
+    {
+        $compClass = new Computer;
+        $empClass = new Employee;
+
+        $response = "";
+        return response()->json(  );
     }
 
     /**

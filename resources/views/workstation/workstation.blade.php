@@ -84,242 +84,25 @@
                                     <div id="workstation-legends">
                                         <div class="legends-title"><span><i class="fa fa-compass"></i></span> Legends</div>
                                         <ul class="legends">
-                                            <li>Lorem - Working</li>
-                                            <li>Lorem - Vacant</li>
-                                            <li>Lorem - Broken</li>
-                                            <li>Lorem - Laptop</li>
-                                            <li>Lorem - Desktop</li>
+                                            <li><span class="badge badge-light">   </span> - Working</li>
+                                            <li><span class="badge badge-warning">   </span> - Vacant</li>
+                                            <li><span class="badge badge-danger">   </span>  - Broken</li>
+                                            <li><i class="fa fa-desktop"></i> - Desktop</li>
+                                            <li><i class="fa fa-laptop"></i> - Laptop</li>
                                         </ul>
                                     </div>
 
-                                    <div id="marketing-team">
-                                        {{--ROW 1--}}
-                                        <div class="workstation" style="top: 255px; left: 70px;" data-workstation-id="">
+                                    @foreach( $response as $workstation )
+
+                                        <div class="workstation" style="{{ $workstation->coordinates }}" data-workstation-id="{{ $workstation->id }}">
                                             <i class="fa fa-desktop fa-2x"></i>
                                         </div>
 
-                                        <div class="workstation" style="top: 255px; left: 120px;">
-                                            <i class="fa fa-desktop fa-2x"></i>
-                                        </div>
-
-                                        <div class="workstation" style="top: 255px; left: 170px;" id="1">
-                                            <i class="fa fa-desktop fa-2x"></i>
-                                        </div>
-
-                                        {{--ROW 2--}}
-                                        <div class="workstation" style="top: 355px; left: 120px;">
-                                            <i class="fa fa-laptop fa-2x"></i>
-                                        </div>
-
-                                        <div class="workstation" style="top: 355px; left: 170px;">
-                                            <i class="fa fa-desktop fa-2x"></i>
-                                        </div>
-                                    </div>
-                                    {{--end marketing team--}}
+                                    @endforeach
 
 
-                                    <div id="admin-team">
-                                        <div class="workstation" style="top: 380px;left: 420px;">
-                                            <i class="fa fa-laptop fa-2x"></i>
-                                        </div>
-
-                                        <div class="workstation" style="top: 450px; left: 420px;">
-                                            <i class="fa fa-laptop fa-2x"></i>
-                                        </div>
-
-                                        <div class="workstation" style="top: 450px; left: 320px;">
-                                            <i class="fa fa-laptop fa-2x"></i>
-                                        </div>
-                                    </div>
-                                    {{--end admin team--}}
 
 
-                                    <div id="outsourced-workers">
-                                        {{--ROW 1--}}
-                                        <div class="workstation" style="top: 255px;left: 490px;">
-                                            <i class="fa fa-desktop fa-2x"></i>
-                                        </div>
-
-                                        <div class="workstation" style="top: 255px;left: 540px;">
-                                            <i class="fa fa-desktop fa-2x"></i>
-                                        </div>
-
-                                        <div class="workstation" style="top: 255px;left: 590px;">
-                                            <i class="fa fa-desktop fa-2x"></i>
-                                        </div>
-
-                                        <div class="workstation" style="top: 255px;left: 640px;">
-                                            <i class="fa fa-desktop fa-2x"></i>
-                                        </div>
-
-                                        {{--ROW 2--}}
-                                        <div class="workstation" style="top: 305px;left: 490px;">
-                                            <i class="fa fa-desktop fa-2x"></i>
-                                        </div>
-
-                                        <div class="workstation" style="top: 305px;left: 540px;">
-                                            <i class="fa fa-desktop fa-2x"></i>
-                                        </div>
-
-                                        <div class="workstation" style="top: 305px;left: 590px;">
-                                            <i class="fa fa-desktop fa-2x"></i>
-                                        </div>
-
-                                        <div class="workstation" style="top: 305px;left: 640px;">
-                                            <i class="fa fa-desktop fa-2x"></i>
-                                        </div>
-
-                                        {{--ROW 3--}}
-                                        <div class="workstation" style="top: 355px;left: 490px;">
-                                            <i class="fa fa-desktop fa-2x"></i>
-                                        </div>
-
-                                        <div class="workstation" style="top: 355px;left: 540px;">
-                                            <i class="fa fa-desktop fa-2x"></i>
-                                        </div>
-
-                                        <div class="workstation" style="top: 355px;left: 590px;">
-                                            <i class="fa fa-desktop fa-2x"></i>
-                                        </div>
-
-                                        <div class="workstation" style="top: 355px;left: 640px;">
-                                            <i class="fa fa-desktop fa-2x"></i>
-                                        </div>
-
-                                        {{--ROW 4--}}
-                                        <div class="workstation" style="top: 405px;left: 490px;">
-                                            <i class="fa fa-desktop fa-2x"></i>
-                                        </div>
-
-                                        <div class="workstation" style="top: 405px;left: 540px;">
-                                            <i class="fa fa-desktop fa-2x"></i>
-                                        </div>
-
-                                        <div class="workstation" style="top: 405px;left: 590px;">
-                                            <i class="fa fa-desktop fa-2x"></i>
-                                        </div>
-
-                                        <div class="workstation" style="top: 405px;left: 640px;">
-                                            <i class="fa fa-desktop fa-2x"></i>
-                                        </div>
-                                    </div>
-                                    {{--end outsourced workers--}}
-
-
-                                    <div id="client-based">
-
-                                        {{--ROW 1--}}
-                                        <div class="workstation" style="top: 20px;left: 730px;">
-                                            <i class="fa fa-desktop fa-2x"></i>
-                                        </div>
-
-                                        <div class="workstation" style="top: 60px;left: 730px;">
-                                            <i class="fa fa-desktop fa-2x"></i>
-                                        </div>
-
-                                        <div class="workstation" style="top: 100px;left: 730px;">
-                                            <i class="fa fa-desktop fa-2x"></i>
-                                        </div>
-
-                                        <div class="workstation" style="top: 140px;left: 730px;">
-                                            <i class="fa fa-desktop fa-2x"></i>
-                                        </div>
-
-                                        <div class="workstation" style="top: 180px;left: 730px;">
-                                            <i class="fa fa-desktop fa-2x"></i>
-                                        </div>
-
-                                        {{--ROW 2--}}
-                                        <div class="workstation" style="top: 20px;left: 780px;">
-                                            <i class="fa fa-desktop fa-2x"></i>
-                                        </div>
-
-                                        <div class="workstation" style="top: 60px;left: 780px;">
-                                            <i class="fa fa-desktop fa-2x"></i>
-                                        </div>
-
-                                        <div class="workstation" style="top: 100px;left: 780px;">
-                                            <i class="fa fa-desktop fa-2x"></i>
-                                        </div>
-
-                                        <div class="workstation" style="top: 140px;left: 780px;">
-                                            <i class="fa fa-desktop fa-2x"></i>
-                                        </div>
-
-                                        <div class="workstation" style="top: 180px;left: 780px;">
-                                            <i class="fa fa-desktop fa-2x"></i>
-                                        </div>
-
-                                        {{--ROW 3--}}
-                                        <div class="workstation" style="top: 20px;left: 830px;">
-                                            <i class="fa fa-desktop fa-2x"></i>
-                                        </div>
-
-                                        <div class="workstation" style="top: 60px;left: 830px;">
-                                            <i class="fa fa-desktop fa-2x"></i>
-                                        </div>
-
-                                        <div class="workstation" style="top: 100px;left: 830px;">
-                                            <i class="fa fa-desktop fa-2x"></i>
-                                        </div>
-
-                                        <div class="workstation" style="top: 140px;left: 830px;">
-                                            <i class="fa fa-desktop fa-2x"></i>
-                                        </div>
-
-                                        <div class="workstation" style="top: 180px;left: 830px;">
-                                            <i class="fa fa-desktop fa-2x"></i>
-                                        </div>
-
-                                        {{--ROW 4--}}
-                                        <div class="workstation" style="top: 20px;left: 880px;">
-                                            <i class="fa fa-desktop fa-2x"></i>
-                                        </div>
-
-                                        <div class="workstation" style="top: 60px;left: 880px;">
-                                            <i class="fa fa-desktop fa-2x"></i>
-                                        </div>
-
-                                        <div class="workstation" style="top: 100px;left: 880px;">
-                                            <i class="fa fa-desktop fa-2x"></i>
-                                        </div>
-
-                                        <div class="workstation" style="top: 140px;left: 880px;">
-                                            <i class="fa fa-desktop fa-2x"></i>
-                                        </div>
-
-                                        <div class="workstation" style="top: 180px;left: 880px;">
-                                            <i class="fa fa-desktop fa-2x"></i>
-                                        </div>
-
-                                        {{-- OTHER ROW--}}
-
-                                        <div class="workstation" style="top: 225px;left: 860px;">
-                                            <i class="fa fa-desktop fa-2x"></i>
-                                        </div>
-
-                                        <div class="workstation" style="top: 225px;left: 760px;">
-                                            <i class="fa fa-desktop fa-2x"></i>
-                                        </div>
-
-                                    </div>
-                                    {{--end client based--}}
-
-
-                                    {{--the others--}}
-
-                                    <div id="management">
-
-                                        <div class="workstation" style="top: 455px;left: 640px;">
-                                            <i class="fa fa-laptop fa-2x"></i>
-                                        </div>
-
-                                        <div class="workstation" style="top: 405px;left: 740px;">
-                                            <i class="fa fa-laptop fa-2x"></i>
-                                        </div>
-
-                                    </div>
-                                    {{--end management--}}
 
                                 </div>
 
@@ -329,14 +112,20 @@
                                         <div class="modal-content">
 
                                             <div class="modal-header">
-                                                <h5 class="modal-title">Hello World</h5>
+                                                <h5 class="modal-title"></h5>
                                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                     <span aria-hidden="true">&times;</span>
                                                 </button>
                                             </div>
 
                                             <div class="modal-body">
-                                                <p>Class Hello</p>
+
+                                                <div class="Employee Information">
+                                                    <p><b>Employee Name: </b> <span id="employee_name"></span></p>
+                                                    <p><b>Computer Name: </b> <span id="computer_name"></span></p>
+                                                </div>
+
+
                                             </div>
 
                                             <div class="modal-footer">

@@ -1307,3 +1307,8 @@ table.dataTable tbody th, table.dataTable tbody td{
     display: block;
 }
 
+
+
+.modal > *{
+    color: black;
+}

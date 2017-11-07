@@ -58,6 +58,7 @@ Route::group(['namespace' => 'Workstation', 'middleware'=>'web'], function(){
     Route::resource('workstation', 'WorkstationController');
     Route::get('workstations/get', 'WorkstationController@get');
     Route::get('workstations/assign', 'WorkstationController@assign')->name('workstations');
+    Route::get('workstations/showWithUser', 'WorkstationController@showWithUser')->name('workstations');
 
 });
 
