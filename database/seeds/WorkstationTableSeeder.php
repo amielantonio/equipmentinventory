@@ -93,9 +93,21 @@ class WorkstationTableSeeder extends Seeder
                 'team' => 'Admin',
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
+            ),
+            array(
+                'coordinates' => 'top: 455px;left: 640px;',
+                'network_type' => 'Main Network',
+                'team' => 'Admin',
+                'created_at' => \Carbon\Carbon::now(),
+                'updated_at' => \Carbon\Carbon::now()
+            ),
+            array(
+                'coordinates' => 'top: 405px;left: 740px;',
+                'network_type' => 'Main Network',
+                'team' => 'Admin',
+                'created_at' => \Carbon\Carbon::now(),
+                'updated_at' => \Carbon\Carbon::now()
             )
-
-
         );
 
         foreach( $adminTeam as $team){
@@ -106,6 +118,7 @@ class WorkstationTableSeeder extends Seeder
 
 
         $outsourcedWorkers = array(
+            //ROW 1
             array(
                 'coordinates' => 'top: 255px; left:490px;',
                 'network_type' => 'Main Network',
@@ -134,6 +147,14 @@ class WorkstationTableSeeder extends Seeder
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ),
+            //ROW 2
+            array(
+                'coordinates' => 'top: 305px; left:490px;',
+                'network_type' => 'Main Network',
+                'team' => 'Outsourced Workers',
+                'created_at' => \Carbon\Carbon::now(),
+                'updated_at' => \Carbon\Carbon::now()
+            ),
             array(
                 'coordinates' => 'top: 305px; left:540px;',
                 'network_type' => 'Main Network',
@@ -155,6 +176,36 @@ class WorkstationTableSeeder extends Seeder
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ),
+            //ROW 3
+            array(
+                'coordinates' => 'top: 355px; left:490px;',
+                'network_type' => 'Main Network',
+                'team' => 'Outsourced Workers',
+                'created_at' => \Carbon\Carbon::now(),
+                'updated_at' => \Carbon\Carbon::now()
+            ),
+            array(
+                'coordinates' => 'top: 355px; left:540px;',
+                'network_type' => 'Main Network',
+                'team' => 'Outsourced Workers',
+                'created_at' => \Carbon\Carbon::now(),
+                'updated_at' => \Carbon\Carbon::now()
+            ),
+            array(
+                'coordinates' => 'top: 355px; left:590px;',
+                'network_type' => 'Main Network',
+                'team' => 'Outsourced Workers',
+                'created_at' => \Carbon\Carbon::now(),
+                'updated_at' => \Carbon\Carbon::now()
+            ),
+            array(
+                'coordinates' => 'top: 355px; left:640px;',
+                'network_type' => 'Main Network',
+                'team' => 'Outsourced Workers',
+                'created_at' => \Carbon\Carbon::now(),
+                'updated_at' => \Carbon\Carbon::now()
+            ),
+            //ROW 4
             array(
                 'coordinates' => 'top: 405px; left:490px;',
                 'network_type' => 'Main Network',
@@ -194,6 +245,7 @@ class WorkstationTableSeeder extends Seeder
 
 
         $clientBased = array(
+            // ROW 1
             array(
                 'coordinates' => 'top: 20px; left:730px;',
                 'network_type' => 'Main Network',
@@ -229,6 +281,7 @@ class WorkstationTableSeeder extends Seeder
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ),
+            // ROW 2
             array(
                 'coordinates' => 'top: 20px; left:780px;',
                 'network_type' => 'Main Network',
@@ -264,6 +317,7 @@ class WorkstationTableSeeder extends Seeder
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ),
+            // ROW 3
             array(
                 'coordinates' => 'top: 20px; left:830px;',
                 'network_type' => 'Main Network',
@@ -299,6 +353,7 @@ class WorkstationTableSeeder extends Seeder
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now()
             ),
+            // ROW 4
             array(
                 'coordinates' => 'top: 20px; left:880px;',
                 'network_type' => 'Main Network',
@@ -340,7 +395,5 @@ class WorkstationTableSeeder extends Seeder
         foreach( $clientBased as $team){
             DB::table('workstations')->insert([$team]);
         }
-
-
     }
 }

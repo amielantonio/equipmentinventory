@@ -87,8 +87,27 @@
 
 
 
-        seat_plan();
+        // seat_plan();
+        modal_workstation_fix();
     });
+
+    function modal_workstation_fix(){
+        var workstation = $('.workstation');
+
+        workstation.on( 'click', function(){
+            var target = $(this).data('target');
+            var employee = $(this).data('employee');
+
+            $( target ).appendTo('body').modal('show');
+
+            employee = JSON.parse(employee);
+
+
+
+
+        });
+    }
+
 
     function seat_plan(){
         var workstation = $('.workstation');
@@ -106,6 +125,8 @@
                 method: 'GET',
                 dataType: 'json'
             }).done( function( data ){
+
+                console.log( data );
 
                 // var employee = $.ajax({
                 //     url: '/employees/' + data.employee_id,
@@ -134,21 +155,19 @@
                 // });
 
 
-
-
-                $('#workstation-information').modal({
-                    backdrop: false,
-                    show: true
-                });
+                // $('#workstation-information').modal({
+                //     backdrop: false,
+                //     show: true
+                // });
             })
 
         });// Workstation on click
 
 
-        $('#workstation-information').on( 'hidden.bs.modal', function(){
-            computer_name.html('');
-            employee_name.html('');
-        });
+        // $('#workstation-information').on( 'hidden.bs.modal', function(){
+        //     computer_name.html('');
+        //     employee_name.html('');
+        // });
 
     }
 

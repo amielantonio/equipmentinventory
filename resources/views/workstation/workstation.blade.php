@@ -94,53 +94,42 @@
 
                                     @foreach( $response as $workstation )
 
-                                        <div class="workstation" style="{{ $workstation->coordinates }}" data-workstation-id="{{ $workstation->id }}">
+                                        <div class="workstation" style="{{ $workstation->coordinates }}" data-workstation-id="{{ $workstation->id }}" data-target="#modal-{{ $workstation->id }}" data-employee="{{$workstation->employee}}" data-computer="{{ $workstation->computer }}">
                                             <i class="fa fa-desktop fa-2x"></i>
+                                        </div>
+
+                                        <div class="modal fade" id="modal-{{ $workstation->id }}" tabindex="-1" role="dialog" aria-labelledby="modal-{{ $workstation->id }}">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title">Workstation Information</h5>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+
+                                                    <div class="modal-body">
+
+                                                        {{--<p><b>Employee name: {{ $employee->first_name }}</b></p>--}}
+
+                                                    </div>
+
+
+                                                </div>
+                                            </div>
                                         </div>
 
                                     @endforeach
 
-
-
-
-
                                 </div>
 
 
-                                <div class="modal" id="workstation-information" tab-index="-1" role="dialog">
-                                    <div class="modal-dialog" role="document">
-                                        <div class="modal-content">
-
-                                            <div class="modal-header">
-                                                <h5 class="modal-title"></h5>
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
-                                                </button>
-                                            </div>
-
-                                            <div class="modal-body">
-
-                                                <div class="Employee Information">
-                                                    <p><b>Employee Name: </b> <span id="employee_name"></span></p>
-                                                    <p><b>Computer Name: </b> <span id="computer_name"></span></p>
-                                                </div>
-
-
-                                            </div>
-
-                                            <div class="modal-footer">
-                                                <button type="button">Hello</button>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
 
                             </div>
                             {{-- end other view--}}
                         </div>
                         {{-- end tab content --}}
-
                     </div>
                     {{-- end card body--}}
 

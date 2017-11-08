@@ -18,12 +18,64 @@ class WorkstationController extends Controller
      */
     public function index()
     {
+//        $workstations = new Workstation;
+//
+//        $allStations = $workstations->all();
+//
+//        $response = $allStations;
+
+
         $workstations = new Workstation;
+        $computers = new Computer;
+        $employees = new Employee;
 
-        $allStations = $workstations->all();
+        //Retrieve all resources
+        $workstations = $workstations->all();
 
-        $response = $allStations;
+        //Instantiate Response
+        $response = [];
+
+        foreach( $workstations as $workstation ){
+            $id = $workstation['id'];
+
+
+            $response[ $id ] = $workstation;
+
+            $response[ $id ]['employee'] = $employees->where( 'id', $workstation['employee_id'] )->get();
+            $response[ $id ]['computer'] = $computers->where( 'id', $workstation['computer_id'] )->get();
+        }
+
+
+//        return response()->json( $response );
+
         return view('workstation.workstation', compact('response'));
+    }
+
+
+    public function stations()
+    {
+        $workstations = new Workstation;
+        $computers = new Computer;
+        $employees = new Employee;
+
+        //Retrieve all resources
+        $workstations = $workstations->all();
+
+        //Instantiate Response
+        $response = [];
+
+        foreach( $workstations as $workstation ){
+            $id = $workstation['id'];
+
+
+            $response[ $id ] = $workstation;
+
+            $response[ $id ]['employee'] = $employees->where( 'id', $workstation['employee_id'] )->get();
+            $response[ $id ]['computer'] = $computers->where( 'id', $workstation['computer_id'] )->get();
+        }
+
+
+        return response()->json( $response );
     }
 
     /**
@@ -37,18 +89,6 @@ class WorkstationController extends Controller
         $workstations = $workstation->all();
 
         return response()->json( $workstations );
-
-//        $computers = new Computer;
-//        $employees = new Employee;
-//        $workstations = new Workstation;
-//
-//        $allStations = $workstations->all();
-//
-//        $response = $allStations;
-//
-//        return response()->json( $response );
-
-
     }
 
 
@@ -124,7 +164,22 @@ class WorkstationController extends Controller
         $empClass = new Employee;
 
         $response = "";
-        return response()->json(  );
+
+
+        return response()->json( $workstation );
+    }
+
+    /**
+     *
+     */
+    public function saveWorkstationWithUser($sessionName, $data, $flash = false, Request $request){
+
+        if( $flash ){
+            $request->session()->flash($sessionName, $data);
+        }else{
+            $request->session()->put($sessionName, $data);
+        }
+
     }
 
     /**
