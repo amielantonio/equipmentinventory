@@ -9,10 +9,10 @@ use App\Diagnostic;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class WorkstationController extends Controller
+class StationController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of the Workstation with the corresponding user resource.
      *
      * @return \Illuminate\Http\Response
      */
@@ -36,38 +36,18 @@ class WorkstationController extends Controller
 
         }
 
-        return view('workstation.workstation', compact('response'));
+
+        return response($response);
     }
 
     /**
-     * Display Workstation only resources
+     * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\JsonResponse
+     * @return \Illuminate\Http\Response
      */
-    public function get(){
-        $workstation = new Workstation;
-
-        $workstations = $workstation->all();
-
-        return response()->json( $workstations );
-    }
-
-
-    /**
-     * Show the form to assign user to workstation
-     *
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     */
-    public function assign()
+    public function create()
     {
-        $employee = new Employee;
-        $computer = new Computer;
-
-        $employees = $employee->all();
-        $computers = $computer->all();
-
-
-        return view('workstation.assign-station', compact('employees', 'computers'));
+        //
     }
 
     /**
@@ -78,48 +58,44 @@ class WorkstationController extends Controller
      */
     public function store(Request $request)
     {
-        $workstation = new Workstation;
-
-        $workstation->employee_id = $request->employee_id;
-        $workstation->computer_id = $request->computer_id;
-        $workstation->location = $request->location;
-        $workstation->network_type = $request->network_type;
-        $workstation->ip_address = $request->ip_address;
-        $workstation->mac_address = $request->mac_address;
-
-        $workstation->save();
-
-        return response()->json($request->all());
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        return view('workstation.workstation-form');
+        //
     }
 
     /**
      * Display the specified resource.
      *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        //
+    }
+
+    /**
+     * Display the specified resource for user.
+     *
      * @param  \App\Workstation  $workstation
      * @return \Illuminate\Http\Response
      */
-    public function show(Workstation $workstation)
+    public function showWithUser(Workstation $workstation)
     {
+        $compClass = new Computer;
+        $empClass = new Employee;
+
+        $response = "";
+
+
         return response()->json( $workstation );
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Workstation  $workstation
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Workstation $workstation)
+    public function edit($id)
     {
         //
     }
@@ -128,10 +104,10 @@ class WorkstationController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Workstation  $workstation
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Workstation $workstation)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -139,10 +115,10 @@ class WorkstationController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Workstation  $workstation
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Workstation $workstation)
+    public function destroy($id)
     {
         //
     }

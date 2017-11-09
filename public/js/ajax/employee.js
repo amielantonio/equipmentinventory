@@ -70,19 +70,20 @@
                         { data: "contact" },
                         { data: "position" },
                         {
-                            data: 'computer_info',
-                            render: function( data, type, row, meta){
-                            if (type === 'display'){
-                                if( data[0] !== undefined){
-                                    return "<a href='#' class='color-light text-hover-info' data-toggle='modal' data-target='#specs-modal'>" +
-                                        "<i class='fa fa-desktop'></i> "+
-                                        data['0']['computer_name'] +
-                                        "</a>"
-                                }
-                            }
-
-                        },
-                            defaultContent: "No PC Assigned"
+                            data: null
+                            // data: 'computer_info',
+                            // render: function( data, type, row, meta){
+                            //     if (type === 'display'){
+                            //         if( data[0] !== undefined){
+                            //             return "<a href='#' class='color-light text-hover-info' data-toggle='modal' data-target='#specs-modal'>" +
+                            //                 "<i class='fa fa-desktop'></i> "+
+                            //                 data['0']['computer_name'] +
+                            //                 "</a>"
+                            //         }
+                            //     }
+                            //
+                            // },
+                            // defaultContent: "No PC Assigned"
                         },
                         {
                             data: null,

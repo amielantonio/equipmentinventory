@@ -58,13 +58,16 @@ Route::group(['namespace' => 'Workstation', 'middleware'=>'web'], function(){
     Route::resource('workstation', 'WorkstationController');
     Route::get('workstations/get', 'WorkstationController@get');
     Route::get('workstations/assign', 'WorkstationController@assign')->name('workstations');
-    Route::get('workstations/showWithUser/{workstation}', 'WorkstationController@showWithUser')->name('workstations');
 
-    //Testing user data
+});
 
-    Route::get('workstations/stations', 'WorkstationController@stations')->name('workstations');
+/**
+ * Stations Routing
+ */
+Route::group(['namespace'=>'Workstation', 'middleware'=>'web'], function(){
 
-
+    Route::resource('station', 'StationController');
+    Route::get('station/{workstation}/user', 'StationController@showWithUser')->name('stations');
 
 });
 

@@ -1244,7 +1244,7 @@ table.dataTable tbody th, table.dataTable tbody td{
     min-height: 500px;
     min-width: 800px;
 
-    background: rgba(0,0,0,0.5);
+    /*background: rgba(0,0,0,0.5);*/
 
     position: relative;
 }
@@ -1294,9 +1294,31 @@ table.dataTable tbody th, table.dataTable tbody td{
     transition: 0.3s color;
 }
 
+.workstation.vacant{
+    color: var(--gray);
+}
+.workstation.broken{
+    color: var(--danger);
+    animation-name: broken-animate;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
 .workstation:hover{
     color: var(--info);
 }
+
+@keyframes broken-animate {
+    0%, 50%, 100% {
+        opacity: 1;
+    }
+    25%, 75% {
+        opacity: 0;
+    }
+}
+
+
+
 
 /* WORKSTATION PROFILE SNIPPET*/
 .workstation .profile-snippet{

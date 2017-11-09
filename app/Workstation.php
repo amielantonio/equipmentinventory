@@ -8,19 +8,27 @@ use Illuminate\Database\Eloquent\Model;
 class Workstation extends Model
 {
 
+//    protected $casts = [
+//        'options' => 'array'
+//    ];
+
     /**
-     * Eloquent Relationship for Computer
+     * Workstation Belongs To Computer
+     *
      * @return \Illuminate\Database\Eloquent\Builder|static
      */
-    public function computer(){
-        return $this->hasOne('App\Computer');
+    public function computer()
+    {
+        return $this->belongsTo('App\Computer', 'computer_id');
     }
 
     /**
-     * Eloquent Relationship for Employee
+     * Workstation Belongs To Employee
+     *
      * @return \Illuminate\Database\Eloquent\Builder|static
      */
-    public function employee(){
-        return $this->hasOne('App\Employee');
+    public function employee()
+    {
+        return $this->belongsTo('App\Employee', 'employee_id');
     }
 }

@@ -30,16 +30,16 @@
 
                         <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
                             <li class="nav-item">
-                                <a class="nav-link " id="pills-home-tab" data-toggle="pill" href="#table-view" role="tab" aria-controls="pills-home" aria-selected="true">Table View</a>
+                                <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#table-view" role="tab" aria-controls="pills-home" aria-selected="true">Table View</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active" id="pills-profile-tab" data-toggle="pill" href="#seat-view" role="tab" aria-controls="pills-profile" aria-selected="false">Seat Plan View</a>
+                                <a class="nav-link " id="pills-profile-tab" data-toggle="pill" href="#seat-view" role="tab" aria-controls="pills-profile" aria-selected="false">Seat Plan View</a>
                             </li>
                         </ul>
                         {{-- end navigation--}}
 
                         <div class="tab-content" id="pills-tabContent">
-                            <div class="tab-pane fade " id="table-view" role="tabpanel" aria-labelledby="pills-home-tab">
+                            <div class="tab-pane fade show active" id="table-view" role="tabpanel" aria-labelledby="pills-home-tab">
 
                                 <table id="workstation-table">
 
@@ -48,7 +48,7 @@
                                             <th>#</th>
                                             <th>User</th>
                                             <th>Computer</th>
-                                            <th>Location</th>
+                                            <th>Team</th>
                                             <th>Network Type</th>
                                             <th>Ip Address</th>
                                             <th>Mac Address</th>
@@ -60,7 +60,7 @@
 
                             </div>
                             {{-- end table view--}}
-                            <div class="tab-pane fade show active" id="seat-view" role="tabpanel" aria-labelledby="pills-profile-tab">
+                            <div class="tab-pane fade" id="seat-view" role="tabpanel" aria-labelledby="pills-profile-tab">
 
 
                                 {{-- WORKSTATION SEAT PLAN--}}
@@ -85,21 +85,21 @@
                                         <div class="legends-title"><span><i class="fa fa-compass"></i></span> Legends</div>
                                         <ul class="legends">
                                             <li><span class="badge badge-light">   </span> - Working</li>
-                                            <li><span class="badge badge-warning">   </span> - Vacant</li>
+                                            <li><span class="badge badge-dark">   </span> - Vacant</li>
                                             <li><span class="badge badge-danger">   </span>  - Broken</li>
                                             <li><i class="fa fa-desktop"></i> - Desktop</li>
                                             <li><i class="fa fa-laptop"></i> - Laptop</li>
                                         </ul>
                                     </div>
 
-                                    @foreach( $response as $workstation )
+                                    @foreach( $response as $key => $value )
 
-                                        <div class="workstation" style="{{ $workstation->coordinates }}" data-workstation-id="{{ $workstation->id }}" data-target="#modal-{{ $workstation->id }}" data-employee="{{$workstation->employee}}" data-computer="{{ $workstation->computer }}">
+                                        <div class="workstation {{ $value['employee_resource']['id'] == "" ? "vacant":"" }} {{ strtolower($value['computer_resource']['status']) }}" style="{{ $value['workstation']['coordinates'] }}" data-workstation-id="{{ $value['workstation']['id'] }}" data-target="#modal-{{ $value['workstation']['id'] }}" data-user="{{ $value['employee_resource']['id'] }}">
                                             <i class="fa fa-desktop fa-2x"></i>
                                         </div>
 
-                                        <div class="modal fade" id="modal-{{ $workstation->id }}" tabindex="-1" role="dialog" aria-labelledby="modal-{{ $workstation->id }}">
-                                            <div class="modal-dialog" role="document">
+                                        <div class="modal fade" id="modal-{{ $value['workstation']['id'] }}" tabindex="-1" role="dialog" aria-labelledby="modal-{{ $value['workstation']['id'] }}">
+                                            <div class="modal-dialog modal-lg" role="document">
                                                 <div class="modal-content">
 
                                                     <div class="modal-header">
@@ -111,7 +111,31 @@
 
                                                     <div class="modal-body">
 
-                                                        {{--<p><b>Employee name: {{ $employee->first_name }}</b></p>--}}
+                                                        <div class="container">
+
+                                                            {{--Employee Information--}}
+
+                                                            <h6 class="">Employee Information</h6>
+                                                            <div class="row">
+                                                                <div class="col-sm-6">
+                                                                    <p><b>Employee Name: </b>{{ $value['employee_resource']['first_name']." ".$value['employee_resource']['last_name'] }}</p>
+                                                                    <p><b>Position: </b>{{ $value['employee_resource']['position'] }}</p>
+                                                                    <p><b>email: </b>{{ $value['employee_resource']['email'] }}</p>
+                                                                </div>
+
+                                                                <div class="col-sm-6">
+                                                                    <p><b>Computer Name: </b>{{ $value['computer_resource']['computer_name'] }}</p>
+                                                                    <p><b>Type: </b>{{ $value['computer_resource']['computer_type'] }}</p>
+                                                                </div>
+                                                            </div>
+                                                            {{--end row--}}
+
+                                                            <h6></h6>
+
+                                                        </div>
+                                                        {{--end container--}}
+
+
 
                                                     </div>
 

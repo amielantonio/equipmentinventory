@@ -44,50 +44,74 @@
         //Get Equipment resources
         var table = $('#workstation-table');
 
-        // $.ajax({
-        //     "url":"/workstations/get",
-        //     "method": "GET",
-        //     "dataType": "json",
-        //     success: function( data ){
-        //
-        //         var t = table.DataTable({
-        //             "paging": true,
-        //             "lengthChange": false,
-        //             "searching": true,
-        //             "ordering": true,
-        //             "info": false,
-        //             "autoWidth": true,
-        //             columns: [
-        //                 { data: null, sortable: false},
-        //                 { data: "employee_id" },
-        //                 { data: "computer_id" },
-        //                 { data: "location" },
-        //                 { data: "network_type" },
-        //                 { data: "ip_address" },
-        //                 { data: "mac_address" },
-        //                 { data: null }
-        //             ],
-        //             data: data,
-        //             columnDefs: [ {
-        //                 searchable: false,
-        //                 orderable: false,
-        //                 targets: 0
-        //             } ],
-        //             order: [[ 1, 'asc' ]]
-        //         });
-        //
-        //         t.on( 'order.dt search.dt', function () {
-        //             t.column(0, {search:'applied', order:'applied'}).nodes().each( function (cell, i) {
-        //                 cell.innerHTML = i+1;
-        //             } );
-        //         } ).draw();
-        //     }
-        // });
+        $.ajax({
+            "url":"/station",
+            "method": "GET",
+            "dataType": "json",
+            success: function( data ){
+
+                var t = table.DataTable({
+                    "paging": true,
+                    "lengthChange": false,
+                    "searching": true,
+                    "ordering": true,
+                    "info": false,
+                    "autoWidth": true,
+                    data: data,
+                    // columns: [
+                    //     { data: null, sortable: false},
+                    //     {
+                    //         data: null,
+                    //         render: function( data, type, row, meta){
+                    //             if( type === "display"){
+                    //                 return data['employee_resource']['first_name']+" "+data['employee_resource']['last_name']
+                    //             }
+                    //         },
+                    //         defaultContent: "No Employee Assigned"
+                    //     },
+                    //     {
+                    //         data: null,
+                    //         render: function( data, type, row, meta ){
+                    //             if( type === "display" ){
+                    //                 return data['computer_resource']['computer_name']
+                    //             }
+                    //         }
+                    //     },
+                    //     { data: "team" },
+                    //     { data: "network_type" },
+                    //     { data: "ip_address" },
+                    //     { data: "mac_address" },
+                    //     { data: null }
+                    // ],
+                    columns: [
+                        { data: null, sortable: false},
+                        { data: 'employee_resource.first_name' },
+                        { data: 'computer_resource.computer_name' },
+                        { data: "workstation.team" },
+                        { data: "workstation.network_type" },
+                        { data: "workstation.ip_address" },
+                        { data: "workstation.mac_address" },
+                        { data: null }
+                    ],
+                    columnDefs: [ {
+                        searchable: false,
+                        orderable: false,
+                        targets: [0, -1]
+                    } ],
+                    order: [[ 1, 'asc' ]]
+                });
+
+                t.on( 'order.dt search.dt', function () {
+                    t.column(0, {search:'applied', order:'applied'}).nodes().each( function (cell, i) {
+                        cell.innerHTML = i+1;
+                    } );
+                } ).draw();
+            }
+        });
         // END AJAX
 
 
 
-        // seat_plan();
         modal_workstation_fix();
     });
 
@@ -96,79 +120,20 @@
 
         workstation.on( 'click', function(){
             var target = $(this).data('target');
-            var employee = $(this).data('employee');
+            var user = $(this).data('user');
 
-            $( target ).appendTo('body').modal('show');
+            console.log( user );
 
-            employee = JSON.parse(employee);
+            if( user === null || user === undefined || user === ""){
+                return;
+            }else{
+                $( target ).appendTo('body').modal('show');
+            }
 
 
 
 
         });
-    }
-
-
-    function seat_plan(){
-        var workstation = $('.workstation');
-        var employee_name = $('#employee_name');
-        var computer_name = $('#computer_name');
-
-        workstation.on( 'click', function(){
-
-            var id = $( this ).data('workstation-id');
-            console.log( id );
-
-
-            $.ajax({
-                url:'/workstation/' + id,
-                method: 'GET',
-                dataType: 'json'
-            }).done( function( data ){
-
-                console.log( data );
-
-                // var employee = $.ajax({
-                //     url: '/employees/' + data.employee_id,
-                //     method: 'GET',
-                //     dataType: 'json',
-                //     success: function( data ){
-                //         return data;
-                //     }
-                // });
-                //
-                // var computer = $.ajax({
-                //     url: '/computers/' + data.computer_id,
-                //     method: 'GET',
-                //     dataType: 'json',
-                //     success: function( data ){
-                //         return data;
-                //     }
-                // });
-                //
-                // employee.done( function( data ) {
-                //     employee_name.html(data.first_name + " " + data.last_name);
-                // });
-                //
-                // computer.done( function( data ){
-                //     computer_name.html( data.computer_name );
-                // });
-
-
-                // $('#workstation-information').modal({
-                //     backdrop: false,
-                //     show: true
-                // });
-            })
-
-        });// Workstation on click
-
-
-        // $('#workstation-information').on( 'hidden.bs.modal', function(){
-        //     computer_name.html('');
-        //     employee_name.html('');
-        // });
-
     }
 
 })(jQuery);

@@ -8,27 +8,23 @@ class Employee extends Model
 {
 
     /**
-     * Appends computer data to every json and array response
-     *
-     * @var array
-     */
-    protected $appends = ['computer_info'];
-
-    /**
-     * One to One Relationship with Computer Model
+     * Employee Model has one Computer Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
-    public function computer(){
+    public function computer()
+    {
         return $this->hasOne('App\Computer');
     }
 
     /**
-     * Accessor to get computer data
+     * Employee Model belongs to Workstation
      *
-     * @return \Illuminate\Database\Eloquent\Collection|static[]
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
-    public function getComputerInfoAttribute(){
-        return $this->computer()->get();
+    public function workstation()
+    {
+        return $this->hasOne( 'App\Workstation');
     }
+
 }
