@@ -1,9 +1,18 @@
 /**
- * Workstation Ajax
+ * Workstation JS
  */
 
 ( function($){
 
+
+    //On load apps
+    $( function(){
+
+        modal_workstation_fix();
+
+    });
+
+    //Workstation Ajax
     $(function(){
 
         var form = $('#workstation-form');
@@ -110,9 +119,6 @@
         });
         // END AJAX
 
-
-
-        modal_workstation_fix();
     });
 
     function modal_workstation_fix(){

@@ -123,6 +123,11 @@ div[class^="col-"]{
     color: var(--secondary);
     text-decoration: none;
 }
+.color-success,
+.color-success:hover{
+    color: var(--success);
+    text-decoration: none;
+}
 .color-warning,
 .color-warning:hover{
     color: var(--warning);
@@ -162,6 +167,10 @@ div[class^="col-"]{
 }
 .text-hover-danger:hover{
     color: var(--danger);
+}
+
+.text-hover-underline:hover{
+    text-decoration: underline;
 }
 
 
@@ -256,6 +265,25 @@ div[class^="col-"]{
 
 .br-1-w{
     border-right: 1px solid #fff;
+}
+
+
+
+/*List*/
+
+
+ul.no-list{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+ul.no-list p{
+    margin-bottom: 5px;
+}
+
+ul.bordered > li{
+    padding: 5px 0;
+    border-bottom: 1px solid #e3e3e3;
 }
 
 /*******************************************
@@ -684,6 +712,10 @@ main::before, main::after{
     border: none;
     border-bottom: 1px solid #fff;
 }
+.fg-form.dark > .fg-form-group > .fg-form-control{
+    color: #000;
+    border-bottom-color: #000;
+}
 .fg-form-group > .fg-form-control:focus{
     outline: none;
 }
@@ -708,11 +740,17 @@ select.fg-form-control > option{
 .fg-form-control.focus{
     border-color: var(--info);
 }
+.fg-form.dark .fg-form-control.focus{
+    border-color: var(--primary);
+}
 
 .fg-form-control.focus ~ label{
     top: -16px;
     font-size: 0.8rem;
     color: var(--info);
+}
+.fg-form.dark .fg-form-control.focus ~ label{
+    color: var(--primary);
 }
 
 
@@ -730,10 +768,9 @@ label > .required{
 .btn{
     /*display*/
     display: inline-block;
-    width: 120px;
 
     /*position*/
-    padding: .65rem 0;
+    padding: 0.65rem 1rem;
 
     /*design*/
     border-radius: 0;
@@ -754,6 +791,13 @@ label > .required{
     -ms-user-select: none;
 
     transition: all 0.3s;
+}
+.btn[type='submit'],
+.btn.submit,
+.btn[type='reset'],
+.btn.reset{
+    width: 120px;
+    padding: .65rem 0;
 }
 .btn ~ .btn{
     margin-left: 10px;
@@ -848,6 +892,7 @@ label > .required{
     height: auto;
 }
 
+
 /*******************************************
  * ALERTS @override bootstrap alerts
  ******************************************/
@@ -929,7 +974,17 @@ label > .required{
 }
 
 /*******************************************
- * NAV @override bootstrap alerts
+ * MODAL @override bootstrap modal
+ ******************************************/
+
+.modal-content{
+    background-color: rgba(255,255,255,0.95);
+    border-radius: 0;
+    box-shadow: 1px 4px 6px rgba(0,0,0,0.5);
+}
+
+/*******************************************
+ * NAV @override bootstrap nav
  ******************************************/
 
 .nav{
@@ -943,6 +998,29 @@ label > .required{
 .nav-pills .nav-link{
     border-radius: 0;
     color: #fff;
+}
+
+/*******************************************
+ * WELLS
+ ******************************************/
+
+.well{
+    width: 100%;
+    height: 100%;
+    min-height: 200px;
+    max-height: 800px;
+    overflow-y: auto;
+    overflow-x:hidden;
+
+    background: rgba(0,0,0,0.4);
+    border: 1px solid #212121;
+    padding: 1.2em 1em;
+}
+
+.well.empty{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /*******************************************

@@ -15,6 +15,10 @@
     <!--DATA TABLES-->
     <script src="{{ asset('plugins/datatables/js/jquery.dataTables.js') }}"></script>
 
+    <!--MOMENT-->
+    <script src="{{ asset('plugins/moment/js/moment.min.js') }}"></script>
+
+
 
     <script src="{{ asset('js/app.js') }}"></script>
 

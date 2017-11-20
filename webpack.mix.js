@@ -32,3 +32,5 @@ mix.copy('node_modules/datatables.net/js/jquery.dataTables.js', 'public/plugins/
     .copy('node_modules/datatables.net-dt/css/jquery.dataTables.css', 'public/plugins/datatables/css/jquery.dataTables.css')
     .copy('node_modules/datatables.net-dt/images/', 'public/plugins/datatables/images/');
 
+//Moment
+mix.copy('node_modules/moment/min/moment.min.js', 'public/plugins/moment/js/moment.min.js');

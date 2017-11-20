@@ -11,11 +11,40 @@
 |
 */
 
+/**
+ * Computer Routing
+ */
+Route::group(['namespace' => 'Computer', 'middleware'=>'web'], function(){
+
+    Route::resource('computers', 'ComputerController');
+    Route::get('computer/build', 'ComputerController@buildComputer')->name('computer-build');
+    Route::get('computer/get', 'ComputerController@get');
+
+});
+
+/**
+ * Categories Routing
+ */
+Route::group(['middleware'=>'web'], function(){
+
+    Route::resource('categories', 'CategoryController');
+
+});
 
 /**
  * Dashboard Routes
  */
 Route::get('/', "DashboardController@index")->name('dashboard');
+
+
+/**
+ * Diagnostics Routing
+ */
+Route::group(['middleware'=>'web'], function(){
+
+    Route::resource('diagnostics', 'DiagnosticController');
+
+});
 
 
 /**
@@ -39,28 +68,16 @@ Route::group(['namespace' => 'Employee', 'middleware'=>'web'], function(){
 
 });
 
-/**
- * Computer Routing
- */
-Route::group(['namespace' => 'Computer', 'middleware'=>'web'], function(){
 
-    Route::resource('computers', 'ComputerController');
-    Route::get('computer/build', 'ComputerController@buildComputer')->name('computer-build');
-    Route::get('computer/get', 'ComputerController@get');
-
-});
 
 /**
- * Workstations Routing
+ * Profile Routing
  */
-Route::group(['namespace' => 'Workstation', 'middleware'=>'web'], function(){
+Route::group(['middleware'=>'web'], function(){
 
-    Route::resource('workstation', 'WorkstationController');
-    Route::get('workstations/get', 'WorkstationController@get');
-    Route::get('workstations/assign', 'WorkstationController@assign')->name('workstations');
+    Route::resource( 'profiles', 'ProfileController' );
 
 });
-
 /**
  * Stations Routing
  */
@@ -73,10 +90,12 @@ Route::group(['namespace'=>'Workstation', 'middleware'=>'web'], function(){
 
 
 /**
- * Categories Routing
+ * Workstations Routing
  */
-Route::group(['middleware'=>'web'], function(){
+Route::group(['namespace' => 'Workstation', 'middleware'=>'web'], function(){
 
-    Route::resource('categories', 'CategoryController');
+    Route::resource('workstation', 'WorkstationController');
+    Route::get('workstations/get', 'WorkstationController@get');
+    Route::get('workstations/assign', 'WorkstationController@assign')->name('workstations');
 
 });

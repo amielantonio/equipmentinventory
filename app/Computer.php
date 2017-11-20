@@ -32,4 +32,14 @@ class Computer extends Model
 
     }
 
+    /**
+     * Computer has many Diagnostics
+     *
+     * @return \Illuminate\Database\Eloquent\Builder|static
+     */
+    public function diagnostics()
+    {
+        return $this->hasMany('App\Diagnostic');
+    }
+
 }

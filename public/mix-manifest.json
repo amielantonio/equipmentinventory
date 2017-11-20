@@ -5,5 +5,6 @@
     "/plugins/chart.js/js/Chart.bundle.min.js": "/plugins/chart.js/js/Chart.bundle.min.js",
     "/plugins/jquery/js/jquery.min.js": "/plugins/jquery/js/jquery.min.js",
     "/plugins/datatables/js/jquery.dataTables.js": "/plugins/datatables/js/jquery.dataTables.js",
-    "/plugins/datatables/css/jquery.dataTables.css": "/plugins/datatables/css/jquery.dataTables.css"
+    "/plugins/datatables/css/jquery.dataTables.css": "/plugins/datatables/css/jquery.dataTables.css",
+    "/plugins/moment/js/moment.min.js": "/plugins/moment/js/moment.min.js"
 }

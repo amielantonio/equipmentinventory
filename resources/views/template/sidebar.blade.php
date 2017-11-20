@@ -32,7 +32,7 @@
         <li class="has-child">
             <a href="{{ route('workstation.index') }}">
                 <span class="icon"><i class="fa fa-id-card"></i></span>
-                <span>Workstation</span>
+                <span>Workstations</span>
                 {{--<span class="link-icon"><i class="fa fa-chevron-right"></i></span>--}}
             </a>
             <ul class="sub-menu">

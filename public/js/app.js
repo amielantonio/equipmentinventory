@@ -13,7 +13,6 @@
         frosted_form_control();
         form_wizard();
         step_wizard();
-        data_capture();
     });
 
     /**
@@ -21,7 +20,6 @@
      */
     function main_menu() {
         var menuItem = $('.main-sidebar > li');
-
 
         menuItem.on( 'mouseenter', function(){
 
@@ -44,8 +42,8 @@
             }
 
         });
-
     }
+    // End MAIN MENU
 
 
     /**
@@ -104,12 +102,12 @@
             });
         });
     }
+    // END FROSTED FORM CONTROL
 
 
     /**
      * Function for Form
      */
-
     function form_wizard(){
         var mainLink = $('.sidebar > li > a');
 
@@ -120,6 +118,7 @@
         });
 
     }
+    // END FORM WIZARD
 
     /**
      * Step Wizard
@@ -162,6 +161,7 @@
             currentPane = nextPane;
 
         });
+        //END BUTTON NEXT
 
         //Click event for previous button
         btnPrev.on( 'click', function(){
@@ -183,6 +183,7 @@
             currentLinkIndex = prevLinkIndex;
             currentPane = prevPane;
         });
+        //END BTN PREV
 
 
         // On Click event for Progress Link.
@@ -207,16 +208,8 @@
             currentLinkIndex = progressLink.index( this );
             currentPane = progressLink.eq( currentLinkIndex ).attr('href');
         });
-
-
+        // END PROGRESS LINK
     }
-
-    function data_capture(){
-
-        var dataCaptured = $('[data-injection=""]');
-        var targetDOM = $('[data-transfer=""]');
-
-    }
-
+    // END STEP WIZARD
 
 })(jQuery);

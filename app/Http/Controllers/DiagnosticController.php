@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Diagnostic;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class DiagnosticController extends Controller
@@ -35,7 +36,18 @@ class DiagnosticController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $diagnostics = new Diagnostic;
+
+        $diagnostics->computer_id = $request->computer_id;
+        $diagnostics->diagnostics_title = $request->diagnostics_title;
+        $diagnostics->diagnostics_text = $request->diagnostics_text;
+        $diagnostics->diagnostics_date = $request->diagnostics_date;
+        $diagnostics->created_at = Carbon::now();
+        $diagnostics->updated_at = Carbon::now();
+
+        $diagnostics->save();
+
+        return response()->json( $request );
     }
 
     /**
