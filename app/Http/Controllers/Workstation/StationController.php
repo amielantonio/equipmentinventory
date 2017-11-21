@@ -28,16 +28,26 @@ class StationController extends Controller
 
 
         // Iterate through workstation and get employee and computer resource
+//        foreach( $workstations as $workstation ){
+//
+//            $response[$workstation->id]['workstation'] = $workstation;
+//            $response[$workstation->id]['employee_resource'] = $workstation->find( $workstation->id )->employee;
+//            $response[$workstation->id]['computer_resource'] = $workstation->find( $workstation->id )->computer;
+//
+//        }
+
+
         foreach( $workstations as $workstation ){
 
-            $response[$workstation->id]['workstation'] = $workstation;
-            $response[$workstation->id]['employee_resource'] = $workstation->find( $workstation->id )->employee;
-            $response[$workstation->id]['computer_resource'] = $workstation->find( $workstation->id )->computer;
+            $response['data'][] = [
+                "workstation" => $workstation,
+                "employee_resources" => $workstation->find( $workstation->id )->employee,
+                "computer_resources" => $workstation->find( $workstation->id )->computer
+            ];
 
         }
 
-
-        return response($response);
+        return response()->json( $response );
     }
 
     /**

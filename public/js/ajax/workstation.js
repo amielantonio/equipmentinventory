@@ -53,69 +53,122 @@
         //Get Equipment resources
         var table = $('#workstation-table');
 
-        $.ajax({
-            "url":"/station",
-            "method": "GET",
-            "dataType": "json",
-            success: function( data ){
 
-                var t = table.DataTable({
-                    "paging": true,
-                    "lengthChange": false,
-                    "searching": true,
-                    "ordering": true,
-                    "info": false,
-                    "autoWidth": true,
-                    data: data,
-                    // columns: [
-                    //     { data: null, sortable: false},
-                    //     {
-                    //         data: null,
-                    //         render: function( data, type, row, meta){
-                    //             if( type === "display"){
-                    //                 return data['employee_resource']['first_name']+" "+data['employee_resource']['last_name']
-                    //             }
-                    //         },
-                    //         defaultContent: "No Employee Assigned"
-                    //     },
-                    //     {
-                    //         data: null,
-                    //         render: function( data, type, row, meta ){
-                    //             if( type === "display" ){
-                    //                 return data['computer_resource']['computer_name']
-                    //             }
-                    //         }
-                    //     },
-                    //     { data: "team" },
-                    //     { data: "network_type" },
-                    //     { data: "ip_address" },
-                    //     { data: "mac_address" },
-                    //     { data: null }
-                    // ],
-                    columns: [
-                        { data: null, sortable: false},
-                        { data: 'employee_resource.first_name' },
-                        { data: 'computer_resource.computer_name' },
-                        { data: "workstation.team" },
-                        { data: "workstation.network_type" },
-                        { data: "workstation.ip_address" },
-                        { data: "workstation.mac_address" },
-                        { data: null }
-                    ],
-                    columnDefs: [ {
-                        searchable: false,
-                        orderable: false,
-                        targets: [0, -1]
-                    } ],
-                    order: [[ 1, 'asc' ]]
-                });
+        table.DataTable({
+            'ajax': '/station',
+            'columns': [
+                {
+                    data: null,
+                    render: function( data, type, row, meta){
+                        if( type === 'display'){
+                            return data['workstation']['id'];
+                        }
+                    },
+                    defaultContent: "#"
 
-                t.on( 'order.dt search.dt', function () {
-                    t.column(0, {search:'applied', order:'applied'}).nodes().each( function (cell, i) {
-                        cell.innerHTML = i+1;
-                    } );
-                } ).draw();
-            }
+                },
+                {
+                    data: null,
+                    render: function( data, type, row, meta){
+
+                        if( type === 'display'){
+                            if( data['employee_resources'] === null || data['employee_resources'] === 'undefined' ){
+
+                                return "No User";
+
+                            }else{
+
+                                return data['employee_resources']['first_name']+" "+ data['employee_resources']['last_name'];
+
+                            }
+                        }
+
+                    },
+                    defaultContent: "No User"
+                },
+                {
+                    data: null,
+                    render: function( data, type, row, meta){
+
+                        if( type === 'display'){
+                            if( data['computer_resources'] === null || data['computer_resources'] === 'undefined' ){
+                                return "No User";
+                            }else{
+                                return data['computer_resources']['computer_name'];
+                            }
+                        }
+
+                    },
+                    defaultContent: "No User"
+                },
+                {
+                    data: null,
+                    render: function( data, type, row, meta){
+
+                        if( type === 'display'){
+                            if( data['workstation'] === null || data['workstation'] === 'undefined' ){
+                                return "No Team";
+                            }else{
+                                return data['workstation']['team'];
+                            }
+                        }
+                    },
+                    defaultContent: "No User"
+                },
+                {
+
+                    data: null,
+                    render: function( data, type, row, meta){
+
+                        if( type === 'display'){
+                            return data['workstation']['network_type'];
+                        }
+                    },
+                    defaultContent: "No plugged network"
+                },
+                {
+                    data: null,
+                    render: function( data, type, row, meta){
+
+                        if( type === 'display'){
+                            if( data['workstation'] === null || data['workstation'] === 'undefined' ){
+                                return "No Team";
+                            }else{
+                                return data['workstation']['ip_address'];
+                            }
+                        }
+                    },
+                    defaultContent: "No IP address"
+                },
+                {
+                    data: null,
+                    render: function( data, type, row, meta){
+
+                        if( type === 'display'){
+                            if( data['workstation'] === null || data['workstation'] === 'undefined' ){
+                                return "No Team";
+                            }else{
+                                return data['workstation']['mac_address'];
+                            }
+                        }
+                    },
+                    defaultContent: "No MAC address"
+                },
+                {
+                    data: null,
+                    render: function( data, type, row, meta){
+
+                        if( type === 'display'){
+                            return "<div class='toolbox'>" +
+                                "<a href='#' class='toolbox-tool'>" +
+                                "<i class='fa fa-eye'></i></a>" +
+                                "</div>"
+
+                        }
+                    },
+                    defaultContent: "No IP"
+                }
+            ]
         });
         // END AJAX
 
