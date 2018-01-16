@@ -62,8 +62,18 @@ class WorkstationController extends Controller
     {
         $employee = new Employee;
         $computer = new Computer;
+        $workstation = new Workstation;
 
-        $employees = $employee->all();
+
+        $comparisonEmployee = $employee->all();
+
+        $workstationEmployee = $workstation->employee()->get();
+
+        $employees = $comparisonEmployee->whereNotIn( 'employee_id', ['2'] );
+
+        $employees->all();
+
+
         $computers = $computer->all();
 
 

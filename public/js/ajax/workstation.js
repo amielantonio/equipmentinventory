@@ -38,7 +38,7 @@
                     alertable.find('#message')
                         .html('New Workstation added successfully');
                     //Form Reset
-                    // form[0].reset();s
+                    // form[0].reset();
                 },
                 error: function(xhr, status, error) {
                     alert(xhr.responseText);
@@ -184,7 +184,7 @@
             console.log( user );
 
             if( user === null || user === undefined || user === ""){
-                return;
+                $( '#add-workstation-modal' ).appendTo('body').modal( 'show' );
             }else{
                 $( target ).appendTo('body').modal('show');
             }

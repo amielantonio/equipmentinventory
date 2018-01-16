@@ -17,7 +17,9 @@ class ComputerController extends Controller
     public function index()
     {
         $computer = new Computer;
-        $computers = $computer->all();
+//        $computers = $computer->all();
+
+
 
 
         return view('computers.computer', compact('computers'));

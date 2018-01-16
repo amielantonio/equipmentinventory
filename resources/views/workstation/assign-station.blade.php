@@ -17,7 +17,9 @@
                 <span aria-hidden="true">&times;</span>
             </button>
         </div>
+        {{--END ALERT--}}
     </div>
+    {{--END NOTIFICATION--}}
 
 
     <form method="POST" class="fg-form" id="workstation-form">
@@ -57,6 +59,7 @@
                             <option value="{{ $employee->id }}">{{ $employee->first_name }} {{ $employee->last_name }}</option>
                         @endforeach
                     </select>
+                    {{--end select--}}
 
 
                     <label for="user_id">Employee <span class="required">*</span></label>

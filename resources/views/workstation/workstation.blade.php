@@ -47,7 +47,7 @@
                             {{-- end table view--}}
                             <div class="tab-pane fade" id="seat-view" role="tabpanel" aria-labelledby="pills-profile-tab">
 
-                                @include('workstation.workstation-seaplan')
+                                @include('workstation.workstation-seatplan')
 
                             </div>
                             {{-- end other view--}}
