@@ -99,3 +99,6 @@ Route::group(['namespace' => 'Workstation', 'middleware'=>'web'], function(){
     Route::get('workstations/assign', 'WorkstationController@assign')->name('workstations');
 
 });
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

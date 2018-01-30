@@ -4,6 +4,9 @@
 
 ( function($){
 
+
+    getelemtnbad
+
     $(function(){
 
         var form = $('#category-form');
